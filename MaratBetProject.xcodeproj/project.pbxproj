@@ -1,0 +1,646 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBE9A8DB27FC417100436197 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8DA27FC417100436197 /* AppDelegate.swift */; };
+		EBE9A8DD27FC417100436197 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8DC27FC417100436197 /* SceneDelegate.swift */; };
+		EBE9A8DF27FC417100436197 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8DE27FC417100436197 /* ViewController.swift */; };
+		EBE9A8E227FC417100436197 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE9A8E027FC417100436197 /* Main.storyboard */; };
+		EBE9A8E527FC417100436197 /* MaratBetProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8E327FC417100436197 /* MaratBetProject.xcdatamodeld */; };
+		EBE9A8E727FC417200436197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE9A8E627FC417200436197 /* Assets.xcassets */; };
+		EBE9A8EA27FC417200436197 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE9A8E827FC417200436197 /* LaunchScreen.storyboard */; };
+		EBE9A8F527FC417200436197 /* MaratBetProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8F427FC417200436197 /* MaratBetProjectTests.swift */; };
+		EBE9A8FF27FC417200436197 /* MaratBetProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8FE27FC417200436197 /* MaratBetProjectUITests.swift */; };
+		EBE9A90127FC417200436197 /* MaratBetProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A90027FC417200436197 /* MaratBetProjectUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EBE9A8F127FC417200436197 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBE9A8CF27FC417100436197 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBE9A8D627FC417100436197;
+			remoteInfo = MaratBetProject;
+		};
+		EBE9A8FB27FC417200436197 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBE9A8CF27FC417100436197 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBE9A8D627FC417100436197;
+			remoteInfo = MaratBetProject;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EBE9A8D727FC417100436197 /* MaratBetProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaratBetProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBE9A8DA27FC417100436197 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EBE9A8DC27FC417100436197 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EBE9A8DE27FC417100436197 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EBE9A8E127FC417100436197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EBE9A8E427FC417100436197 /* MaratBetProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MaratBetProject.xcdatamodel; sourceTree = "<group>"; };
+		EBE9A8E627FC417200436197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBE9A8E927FC417200436197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EBE9A8EB27FC417200436197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBE9A8F027FC417200436197 /* MaratBetProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaratBetProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBE9A8F427FC417200436197 /* MaratBetProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaratBetProjectTests.swift; sourceTree = "<group>"; };
+		EBE9A8FA27FC417200436197 /* MaratBetProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaratBetProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBE9A8FE27FC417200436197 /* MaratBetProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaratBetProjectUITests.swift; sourceTree = "<group>"; };
+		EBE9A90027FC417200436197 /* MaratBetProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaratBetProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBE9A8D427FC417100436197 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBE9A8ED27FC417200436197 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBE9A8F727FC417200436197 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EBE9A8CE27FC417100436197 = {
+			isa = PBXGroup;
+			children = (
+				EBE9A8D927FC417100436197 /* MaratBetProject */,
+				EBE9A8F327FC417200436197 /* MaratBetProjectTests */,
+				EBE9A8FD27FC417200436197 /* MaratBetProjectUITests */,
+				EBE9A8D827FC417100436197 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EBE9A8D827FC417100436197 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBE9A8D727FC417100436197 /* MaratBetProject.app */,
+				EBE9A8F027FC417200436197 /* MaratBetProjectTests.xctest */,
+				EBE9A8FA27FC417200436197 /* MaratBetProjectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBE9A8D927FC417100436197 /* MaratBetProject */ = {
+			isa = PBXGroup;
+			children = (
+				EBE9A8DA27FC417100436197 /* AppDelegate.swift */,
+				EBE9A8DC27FC417100436197 /* SceneDelegate.swift */,
+				EBE9A8DE27FC417100436197 /* ViewController.swift */,
+				EBE9A8E027FC417100436197 /* Main.storyboard */,
+				EBE9A8E627FC417200436197 /* Assets.xcassets */,
+				EBE9A8E827FC417200436197 /* LaunchScreen.storyboard */,
+				EBE9A8EB27FC417200436197 /* Info.plist */,
+				EBE9A8E327FC417100436197 /* MaratBetProject.xcdatamodeld */,
+			);
+			path = MaratBetProject;
+			sourceTree = "<group>";
+		};
+		EBE9A8F327FC417200436197 /* MaratBetProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBE9A8F427FC417200436197 /* MaratBetProjectTests.swift */,
+			);
+			path = MaratBetProjectTests;
+			sourceTree = "<group>";
+		};
+		EBE9A8FD27FC417200436197 /* MaratBetProjectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EBE9A8FE27FC417200436197 /* MaratBetProjectUITests.swift */,
+				EBE9A90027FC417200436197 /* MaratBetProjectUITestsLaunchTests.swift */,
+			);
+			path = MaratBetProjectUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBE9A8D627FC417100436197 /* MaratBetProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBE9A90427FC417200436197 /* Build configuration list for PBXNativeTarget "MaratBetProject" */;
+			buildPhases = (
+				EBE9A8D327FC417100436197 /* Sources */,
+				EBE9A8D427FC417100436197 /* Frameworks */,
+				EBE9A8D527FC417100436197 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MaratBetProject;
+			productName = MaratBetProject;
+			productReference = EBE9A8D727FC417100436197 /* MaratBetProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EBE9A8EF27FC417200436197 /* MaratBetProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBE9A90727FC417200436197 /* Build configuration list for PBXNativeTarget "MaratBetProjectTests" */;
+			buildPhases = (
+				EBE9A8EC27FC417200436197 /* Sources */,
+				EBE9A8ED27FC417200436197 /* Frameworks */,
+				EBE9A8EE27FC417200436197 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBE9A8F227FC417200436197 /* PBXTargetDependency */,
+			);
+			name = MaratBetProjectTests;
+			productName = MaratBetProjectTests;
+			productReference = EBE9A8F027FC417200436197 /* MaratBetProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EBE9A8F927FC417200436197 /* MaratBetProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBE9A90A27FC417200436197 /* Build configuration list for PBXNativeTarget "MaratBetProjectUITests" */;
+			buildPhases = (
+				EBE9A8F627FC417200436197 /* Sources */,
+				EBE9A8F727FC417200436197 /* Frameworks */,
+				EBE9A8F827FC417200436197 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBE9A8FC27FC417200436197 /* PBXTargetDependency */,
+			);
+			name = MaratBetProjectUITests;
+			productName = MaratBetProjectUITests;
+			productReference = EBE9A8FA27FC417200436197 /* MaratBetProjectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBE9A8CF27FC417100436197 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					EBE9A8D627FC417100436197 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					EBE9A8EF27FC417200436197 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = EBE9A8D627FC417100436197;
+					};
+					EBE9A8F927FC417200436197 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = EBE9A8D627FC417100436197;
+					};
+				};
+			};
+			buildConfigurationList = EBE9A8D227FC417100436197 /* Build configuration list for PBXProject "MaratBetProject" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBE9A8CE27FC417100436197;
+			productRefGroup = EBE9A8D827FC417100436197 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBE9A8D627FC417100436197 /* MaratBetProject */,
+				EBE9A8EF27FC417200436197 /* MaratBetProjectTests */,
+				EBE9A8F927FC417200436197 /* MaratBetProjectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EBE9A8D527FC417100436197 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBE9A8EA27FC417200436197 /* LaunchScreen.storyboard in Resources */,
+				EBE9A8E727FC417200436197 /* Assets.xcassets in Resources */,
+				EBE9A8E227FC417100436197 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBE9A8EE27FC417200436197 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBE9A8F827FC417200436197 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBE9A8D327FC417100436197 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBE9A8DF27FC417100436197 /* ViewController.swift in Sources */,
+				EBE9A8DB27FC417100436197 /* AppDelegate.swift in Sources */,
+				EBE9A8DD27FC417100436197 /* SceneDelegate.swift in Sources */,
+				EBE9A8E527FC417100436197 /* MaratBetProject.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBE9A8EC27FC417200436197 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBE9A8F527FC417200436197 /* MaratBetProjectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBE9A8F627FC417200436197 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBE9A90127FC417200436197 /* MaratBetProjectUITestsLaunchTests.swift in Sources */,
+				EBE9A8FF27FC417200436197 /* MaratBetProjectUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EBE9A8F227FC417200436197 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBE9A8D627FC417100436197 /* MaratBetProject */;
+			targetProxy = EBE9A8F127FC417200436197 /* PBXContainerItemProxy */;
+		};
+		EBE9A8FC27FC417200436197 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBE9A8D627FC417100436197 /* MaratBetProject */;
+			targetProxy = EBE9A8FB27FC417200436197 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EBE9A8E027FC417100436197 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBE9A8E127FC417100436197 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EBE9A8E827FC417200436197 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBE9A8E927FC417200436197 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EBE9A90227FC417200436197 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EBE9A90327FC417200436197 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EBE9A90527FC417200436197 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7NHN3ZNUVJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MaratBetProject/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = JopaEntertainment.MaratBetProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBE9A90627FC417200436197 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7NHN3ZNUVJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MaratBetProject/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = JopaEntertainment.MaratBetProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EBE9A90827FC417200436197 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7NHN3ZNUVJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = JopaEntertainment.MaratBetProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MaratBetProject.app/MaratBetProject";
+			};
+			name = Debug;
+		};
+		EBE9A90927FC417200436197 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7NHN3ZNUVJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = JopaEntertainment.MaratBetProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MaratBetProject.app/MaratBetProject";
+			};
+			name = Release;
+		};
+		EBE9A90B27FC417200436197 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7NHN3ZNUVJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = JopaEntertainment.MaratBetProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MaratBetProject;
+			};
+			name = Debug;
+		};
+		EBE9A90C27FC417200436197 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7NHN3ZNUVJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = JopaEntertainment.MaratBetProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MaratBetProject;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBE9A8D227FC417100436197 /* Build configuration list for PBXProject "MaratBetProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBE9A90227FC417200436197 /* Debug */,
+				EBE9A90327FC417200436197 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBE9A90427FC417200436197 /* Build configuration list for PBXNativeTarget "MaratBetProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBE9A90527FC417200436197 /* Debug */,
+				EBE9A90627FC417200436197 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBE9A90727FC417200436197 /* Build configuration list for PBXNativeTarget "MaratBetProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBE9A90827FC417200436197 /* Debug */,
+				EBE9A90927FC417200436197 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBE9A90A27FC417200436197 /* Build configuration list for PBXNativeTarget "MaratBetProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBE9A90B27FC417200436197 /* Debug */,
+				EBE9A90C27FC417200436197 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EBE9A8E327FC417100436197 /* MaratBetProject.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EBE9A8E427FC417100436197 /* MaratBetProject.xcdatamodel */,
+			);
+			currentVersion = EBE9A8E427FC417100436197 /* MaratBetProject.xcdatamodel */;
+			path = MaratBetProject.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EBE9A8CF27FC417100436197 /* Project object */;
+}
