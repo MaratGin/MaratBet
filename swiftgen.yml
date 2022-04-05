@@ -1,0 +1,11 @@
+strings:
+  inputs: MaratBetProject/Resources/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: MaratBetProject/Resources/SwiftGen/Strings.swift
+xcassets:
+  inputs:
+    - MaratBetProject/Resources/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: MaratBetProject/Resources/SwiftGen/Assets.swift
