@@ -14,9 +14,27 @@
 		EB225CE527FCA74A002E2769 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB225CE427FCA74A002E2769 /* Localizable.strings */; };
 		EB225CE827FCA839002E2769 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225CE627FCA839002E2769 /* Strings.swift */; };
 		EB225CE927FCA839002E2769 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225CE727FCA839002E2769 /* Assets.swift */; };
+		EB225CF027FCAB7B002E2769 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225CEF27FCAB7B002E2769 /* Coordinator.swift */; };
+		EB225CF227FCAB88002E2769 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225CF127FCAB88002E2769 /* MainCoordinator.swift */; };
+		EB225CF427FCAB99002E2769 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225CF327FCAB99002E2769 /* OnboardingCoordinator.swift */; };
+		EB225CF627FCABA7002E2769 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225CF527FCABA7002E2769 /* SignUpCoordinator.swift */; };
+		EB225CF827FCABB3002E2769 /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225CF727FCABB3002E2769 /* SignInCoordinator.swift */; };
+		EB225CFF27FCABFF002E2769 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225CFE27FCABFF002E2769 /* OnboardingViewController.swift */; };
+		EB225D0127FCAC63002E2769 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D0027FCAC63002E2769 /* SignInViewController.swift */; };
+		EB225D0327FCAC79002E2769 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D0227FCAC79002E2769 /* SignUpViewController.swift */; };
+		EB225D0527FCACB8002E2769 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D0427FCACB8002E2769 /* SignInViewModel.swift */; };
+		EB225D0727FCACCE002E2769 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D0627FCACCE002E2769 /* SignUpViewModel.swift */; };
+		EB225D0A27FCACFB002E2769 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D0927FCACFB002E2769 /* User.swift */; };
+		EB225D0C27FCAD76002E2769 /* Matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D0B27FCAD76002E2769 /* Matches.swift */; };
+		EB225D0F27FCADB8002E2769 /* AuthBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D0E27FCADB8002E2769 /* AuthBinding.swift */; };
+		EB225D1127FCADC7002E2769 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1027FCADC7002E2769 /* Validation.swift */; };
+		EB225D1327FCADE0002E2769 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1227FCADE0002E2769 /* Factory.swift */; };
+		EB225D1627FCAE06002E2769 /* MoyaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1527FCAE06002E2769 /* MoyaConfiguration.swift */; };
+		EB225D1827FCAE20002E2769 /* SignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1727FCAE20002E2769 /* SignInService.swift */; };
+		EB225D1A27FCAE29002E2769 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1927FCAE29002E2769 /* SignUpService.swift */; };
+		EB225D1D27FCAE78002E2769 /* ErrorEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1C27FCAE78002E2769 /* ErrorEnums.swift */; };
 		EBE9A8DB27FC417100436197 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8DA27FC417100436197 /* AppDelegate.swift */; };
 		EBE9A8DF27FC417100436197 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8DE27FC417100436197 /* ViewController.swift */; };
-		EBE9A8E227FC417100436197 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE9A8E027FC417100436197 /* Main.storyboard */; };
 		EBE9A8E527FC417100436197 /* MaratBetProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8E327FC417100436197 /* MaratBetProject.xcdatamodeld */; };
 		EBE9A8E727FC417200436197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE9A8E627FC417200436197 /* Assets.xcassets */; };
 		EBE9A8EA27FC417200436197 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE9A8E827FC417200436197 /* LaunchScreen.storyboard */; };
@@ -56,10 +74,28 @@
 		EB225CE427FCA74A002E2769 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		EB225CE627FCA839002E2769 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		EB225CE727FCA839002E2769 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		EB225CEF27FCAB7B002E2769 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EB225CF127FCAB88002E2769 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		EB225CF327FCAB99002E2769 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		EB225CF527FCABA7002E2769 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
+		EB225CF727FCABB3002E2769 /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
+		EB225CFE27FCABFF002E2769 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		EB225D0027FCAC63002E2769 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		EB225D0227FCAC79002E2769 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		EB225D0427FCACB8002E2769 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		EB225D0627FCACCE002E2769 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		EB225D0927FCACFB002E2769 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EB225D0B27FCAD76002E2769 /* Matches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matches.swift; sourceTree = "<group>"; };
+		EB225D0E27FCADB8002E2769 /* AuthBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBinding.swift; sourceTree = "<group>"; };
+		EB225D1027FCADC7002E2769 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		EB225D1227FCADE0002E2769 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		EB225D1527FCAE06002E2769 /* MoyaConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaConfiguration.swift; sourceTree = "<group>"; };
+		EB225D1727FCAE20002E2769 /* SignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInService.swift; sourceTree = "<group>"; };
+		EB225D1927FCAE29002E2769 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		EB225D1C27FCAE78002E2769 /* ErrorEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnums.swift; sourceTree = "<group>"; };
 		EBE9A8D727FC417100436197 /* MaratBetProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaratBetProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE9A8DA27FC417100436197 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBE9A8DE27FC417100436197 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EBE9A8E127FC417100436197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBE9A8E427FC417100436197 /* MaratBetProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MaratBetProject.xcdatamodel; sourceTree = "<group>"; };
 		EBE9A8E627FC417200436197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBE9A8E927FC417200436197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -152,6 +188,11 @@
 		EB225CEB27FCA9BB002E2769 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				EB225CEF27FCAB7B002E2769 /* Coordinator.swift */,
+				EB225CF127FCAB88002E2769 /* MainCoordinator.swift */,
+				EB225CF327FCAB99002E2769 /* OnboardingCoordinator.swift */,
+				EB225CF527FCABA7002E2769 /* SignUpCoordinator.swift */,
+				EB225CF727FCABB3002E2769 /* SignInCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -159,6 +200,8 @@
 		EB225CEC27FCA9C6002E2769 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EB225CFA27FCABCC002E2769 /* Authentification */,
+				EB225CF927FCABC3002E2769 /* Onboarding */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -166,6 +209,13 @@
 		EB225CED27FCA9CD002E2769 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EB225D1B27FCAE5D002E2769 /* Authentification */,
+				EB225D0D27FCAD8F002E2769 /* CoreData */,
+				EB225D0E27FCADB8002E2769 /* AuthBinding.swift */,
+				EB225D1027FCADC7002E2769 /* Validation.swift */,
+				EB225D1227FCADE0002E2769 /* Factory.swift */,
+				EB225D1527FCAE06002E2769 /* MoyaConfiguration.swift */,
+				EB225D1C27FCAE78002E2769 /* ErrorEnums.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -175,6 +225,75 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EB225CF927FCABC3002E2769 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				EB225CFB27FCABD8002E2769 /* Views */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		EB225CFA27FCABCC002E2769 /* Authentification */ = {
+			isa = PBXGroup;
+			children = (
+				EB225CFD27FCABE6002E2769 /* ViewModels */,
+				EB225CFC27FCABDE002E2769 /* Views */,
+			);
+			path = Authentification;
+			sourceTree = "<group>";
+		};
+		EB225CFB27FCABD8002E2769 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB225CFE27FCABFF002E2769 /* OnboardingViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EB225CFC27FCABDE002E2769 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB225D0027FCAC63002E2769 /* SignInViewController.swift */,
+				EB225D0227FCAC79002E2769 /* SignUpViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EB225CFD27FCABE6002E2769 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EB225D0427FCACB8002E2769 /* SignInViewModel.swift */,
+				EB225D0627FCACCE002E2769 /* SignUpViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EB225D0827FCACF3002E2769 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EB225D0927FCACFB002E2769 /* User.swift */,
+				EB225D0B27FCAD76002E2769 /* Matches.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EB225D0D27FCAD8F002E2769 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				EBE9A8E327FC417100436197 /* MaratBetProject.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		EB225D1B27FCAE5D002E2769 /* Authentification */ = {
+			isa = PBXGroup;
+			children = (
+				EB225D1727FCAE20002E2769 /* SignInService.swift */,
+				EB225D1927FCAE29002E2769 /* SignUpService.swift */,
+			);
+			path = Authentification;
 			sourceTree = "<group>";
 		};
 		EBE9A8CE27FC417100436197 = {
@@ -203,17 +322,16 @@
 		EBE9A8D927FC417100436197 /* MaratBetProject */ = {
 			isa = PBXGroup;
 			children = (
-				EB225CED27FCA9CD002E2769 /* Services */,
-				EB225CEC27FCA9C6002E2769 /* Modules */,
+				EB225D0827FCACF3002E2769 /* Models */,
 				EB225CEB27FCA9BB002E2769 /* Coordinators */,
+				EB225CEC27FCA9C6002E2769 /* Modules */,
+				EB225CED27FCA9CD002E2769 /* Services */,
 				EB225CEA27FCA9AB002E2769 /* UIBaseComponents */,
 				EB225CE227FCA6E8002E2769 /* Resources */,
 				EBE9A8DA27FC417100436197 /* AppDelegate.swift */,
 				EBE9A8DE27FC417100436197 /* ViewController.swift */,
-				EBE9A8E027FC417100436197 /* Main.storyboard */,
 				EBE9A8E827FC417200436197 /* LaunchScreen.storyboard */,
 				EBE9A8EB27FC417200436197 /* Info.plist */,
-				EBE9A8E327FC417100436197 /* MaratBetProject.xcdatamodeld */,
 			);
 			path = MaratBetProject;
 			sourceTree = "<group>";
@@ -350,7 +468,6 @@
 				EBE9A8EA27FC417200436197 /* LaunchScreen.storyboard in Resources */,
 				EBE9A8E727FC417200436197 /* Assets.xcassets in Resources */,
 				EB225CE127FCA6BD002E2769 /* swiftgen.yml in Resources */,
-				EBE9A8E227FC417100436197 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,10 +632,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBE9A8DF27FC417100436197 /* ViewController.swift in Sources */,
+				EB225CF227FCAB88002E2769 /* MainCoordinator.swift in Sources */,
 				EBE9A8DB27FC417100436197 /* AppDelegate.swift in Sources */,
+				EB225CF027FCAB7B002E2769 /* Coordinator.swift in Sources */,
+				EB225D1327FCADE0002E2769 /* Factory.swift in Sources */,
+				EB225D0A27FCACFB002E2769 /* User.swift in Sources */,
+				EB225CF827FCABB3002E2769 /* SignInCoordinator.swift in Sources */,
 				EB225CE927FCA839002E2769 /* Assets.swift in Sources */,
+				EB225D1627FCAE06002E2769 /* MoyaConfiguration.swift in Sources */,
+				EB225CF427FCAB99002E2769 /* OnboardingCoordinator.swift in Sources */,
+				EB225D0727FCACCE002E2769 /* SignUpViewModel.swift in Sources */,
+				EB225D1827FCAE20002E2769 /* SignInService.swift in Sources */,
 				EB225CE827FCA839002E2769 /* Strings.swift in Sources */,
+				EB225D0527FCACB8002E2769 /* SignInViewModel.swift in Sources */,
+				EB225D1A27FCAE29002E2769 /* SignUpService.swift in Sources */,
+				EB225D0127FCAC63002E2769 /* SignInViewController.swift in Sources */,
 				EBE9A8E527FC417100436197 /* MaratBetProject.xcdatamodeld in Sources */,
+				EB225D1127FCADC7002E2769 /* Validation.swift in Sources */,
+				EB225CFF27FCABFF002E2769 /* OnboardingViewController.swift in Sources */,
+				EB225D0327FCAC79002E2769 /* SignUpViewController.swift in Sources */,
+				EB225D0C27FCAD76002E2769 /* Matches.swift in Sources */,
+				EB225D1D27FCAE78002E2769 /* ErrorEnums.swift in Sources */,
+				EB225CF627FCABA7002E2769 /* SignUpCoordinator.swift in Sources */,
+				EB225D0F27FCADB8002E2769 /* AuthBinding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,14 +691,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EBE9A8E027FC417100436197 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EBE9A8E127FC417100436197 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EBE9A8E827FC417200436197 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -703,7 +831,6 @@
 				INFOPLIST_FILE = MaratBetProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -732,7 +859,6 @@
 				INFOPLIST_FILE = MaratBetProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
