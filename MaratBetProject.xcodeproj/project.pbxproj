@@ -15,7 +15,6 @@
 		EB225CE827FCA839002E2769 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225CE627FCA839002E2769 /* Strings.swift */; };
 		EB225CE927FCA839002E2769 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225CE727FCA839002E2769 /* Assets.swift */; };
 		EBE9A8DB27FC417100436197 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8DA27FC417100436197 /* AppDelegate.swift */; };
-		EBE9A8DD27FC417100436197 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8DC27FC417100436197 /* SceneDelegate.swift */; };
 		EBE9A8DF27FC417100436197 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8DE27FC417100436197 /* ViewController.swift */; };
 		EBE9A8E227FC417100436197 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE9A8E027FC417100436197 /* Main.storyboard */; };
 		EBE9A8E527FC417100436197 /* MaratBetProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8E327FC417100436197 /* MaratBetProject.xcdatamodeld */; };
@@ -59,7 +58,6 @@
 		EB225CE727FCA839002E2769 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		EBE9A8D727FC417100436197 /* MaratBetProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaratBetProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE9A8DA27FC417100436197 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EBE9A8DC27FC417100436197 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EBE9A8DE27FC417100436197 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EBE9A8E127FC417100436197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBE9A8E427FC417100436197 /* MaratBetProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MaratBetProject.xcdatamodel; sourceTree = "<group>"; };
@@ -143,6 +141,42 @@
 			path = SwiftGen;
 			sourceTree = "<group>";
 		};
+		EB225CEA27FCA9AB002E2769 /* UIBaseComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EB225CEE27FCA9D6002E2769 /* Models */,
+			);
+			path = UIBaseComponents;
+			sourceTree = "<group>";
+		};
+		EB225CEB27FCA9BB002E2769 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		EB225CEC27FCA9C6002E2769 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EB225CED27FCA9CD002E2769 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EB225CEE27FCA9D6002E2769 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		EBE9A8CE27FC417100436197 = {
 			isa = PBXGroup;
 			children = (
@@ -169,9 +203,12 @@
 		EBE9A8D927FC417100436197 /* MaratBetProject */ = {
 			isa = PBXGroup;
 			children = (
+				EB225CED27FCA9CD002E2769 /* Services */,
+				EB225CEC27FCA9C6002E2769 /* Modules */,
+				EB225CEB27FCA9BB002E2769 /* Coordinators */,
+				EB225CEA27FCA9AB002E2769 /* UIBaseComponents */,
 				EB225CE227FCA6E8002E2769 /* Resources */,
 				EBE9A8DA27FC417100436197 /* AppDelegate.swift */,
-				EBE9A8DC27FC417100436197 /* SceneDelegate.swift */,
 				EBE9A8DE27FC417100436197 /* ViewController.swift */,
 				EBE9A8E027FC417100436197 /* Main.storyboard */,
 				EBE9A8E827FC417200436197 /* LaunchScreen.storyboard */,
@@ -481,7 +518,6 @@
 				EBE9A8DB27FC417100436197 /* AppDelegate.swift in Sources */,
 				EB225CE927FCA839002E2769 /* Assets.swift in Sources */,
 				EB225CE827FCA839002E2769 /* Strings.swift in Sources */,
-				EBE9A8DD27FC417100436197 /* SceneDelegate.swift in Sources */,
 				EBE9A8E527FC417100436197 /* MaratBetProject.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
