@@ -1,25 +1,36 @@
 //
 //  AppDelegate.swift
-//  MaratBetProject
+//  MaratBet
 //
-//  Created by Marat Giniyatov on 05.04.2022.
+//  Created by Marat Giniyatov on 06.03.2022.
 //
+// swiftlint:disable all
 
 import UIKit
 import CoreData
 
-@main
+@UIApplicationMain
+// MARK: - Main screen configuration
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+    // MARK: - Variables
+    var mainCoordinator : MainCoordinator?
+    var window: UIWindow?
+    
+    func application
+    (_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
+         -> Bool {
+             let  window = UIWindow(frame: UIScreen.main.bounds)
+             let mainCoordinator = MainCoordinator(window: window )
+             self.window = window
+             self.window?.makeKeyAndVisible()
+             self.mainCoordinator = mainCoordinator
+             
+             mainCoordinator.navigate(with: .onboardingScreen)
+             return true
     }
 
     // MARK: UISceneSession Lifecycle
-
+/*
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
@@ -41,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "MaratBetProject")
+        let container = NSPersistentContainer(name: "MaratBet")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -78,4 +89,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-
+ */
+}
