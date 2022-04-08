@@ -25,7 +25,7 @@ class SignUpCoordinator: Coordinator {
             navigationController.pushViewController(viewController, animated: true)
         case .appScreen:
             break
-        }
+            }
     }
     func configureViewController(id: Int) -> UIViewController {
             navigate(with: .signUpScreen)

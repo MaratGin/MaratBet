@@ -169,7 +169,6 @@ class SignUpViewController: UIViewController {
     // MARK: - Actions
     @objc
     func signUpButtonAction() {
-        print("123123123123123\(passwordTextField.text)")
         viewModel?.signUp(login: loginTextField.text ?? " ", password: passwordTextField.text ?? " ", email: emaiiTextField.text ?? " ", repassword: repasswordTextField.text ?? " ")
     }
     @objc

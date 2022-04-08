@@ -45,16 +45,4 @@ class OnboardingCoordinator: OnboardingCoordinatorProtocol {
         navigate(with: .onboarding)
         return navigationController
     }
-//
-//    func moveToSignIn() {
-//        let viewController = SignInViewController()
-//        viewController.viewModel = SignInViewModel()
-//        viewController.coordinator = AuthentificationCoordinator()
-//        navigationController.pushViewController(viewController, animated: true)
-//    }
-//    func moveToSignUp() {
-//        let viewController = SignUpViewController()
-//        viewController.viewModel = SignUpViewModel()
-//        navigationController.pushViewController(viewController, animated: true)
-//    }
 }

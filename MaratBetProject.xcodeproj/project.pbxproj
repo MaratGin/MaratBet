@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		30F1160E1B41F7977BD2F4D8 /* Pods_MaratBetProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B772647D6B02CA1E71926D /* Pods_MaratBetProject.framework */; };
 		4ACFC747E6B42A68F78087A2 /* Pods_MaratBetProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C90F86F2F86B47254F0DA8 /* Pods_MaratBetProjectTests.framework */; };
-		8265EC8AF63CE46C1113B7E9 /* Pods_MaratBetProject_MaratBetProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7E00E831F4A5F2D5610608 /* Pods_MaratBetProject_MaratBetProjectUITests.framework */; };
 		EB225CE127FCA6BD002E2769 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = EB225CE027FCA6BD002E2769 /* swiftgen.yml */; };
 		EB225CE527FCA74A002E2769 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB225CE427FCA74A002E2769 /* Localizable.strings */; };
 		EB225CE827FCA839002E2769 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225CE627FCA839002E2769 /* Strings.swift */; };
@@ -33,25 +32,17 @@
 		EB225D1827FCAE20002E2769 /* SignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1727FCAE20002E2769 /* SignInService.swift */; };
 		EB225D1A27FCAE29002E2769 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1927FCAE29002E2769 /* SignUpService.swift */; };
 		EB225D1D27FCAE78002E2769 /* ErrorEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1C27FCAE78002E2769 /* ErrorEnums.swift */; };
+		EB263B462800AD0C00E3F3B4 /* MaratBetIntegrationalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB263B452800AD0C00E3F3B4 /* MaratBetIntegrationalTests.swift */; };
 		EBE9A8DB27FC417100436197 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8DA27FC417100436197 /* AppDelegate.swift */; };
 		EBE9A8DF27FC417100436197 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8DE27FC417100436197 /* ViewController.swift */; };
 		EBE9A8E527FC417100436197 /* MaratBetProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8E327FC417100436197 /* MaratBetProject.xcdatamodeld */; };
 		EBE9A8E727FC417200436197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE9A8E627FC417200436197 /* Assets.xcassets */; };
 		EBE9A8EA27FC417200436197 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE9A8E827FC417200436197 /* LaunchScreen.storyboard */; };
 		EBE9A8F527FC417200436197 /* MaratBetProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8F427FC417200436197 /* MaratBetProjectTests.swift */; };
-		EBE9A8FF27FC417200436197 /* MaratBetProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8FE27FC417200436197 /* MaratBetProjectUITests.swift */; };
-		EBE9A90127FC417200436197 /* MaratBetProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A90027FC417200436197 /* MaratBetProjectUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		EBE9A8F127FC417200436197 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EBE9A8CF27FC417100436197 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EBE9A8D627FC417100436197;
-			remoteInfo = MaratBetProject;
-		};
-		EBE9A8FB27FC417200436197 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EBE9A8CF27FC417100436197 /* Project object */;
 			proxyType = 1;
@@ -93,6 +84,7 @@
 		EB225D1727FCAE20002E2769 /* SignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInService.swift; sourceTree = "<group>"; };
 		EB225D1927FCAE29002E2769 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		EB225D1C27FCAE78002E2769 /* ErrorEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnums.swift; sourceTree = "<group>"; };
+		EB263B452800AD0C00E3F3B4 /* MaratBetIntegrationalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaratBetIntegrationalTests.swift; sourceTree = "<group>"; };
 		EBE9A8D727FC417100436197 /* MaratBetProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaratBetProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE9A8DA27FC417100436197 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBE9A8DE27FC417100436197 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,9 +94,6 @@
 		EBE9A8EB27FC417200436197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBE9A8F027FC417200436197 /* MaratBetProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaratBetProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE9A8F427FC417200436197 /* MaratBetProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaratBetProjectTests.swift; sourceTree = "<group>"; };
-		EBE9A8FA27FC417200436197 /* MaratBetProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaratBetProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBE9A8FE27FC417200436197 /* MaratBetProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaratBetProjectUITests.swift; sourceTree = "<group>"; };
-		EBE9A90027FC417200436197 /* MaratBetProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaratBetProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,14 +110,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ACFC747E6B42A68F78087A2 /* Pods_MaratBetProjectTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EBE9A8F727FC417200436197 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8265EC8AF63CE46C1113B7E9 /* Pods_MaratBetProject_MaratBetProjectUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +295,6 @@
 			children = (
 				EBE9A8D727FC417100436197 /* MaratBetProject.app */,
 				EBE9A8F027FC417200436197 /* MaratBetProjectTests.xctest */,
-				EBE9A8FA27FC417200436197 /* MaratBetProjectUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -340,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				EBE9A8F427FC417200436197 /* MaratBetProjectTests.swift */,
+				EB263B452800AD0C00E3F3B4 /* MaratBetIntegrationalTests.swift */,
 			);
 			path = MaratBetProjectTests;
 			sourceTree = "<group>";
@@ -347,8 +328,6 @@
 		EBE9A8FD27FC417200436197 /* MaratBetProjectUITests */ = {
 			isa = PBXGroup;
 			children = (
-				EBE9A8FE27FC417200436197 /* MaratBetProjectUITests.swift */,
-				EBE9A90027FC417200436197 /* MaratBetProjectUITestsLaunchTests.swift */,
 			);
 			path = MaratBetProjectUITests;
 			sourceTree = "<group>";
@@ -396,26 +375,6 @@
 			productReference = EBE9A8F027FC417200436197 /* MaratBetProjectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EBE9A8F927FC417200436197 /* MaratBetProjectUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EBE9A90A27FC417200436197 /* Build configuration list for PBXNativeTarget "MaratBetProjectUITests" */;
-			buildPhases = (
-				2780A8C3E7BFB08A712A3528 /* [CP] Check Pods Manifest.lock */,
-				EBE9A8F627FC417200436197 /* Sources */,
-				EBE9A8F727FC417200436197 /* Frameworks */,
-				EBE9A8F827FC417200436197 /* Resources */,
-				9FACE7F34F1ADFA21D6CD240 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EBE9A8FC27FC417200436197 /* PBXTargetDependency */,
-			);
-			name = MaratBetProjectUITests;
-			productName = MaratBetProjectUITests;
-			productReference = EBE9A8FA27FC417200436197 /* MaratBetProjectUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -430,10 +389,6 @@
 						CreatedOnToolsVersion = 13.1;
 					};
 					EBE9A8EF27FC417200436197 = {
-						CreatedOnToolsVersion = 13.1;
-						TestTargetID = EBE9A8D627FC417100436197;
-					};
-					EBE9A8F927FC417200436197 = {
 						CreatedOnToolsVersion = 13.1;
 						TestTargetID = EBE9A8D627FC417100436197;
 					};
@@ -454,7 +409,6 @@
 			targets = (
 				EBE9A8D627FC417100436197 /* MaratBetProject */,
 				EBE9A8EF27FC417200436197 /* MaratBetProjectTests */,
-				EBE9A8F927FC417200436197 /* MaratBetProjectUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -478,38 +432,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EBE9A8F827FC417200436197 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2780A8C3E7BFB08A712A3528 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MaratBetProject-MaratBetProjectUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		44F3D8545236532A68D3269A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -552,23 +477,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9FACE7F34F1ADFA21D6CD240 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MaratBetProject-MaratBetProjectUITests/Pods-MaratBetProject-MaratBetProjectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MaratBetProject-MaratBetProjectUITests/Pods-MaratBetProject-MaratBetProjectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MaratBetProject-MaratBetProjectUITests/Pods-MaratBetProject-MaratBetProjectUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C28F254C413610AFF7D0151C /* [CP] Embed Pods Frameworks */ = {
@@ -662,16 +570,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB263B462800AD0C00E3F3B4 /* MaratBetIntegrationalTests.swift in Sources */,
 				EBE9A8F527FC417200436197 /* MaratBetProjectTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EBE9A8F627FC417200436197 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EBE9A90127FC417200436197 /* MaratBetProjectUITestsLaunchTests.swift in Sources */,
-				EBE9A8FF27FC417200436197 /* MaratBetProjectUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,11 +582,6 @@
 			isa = PBXTargetDependency;
 			target = EBE9A8D627FC417100436197 /* MaratBetProject */;
 			targetProxy = EBE9A8F127FC417200436197 /* PBXContainerItemProxy */;
-		};
-		EBE9A8FC27FC417200436197 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EBE9A8D627FC417100436197 /* MaratBetProject */;
-			targetProxy = EBE9A8FB27FC417200436197 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -926,54 +821,6 @@
 			};
 			name = Release;
 		};
-		EBE9A90B27FC417200436197 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6F62F7AA6CE233C92D36612 /* Pods-MaratBetProject-MaratBetProjectUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7NHN3ZNUVJ;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = JopaEntertainment.MaratBetProjectUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MaratBetProject;
-			};
-			name = Debug;
-		};
-		EBE9A90C27FC417200436197 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9A87B78304AC3F24CBD8D11 /* Pods-MaratBetProject-MaratBetProjectUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7NHN3ZNUVJ;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = JopaEntertainment.MaratBetProjectUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MaratBetProject;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1000,15 +847,6 @@
 			buildConfigurations = (
 				EBE9A90827FC417200436197 /* Debug */,
 				EBE9A90927FC417200436197 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EBE9A90A27FC417200436197 /* Build configuration list for PBXNativeTarget "MaratBetProjectUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EBE9A90B27FC417200436197 /* Debug */,
-				EBE9A90C27FC417200436197 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
