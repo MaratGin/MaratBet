@@ -11,6 +11,9 @@ import Moya
 protocol SignUpServiceProtocol {
     func funcSendUserInfo(login: String, email: String, password: String, completion: @escaping (Result<(),SignUpErrors>) -> Void)
 }
+
+// MARK: - SignUp network method
+
 class SignUpService: SignUpServiceProtocol {
     let moyaProvider = MoyaProvider<MoyaServices>()
     

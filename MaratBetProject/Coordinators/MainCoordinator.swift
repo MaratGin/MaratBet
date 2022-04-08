@@ -23,6 +23,7 @@ class MainCoordinator: Coordinator {
     init(window: UIWindow) {
         self.window = window
     }
+    // MARK: - Naviagtion method
     func navigate(with route: Route) {
         switch route {
         case .signUpScreen:

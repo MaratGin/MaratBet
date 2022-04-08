@@ -15,6 +15,7 @@ private weak var signUpViewModel: SignUpViewModel!
 private var signInView: SignInViewController!
 private weak var coordinator: SignUpCoordinator!
 
+    // MARK: - SetUp
 override func setUpWithError() throws {
     let coordinator = SignUpCoordinator()
     let signUpViewModel = SignUpViewModel()
@@ -29,19 +30,18 @@ override func tearDownWithError() throws {
     signUpView = nil
     signInView = nil
 }
-
+    
+    // MARK: - Tests
+    
 func testSignUpModuleInit() throws {
     XCTAssertNotNil(signUpView)
     XCTAssertNotNil(signUpViewModel)
 }
-
 func testSignUpModuleMemoryLeak() throws {
     signUpView = nil
     XCTAssertNil(signUpViewModel)
     XCTAssertNil(coordinator)
 }
- 
-
 func testPerformanceExample() throws {
     // This is an example of a performance test case.
     self.measure {

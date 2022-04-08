@@ -11,13 +11,11 @@ import Moya
 protocol SignInServiceProtocol {
     func funcSendUserInfo(email: String, password: String, completion: @escaping (Result<(),SignInErrors>) -> Void)
 }
+// MARK: - SignIn network method
 class SignInService: SignInServiceProtocol {
     private let moyaProvider = MoyaProvider<MoyaServices>()
 
     func funcSendUserInfo(email: String, password: String, completion: @escaping (Result<(), SignInErrors>) -> Void) {
-        
-        
-            print("here----------------------------------")
         moyaProvider.request(.sendSignInInfo(email: email, password: password)) { (result) in
                 switch result {
                 case .success(let response):

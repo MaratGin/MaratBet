@@ -47,12 +47,13 @@ class SignUpViewModel: SignUpViewModelProtocol {
                             return false
                         } else {
                             signUpStatus.value = "Зарегестрирован! 🥰"
-                            return true
                         }
                     }
                 }
         }
         }
+        // MARK: - network result handling
+        
         signUpService.funcSendUserInfo(login: login, email: email, password: password) { [weak self] result in
             switch result {
             case .success():
@@ -61,9 +62,10 @@ class SignUpViewModel: SignUpViewModelProtocol {
                 print("error")
                         }
         }
-        return false
+        return true
 }
     // MARK: - coordinator's navigation method call
+    
     func goToApp() {
         coordinator?.navigate(with: .appScreen)
     }

@@ -19,6 +19,8 @@ class MaratBetProjectTests: XCTestCase {
     private var mainCoordinator: MainCoordinator!
     private var validation: Validation!
     
+    // MARK: - SetUp
+    
     override func setUpWithError() throws {
         validation = Validation()
         signUpView = .init()
@@ -42,6 +44,8 @@ class MaratBetProjectTests: XCTestCase {
         signInViewModel = nil
     }
 
+    // MARK: - Tests
+    
     func testValidationSuccess() throws {
         let email = "email@mail.ru"
         let login = "testlogin1"
