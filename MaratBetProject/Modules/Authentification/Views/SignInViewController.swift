@@ -9,53 +9,31 @@ import UIKit
 
 class SignInViewController: UIViewController {
       // MARK: - UI elements
-    let mainLabel: UILabel = {
-        let text = "MaratBet"
-        let font = UIFont(name: "Futura Bold", size: 40)
-        let color = UIColor.black
-        let label = UILabel()
-        label.text = text
-        label.font = font
-        label.textColor = color
+    let mainLabel: AuthLabel = {
+        let label = AuthLabel()
         return label
     }()
-    var signInStatusLabel: UILabel = {
-        let text = "MaratBet"
-        let font = UIFont(name: "Futura Bold", size: 18)
-        let color = UIColor.white
-        let label = UILabel()
-        label.text = text
-        label.font = font
-        label.textColor = color
-        label.textAlignment = .center
+    var signInStatusLabel: AuthLabel = {
+        let label = AuthLabel()
         return label
     }()
-    let loginTextField: UITextField = {
-       // let textField = UITextFieldWithPadding(frame: <#CGRect#>)
-        let textField = UITextField()
-        let attributes = [
+    let loginTextField: AuthTextField = {
+        let textField = AuthTextField()
+        let attributes =  [
             NSAttributedString.Key.foregroundColor: UIColor.systemGray,
             NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
         ]
-        textField.attributedPlaceholder = NSAttributedString(string: " Введите логин", attributes: attributes)
-        textField.isSecureTextEntry = false
-        textField.layer.borderColor = UIColor.black.cgColor
-        textField.layer.borderWidth = 1.0
-        textField.layer.cornerRadius = 8
+        textField.attributedPlaceholder = NSAttributedString(string: " Введите логин", attributes: attributes as [NSAttributedString.Key : Any])
         return textField
     }()
-    let passwordTextField: UITextField = {
-        let textField = UITextField()
-        let attributes = [
+    let passwordTextField: AuthTextField = {
+        let textField = AuthTextField()
+        let attributes =  [
             NSAttributedString.Key.foregroundColor: UIColor.systemGray,
             NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
         ]
-        textField.attributedPlaceholder = NSAttributedString(string: " Введите пароль", attributes: attributes)
+        textField.attributedPlaceholder = NSAttributedString(string: " Введите  пароль", attributes: attributes as [NSAttributedString.Key : Any])
         textField.isSecureTextEntry = true
-        textField.returnKeyType = .done
-        textField.layer.borderColor = UIColor.black.cgColor
-        textField.layer.borderWidth = 1.0
-        textField.layer.cornerRadius = 8
         return textField
     }()
     let signInButton: UIButton = {
@@ -73,14 +51,12 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
             view.backgroundColor = .white
         signInButton.addTarget(self, action: #selector(signInButtonAction), for: .touchUpInside)
-//        getBackButton.addTarget(self, action: #selector(getBackButtonAction), for: .touchUpInside)
         setupInterface()
         setupConstraints()
         bindViewModel()
     }
     // MARK: - Layout
     func setupInterface() {
-//        view.addSubview(getBackButton)
         view.addSubview(signInStatusLabel)
         view.addSubview(loginTextField)
         view.addSubview(passwordTextField)
@@ -133,7 +109,6 @@ class SignInViewController: UIViewController {
     @objc
     func getBackButtonAction() {
         viewModel?.goToApp()
-        
     }
     // MARK: - Binding
     func bindViewModel() {

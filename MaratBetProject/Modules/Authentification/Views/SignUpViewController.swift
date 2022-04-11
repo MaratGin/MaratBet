@@ -15,75 +15,54 @@ class SignUpViewController: UIViewController {
 //        button.tintColor = .black
 //        return button
 //    }()
-    let mainLabel: UILabel = {
-        let text = "Регистрация"
-        let font = UIFont(name: "Futura Bold", size: 40)
-        let color = UIColor.black
-        let label = UILabel()
-        label.text = text
-        label.font = font
-        label.textColor = color
+    let mainLabel: AuthLabel = {
+        let label = AuthLabel()
         return label
     }()
-    var signUpStatusLabel: UILabel = {
-        let text = "MaratBet"
-        let font = UIFont(name: "Futura Bold", size: 20)
-        let color = UIColor.white
-        let label = UILabel()
-        label.textAlignment = .center
-        label.text = text
-        label.font = font
-        label.textColor = color
+    var signUpStatusLabel: StatusLabel = {
+        let label = StatusLabel()        
         return label
     }()
-    let loginTextField: UITextField = {
-        let textField = UITextField()
+    let loginTextField: AuthTextField = {
+        let textField = AuthTextField()
         let attributes = [
             NSAttributedString.Key.foregroundColor: UIColor.systemGray, NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
         ]
         textField.attributedPlaceholder = NSAttributedString(string: " Введите логин", attributes: attributes)
-        textField.layer.borderColor = UIColor.black.cgColor
-        textField.layer.borderWidth = 1.0
-        textField.layer.cornerRadius = 8
+        textField.textColor = .black
         return textField
     }()
-    let emaiiTextField: UITextField = {
-        let textField = UITextField()
+    let emaiiTextField: AuthTextField = {
+        let textField = AuthTextField()
         let attributes = [
             NSAttributedString.Key.foregroundColor: UIColor.systemGray,
             NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
         ]
         textField.attributedPlaceholder = NSAttributedString(string: " Введите e-mail адрес", attributes: attributes)
-        textField.isSecureTextEntry = false
-        textField.layer.borderColor = UIColor.black.cgColor
-        textField.layer.borderWidth = 1.0
-        textField.layer.cornerRadius = 8
+        textField.textColor = .black
         return textField
     }()
-    let passwordTextField: UITextField = {
-        let textField = UITextField()
+    let passwordTextField: AuthTextField = {
+        let textField = AuthTextField()
         let attributes = [
             NSAttributedString.Key.foregroundColor: UIColor.systemGray,
             NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
         ]
         textField.attributedPlaceholder = NSAttributedString(string: " Введите пароль", attributes: attributes)
         textField.isSecureTextEntry = true
-        textField.layer.borderColor = UIColor.black.cgColor
-        textField.layer.borderWidth = 1.0
-        textField.layer.cornerRadius = 8
+        textField.textColor = .black
+
         return textField
     }()
-    let repasswordTextField: UITextField = {
-        let textField = UITextField()
+    let repasswordTextField: AuthTextField = {
+        let textField = AuthTextField()
         let attributes = [
             NSAttributedString.Key.foregroundColor: UIColor.systemGray,
             NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
         ]
         textField.attributedPlaceholder = NSAttributedString(string: " Введите пароль заново", attributes: attributes)
         textField.isSecureTextEntry = true
-        textField.layer.borderColor = UIColor.black.cgColor
-        textField.layer.borderWidth = 1.0
-        textField.layer.cornerRadius = 8
+        textField.textColor = .black
         return textField
     }()
     let signUpButton: UIButton = {
@@ -105,7 +84,6 @@ class SignUpViewController: UIViewController {
         setupInterface()
         setupConstraints()
         bindViewModel()
-
     }
     // MARK: - Layout
     func setupInterface() {

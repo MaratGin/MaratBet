@@ -20,20 +20,23 @@ class OnboardingCoordinator: OnboardingCoordinatorProtocol {
     private let navigationController = UINavigationController()
     private lazy var signInCoordinator = SignInCoordinator()
     private lazy var signUpCoordinator = SignUpCoordinator()
+    var mainCoordinator: MainCoordinator?
+    
     // MARK: - coordinator's navigation method
     func navigate(with route: Route) {
         switch route {
         case .signUpScreen:
             let viewController = SignUpViewController()
-            let viewModel = SignUpViewModel()
-            viewModel.coordinator = signUpCoordinator
+            let signUpService = SignUpService()
+            signUpCoordinator.mainCoordinator = mainCoordinator
+            let viewModel = SignUpViewModel(signUpService: signUpService, coordinator: signUpCoordinator)
             viewController.viewModel = viewModel
             navigationController.pushViewController(viewController, animated: true)
         case .signInScreen:
+            let signInService = SignInService()
             let viewController = SignInViewController()
-            viewController.viewModel = SignInViewModel()
-            let viewModel = SignInViewModel()
-            viewModel.coordinator = signInCoordinator
+            signInCoordinator.mainCoordinator = mainCoordinator
+            viewController.viewModel = SignInViewModel(signInService: signInService, coordinator: signInCoordinator)
             navigationController.pushViewController(viewController, animated: true)
         case .onboarding:
             let viewController = OnboardingViewController()

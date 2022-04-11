@@ -15,11 +15,14 @@ class SignInCoordinator: Coordinator {
     }
     // MARK: - Variables
     private let navigationController = UINavigationController()
+    var mainCoordinator: MainCoordinator?
+    
     func navigate(with route: Route) {
         switch route {
         case .signInScreen:
             let viewController = SignInViewController()
-            viewController.viewModel = SignInViewModel()
+            let signInService = SignInService()
+            viewController.viewModel = SignInViewModel(signInService: signInService, coordinator: self)
             navigationController.pushViewController(viewController, animated: true)
         case .appScreen:
             break

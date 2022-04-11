@@ -12,35 +12,45 @@ protocol SignInViewModelProtocol {
 //    var signInStatus:
     func signIn(login: String, password: String)
     func goToApp()
-    var coordinator: SignInCoordinator? { get }
+    var coordinator: SignInCoordinator { get }
     var signInStatus: Observable<String> { get }
-    
 }
-// protocol SignInServiceProtocol {
-//    func verifyUser(name: String, password: String, completion: @escaping ((Result<Void, Error>) -> ()))
-// }
 
 class SignInViewModel: SignInViewModelProtocol {
     // MARK: - variables
-    var signInStatus = Observable("")
-    var validator = Validation()
-    let service: AuthentificationServiceProtocol! = nil
-    var coordinator: SignInCoordinator?
+    var signInStatus: Observable<String>
+    var validator: Validation
+//    let service: AuthentificationServiceProtocol! = nil
+    var coordinator: SignInCoordinator
+    var signInService: SignInService
+    
+    init(signInService: SignInService, coordinator: SignInCoordinator) {
+        self.signInService = signInService
+        self.coordinator = coordinator
+        signInStatus = Observable("")
+        validator = Validation()
+    }
+
     // MARK: - sign in method
     func signIn(login: String, password: String) {
         if login.isEmpty || password.isEmpty {
             signInStatus.value = "Недопустимая длина 😱"
         } else {
-            if service.signInService(login: login, password: password) {
-                signInStatus.value = "Успешно! 🟢"
-            } else {
-                signInStatus.value = " Неправильно введенные данные 🔴"
+            if !validator.checkLogin(login) || !validator.checkPassword(password) {
+                signInStatus.value = "Некорретно введен пароль, допускаются латинские буквы и цифры 🔴"
+            }        }
+        signInService.funcSendUserInfo(email: login, password: password) {[weak self] result in
+            switch result {
+            case .success():
+                self?.signInStatus.value = "Успешно!🥰"
+            case .failure(_):
+                self?.signInStatus.value = "Ошибка соединения.. повториите вход🙁"
             }
         }
     }
     // MARK: - coordinator's navigation method call
     func goToApp() {
-        coordinator?.navigate(with: .appScreen)
+        coordinator.navigate(with: .appScreen)
     }
 }
 protocol AuthentificationServiceProtocol {

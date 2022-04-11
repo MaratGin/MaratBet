@@ -14,13 +14,15 @@ private var signUpView: SignUpViewController!
 private weak var signUpViewModel: SignUpViewModel!
 private var signInView: SignInViewController!
 private weak var coordinator: SignUpCoordinator!
+    private var service: SignUpService!
 
     // MARK: - SetUp
 override func setUpWithError() throws {
+    service = SignUpService()
     let coordinator = SignUpCoordinator()
-    let signUpViewModel = SignUpViewModel()
+    let signUpViewModel = SignUpViewModel(signUpService: service, coordinator: coordinator)
     signUpView = .init()
-    signUpViewModel.coordinator = coordinator
+//    signUpViewModel.coordinator = coordinator
     self.signUpViewModel = signUpViewModel
     signUpView.viewModel = signUpViewModel
     self.coordinator = coordinator

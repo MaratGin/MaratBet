@@ -6,9 +6,6 @@
 //
 
 import Foundation
-/// На данном этапе разработки использовать паттерн фабрики пока не с чем,
-/// поэтому в проекте нет примеров его применения
-/// (структуры тоже не имеют ничего общего, с тем, как они должны выглядеть)
 // MARK: - Factory pattern realisation
 protocol MatchFactory {
     func createMatch() -> Match

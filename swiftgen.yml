@@ -1,5 +1,5 @@
 strings:
-  inputs: MaratBetProject/Resources/Localizable.strings
+  inputs: MaratBetProject/Resources/en.Iproj/Localizable.strings
   outputs:
     - templateName: structured-swift5
       output: MaratBetProject/Resources/SwiftGen/Strings.swift
