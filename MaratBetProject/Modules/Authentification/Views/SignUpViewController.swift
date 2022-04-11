@@ -99,7 +99,7 @@ class SignUpViewController: UIViewController {
     func setupConstraints() {
         mainLabel.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-30)
-            make.top.equalToSuperview().offset(200)
+            make.top.equalToSuperview().offset(100)
             make.centerX.equalTo(self.view)
         }
         loginTextField.snp.makeConstraints { make in
