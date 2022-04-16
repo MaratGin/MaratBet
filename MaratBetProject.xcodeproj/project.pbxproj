@@ -10,7 +10,6 @@
 		30F1160E1B41F7977BD2F4D8 /* Pods_MaratBetProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B772647D6B02CA1E71926D /* Pods_MaratBetProject.framework */; };
 		4ACFC747E6B42A68F78087A2 /* Pods_MaratBetProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C90F86F2F86B47254F0DA8 /* Pods_MaratBetProjectTests.framework */; };
 		EB225CE127FCA6BD002E2769 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = EB225CE027FCA6BD002E2769 /* swiftgen.yml */; };
-		EB225CE527FCA74A002E2769 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB225CE427FCA74A002E2769 /* Localizable.strings */; };
 		EB225CE827FCA839002E2769 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225CE627FCA839002E2769 /* Strings.swift */; };
 		EB225CE927FCA839002E2769 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225CE727FCA839002E2769 /* Assets.swift */; };
 		EB225CF027FCAB7B002E2769 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225CEF27FCAB7B002E2769 /* Coordinator.swift */; };
@@ -33,6 +32,25 @@
 		EB225D1A27FCAE29002E2769 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1927FCAE29002E2769 /* SignUpService.swift */; };
 		EB225D1D27FCAE78002E2769 /* ErrorEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1C27FCAE78002E2769 /* ErrorEnums.swift */; };
 		EB263B462800AD0C00E3F3B4 /* MaratBetIntegrationalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB263B452800AD0C00E3F3B4 /* MaratBetIntegrationalTests.swift */; };
+		EBBEA08A2802E35A00F190E2 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0892802E35A00F190E2 /* KeychainService.swift */; };
+		EBBEA08D2803540100F190E2 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA08C2803540100F190E2 /* FeedViewController.swift */; };
+		EBBEA0902803542800F190E2 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA08F2803542800F190E2 /* FeedViewModel.swift */; };
+		EBBEA093280356EF00F190E2 /* TapBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA092280356EF00F190E2 /* TapBarViewController.swift */; };
+		EBBEA095280356FE00F190E2 /* TapBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA094280356FE00F190E2 /* TapBarCoordinator.swift */; };
+		EBBEA09728037AE500F190E2 /* ButtonPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA09628037AE500F190E2 /* ButtonPatterns.swift */; };
+		EBBEA09928037E1000F190E2 /* StackViewPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA09828037E1000F190E2 /* StackViewPatterns.swift */; };
+		EBBEA09B28037E1C00F190E2 /* TextFieldPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA09A28037E1C00F190E2 /* TextFieldPatterns.swift */; };
+		EBBEA09D28037E8B00F190E2 /* LabelPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA09C28037E8B00F190E2 /* LabelPatterns.swift */; };
+		EBBEA0A3280384B900F190E2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0A2280384B800F190E2 /* ProfileViewController.swift */; };
+		EBBEA0A6280384CD00F190E2 /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0A5280384CD00F190E2 /* BalanceViewController.swift */; };
+		EBBEA0A9280384DC00F190E2 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0A8280384DC00F190E2 /* FriendsViewController.swift */; };
+		EBBEA0AF2804114700F190E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBBEA0B12804114700F190E2 /* Localizable.strings */; };
+		EBBEA0B4280444BC00F190E2 /* MatchListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0B3280444BC00F190E2 /* MatchListService.swift */; };
+		EBBEA0B628045E7E00F190E2 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0B528045E7E00F190E2 /* Fixture.swift */; };
+		EBBEA0B828045E8D00F190E2 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0B728045E8D00F190E2 /* League.swift */; };
+		EBBEA0BA28045E9900F190E2 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0B928045E9900F190E2 /* Teams.swift */; };
+		EBBEA0BC28045EAB00F190E2 /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0BB28045EAB00F190E2 /* Goals.swift */; };
+		EBBEA0BE28045EBA00F190E2 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0BD28045EBA00F190E2 /* Score.swift */; };
 		EBE9A8DB27FC417100436197 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8DA27FC417100436197 /* AppDelegate.swift */; };
 		EBE9A8DF27FC417100436197 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8DE27FC417100436197 /* ViewController.swift */; };
 		EBE9A8E527FC417100436197 /* MaratBetProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBE9A8E327FC417100436197 /* MaratBetProject.xcdatamodeld */; };
@@ -62,7 +80,6 @@
 		E6F62F7AA6CE233C92D36612 /* Pods-MaratBetProject-MaratBetProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaratBetProject-MaratBetProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-MaratBetProject-MaratBetProjectUITests/Pods-MaratBetProject-MaratBetProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E7B4066CCEA999CACD1E2120 /* Pods-MaratBetProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaratBetProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-MaratBetProjectTests/Pods-MaratBetProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EB225CE027FCA6BD002E2769 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
-		EB225CE427FCA74A002E2769 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		EB225CE627FCA839002E2769 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		EB225CE727FCA839002E2769 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		EB225CEF27FCAB7B002E2769 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -85,6 +102,25 @@
 		EB225D1927FCAE29002E2769 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		EB225D1C27FCAE78002E2769 /* ErrorEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnums.swift; sourceTree = "<group>"; };
 		EB263B452800AD0C00E3F3B4 /* MaratBetIntegrationalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaratBetIntegrationalTests.swift; sourceTree = "<group>"; };
+		EBBEA0892802E35A00F190E2 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		EBBEA08C2803540100F190E2 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		EBBEA08F2803542800F190E2 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		EBBEA092280356EF00F190E2 /* TapBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarViewController.swift; sourceTree = "<group>"; };
+		EBBEA094280356FE00F190E2 /* TapBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarCoordinator.swift; sourceTree = "<group>"; };
+		EBBEA09628037AE500F190E2 /* ButtonPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPatterns.swift; sourceTree = "<group>"; };
+		EBBEA09828037E1000F190E2 /* StackViewPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewPatterns.swift; sourceTree = "<group>"; };
+		EBBEA09A28037E1C00F190E2 /* TextFieldPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPatterns.swift; sourceTree = "<group>"; };
+		EBBEA09C28037E8B00F190E2 /* LabelPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPatterns.swift; sourceTree = "<group>"; };
+		EBBEA0A2280384B800F190E2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EBBEA0A5280384CD00F190E2 /* BalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
+		EBBEA0A8280384DC00F190E2 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		EBBEA0B02804114700F190E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EBBEA0B3280444BC00F190E2 /* MatchListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListService.swift; sourceTree = "<group>"; };
+		EBBEA0B528045E7E00F190E2 /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
+		EBBEA0B728045E8D00F190E2 /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
+		EBBEA0B928045E9900F190E2 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
+		EBBEA0BB28045EAB00F190E2 /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
+		EBBEA0BD28045EBA00F190E2 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		EBE9A8D727FC417100436197 /* MaratBetProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaratBetProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE9A8DA27FC417100436197 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBE9A8DE27FC417100436197 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -142,9 +178,10 @@
 		EB225CE227FCA6E8002E2769 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EB225CE427FCA74A002E2769 /* Localizable.strings */,
+				EBBEA0912803569000F190E2 /* UIComponents */,
 				EB225CE327FCA70A002E2769 /* SwiftGen */,
 				EBE9A8E627FC417200436197 /* Assets.xcassets */,
+				EBBEA0B12804114700F190E2 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -174,6 +211,7 @@
 				EB225CF327FCAB99002E2769 /* OnboardingCoordinator.swift */,
 				EB225CF527FCABA7002E2769 /* SignUpCoordinator.swift */,
 				EB225CF727FCABB3002E2769 /* SignInCoordinator.swift */,
+				EBBEA094280356FE00F190E2 /* TapBarCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -181,8 +219,13 @@
 		EB225CEC27FCA9C6002E2769 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EBBEA0A02803848400F190E2 /* Friends */,
+				EBBEA09F2803847700F190E2 /* Balance */,
+				EBBEA09E2803846E00F190E2 /* Profile */,
+				EBBEA08B280353A400F190E2 /* Feed */,
 				EB225CFA27FCABCC002E2769 /* Authentification */,
 				EB225CF927FCABC3002E2769 /* Onboarding */,
+				EBBEA092280356EF00F190E2 /* TapBarViewController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -190,6 +233,8 @@
 		EB225CED27FCA9CD002E2769 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EBBEA0B2280444A400F190E2 /* MatchList */,
+				EBBEA0882802E33D00F190E2 /* Keychain */,
 				EB225D1B27FCAE5D002E2769 /* Authentification */,
 				EB225D0D27FCAD8F002E2769 /* CoreData */,
 				EB225D0E27FCADB8002E2769 /* AuthBinding.swift */,
@@ -256,6 +301,11 @@
 			children = (
 				EB225D0927FCACFB002E2769 /* User.swift */,
 				EB225D0B27FCAD76002E2769 /* Matches.swift */,
+				EBBEA0B528045E7E00F190E2 /* Fixture.swift */,
+				EBBEA0B728045E8D00F190E2 /* League.swift */,
+				EBBEA0B928045E9900F190E2 /* Teams.swift */,
+				EBBEA0BB28045EAB00F190E2 /* Goals.swift */,
+				EBBEA0BD28045EBA00F190E2 /* Score.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +325,98 @@
 				EB225D1927FCAE29002E2769 /* SignUpService.swift */,
 			);
 			path = Authentification;
+			sourceTree = "<group>";
+		};
+		EBBEA0882802E33D00F190E2 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				EBBEA0892802E35A00F190E2 /* KeychainService.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		EBBEA08B280353A400F190E2 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				EBBEA08F2803542800F190E2 /* FeedViewModel.swift */,
+				EBBEA08E2803540C00F190E2 /* View */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		EBBEA08E2803540C00F190E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EBBEA08C2803540100F190E2 /* FeedViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EBBEA0912803569000F190E2 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EBBEA09628037AE500F190E2 /* ButtonPatterns.swift */,
+				EBBEA09828037E1000F190E2 /* StackViewPatterns.swift */,
+				EBBEA09A28037E1C00F190E2 /* TextFieldPatterns.swift */,
+				EBBEA09C28037E8B00F190E2 /* LabelPatterns.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		EBBEA09E2803846E00F190E2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EBBEA0A1280384A100F190E2 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		EBBEA09F2803847700F190E2 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				EBBEA0A4280384C100F190E2 /* Views */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		EBBEA0A02803848400F190E2 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				EBBEA0A7280384D000F190E2 /* Views */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		EBBEA0A1280384A100F190E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EBBEA0A2280384B800F190E2 /* ProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EBBEA0A4280384C100F190E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EBBEA0A5280384CD00F190E2 /* BalanceViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EBBEA0A7280384D000F190E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EBBEA0A8280384DC00F190E2 /* FriendsViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EBBEA0B2280444A400F190E2 /* MatchList */ = {
+			isa = PBXGroup;
+			children = (
+				EBBEA0B3280444BC00F190E2 /* MatchListService.swift */,
+			);
+			path = MatchList;
 			sourceTree = "<group>";
 		};
 		EBE9A8CE27FC417100436197 = {
@@ -339,8 +481,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBE9A90427FC417200436197 /* Build configuration list for PBXNativeTarget "MaratBetProject" */;
 			buildPhases = (
-				EB225CDE27FCA56F002E2769 /* SwiftGen */,
 				75BE30DC957F9DDDF34BA6C7 /* [CP] Check Pods Manifest.lock */,
+				EB225CDE27FCA56F002E2769 /* SwiftGen */,
 				EB225CDF27FCA595002E2769 /* SwiftLint */,
 				EBE9A8D327FC417100436197 /* Sources */,
 				EBE9A8D427FC417100436197 /* Frameworks */,
@@ -418,8 +560,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB225CE527FCA74A002E2769 /* Localizable.strings in Resources */,
 				EBE9A8EA27FC417200436197 /* LaunchScreen.storyboard in Resources */,
+				EBBEA0AF2804114700F190E2 /* Localizable.strings in Resources */,
 				EBE9A8E727FC417200436197 /* Assets.xcassets in Resources */,
 				EB225CE127FCA6BD002E2769 /* swiftgen.yml in Resources */,
 			);
@@ -542,26 +684,44 @@
 				EBE9A8DF27FC417100436197 /* ViewController.swift in Sources */,
 				EB225CF227FCAB88002E2769 /* MainCoordinator.swift in Sources */,
 				EBE9A8DB27FC417100436197 /* AppDelegate.swift in Sources */,
+				EBBEA08A2802E35A00F190E2 /* KeychainService.swift in Sources */,
 				EB225CF027FCAB7B002E2769 /* Coordinator.swift in Sources */,
+				EBBEA0B628045E7E00F190E2 /* Fixture.swift in Sources */,
 				EB225D1327FCADE0002E2769 /* Factory.swift in Sources */,
 				EB225D0A27FCACFB002E2769 /* User.swift in Sources */,
 				EB225CF827FCABB3002E2769 /* SignInCoordinator.swift in Sources */,
+				EBBEA095280356FE00F190E2 /* TapBarCoordinator.swift in Sources */,
 				EB225CE927FCA839002E2769 /* Assets.swift in Sources */,
 				EB225D1627FCAE06002E2769 /* MoyaConfiguration.swift in Sources */,
 				EB225CF427FCAB99002E2769 /* OnboardingCoordinator.swift in Sources */,
+				EBBEA0A6280384CD00F190E2 /* BalanceViewController.swift in Sources */,
+				EBBEA09B28037E1C00F190E2 /* TextFieldPatterns.swift in Sources */,
 				EB225D0727FCACCE002E2769 /* SignUpViewModel.swift in Sources */,
+				EBBEA0BA28045E9900F190E2 /* Teams.swift in Sources */,
 				EB225D1827FCAE20002E2769 /* SignInService.swift in Sources */,
+				EBBEA09928037E1000F190E2 /* StackViewPatterns.swift in Sources */,
 				EB225CE827FCA839002E2769 /* Strings.swift in Sources */,
+				EBBEA0B828045E8D00F190E2 /* League.swift in Sources */,
+				EBBEA093280356EF00F190E2 /* TapBarViewController.swift in Sources */,
 				EB225D0527FCACB8002E2769 /* SignInViewModel.swift in Sources */,
+				EBBEA0B4280444BC00F190E2 /* MatchListService.swift in Sources */,
 				EB225D1A27FCAE29002E2769 /* SignUpService.swift in Sources */,
+				EBBEA09D28037E8B00F190E2 /* LabelPatterns.swift in Sources */,
 				EB225D0127FCAC63002E2769 /* SignInViewController.swift in Sources */,
+				EBBEA0902803542800F190E2 /* FeedViewModel.swift in Sources */,
+				EBBEA0BE28045EBA00F190E2 /* Score.swift in Sources */,
+				EBBEA09728037AE500F190E2 /* ButtonPatterns.swift in Sources */,
+				EBBEA0A3280384B900F190E2 /* ProfileViewController.swift in Sources */,
 				EBE9A8E527FC417100436197 /* MaratBetProject.xcdatamodeld in Sources */,
 				EB225D1127FCADC7002E2769 /* Validation.swift in Sources */,
+				EBBEA0A9280384DC00F190E2 /* FriendsViewController.swift in Sources */,
 				EB225CFF27FCABFF002E2769 /* OnboardingViewController.swift in Sources */,
 				EB225D0327FCAC79002E2769 /* SignUpViewController.swift in Sources */,
+				EBBEA0BC28045EAB00F190E2 /* Goals.swift in Sources */,
 				EB225D0C27FCAD76002E2769 /* Matches.swift in Sources */,
 				EB225D1D27FCAE78002E2769 /* ErrorEnums.swift in Sources */,
 				EB225CF627FCABA7002E2769 /* SignUpCoordinator.swift in Sources */,
+				EBBEA08D2803540100F190E2 /* FeedViewController.swift in Sources */,
 				EB225D0F27FCADB8002E2769 /* AuthBinding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,6 +746,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		EBBEA0B12804114700F190E2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBBEA0B02804114700F190E2 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		EBE9A8E827FC417200436197 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

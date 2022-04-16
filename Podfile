@@ -10,13 +10,11 @@ pod 'SnapKit', '~> 5.0'
 pod 'SwiftLint'
 pod 'SwiftGen', '~> 6.0'
 pod 'Moya', '~> 15.0'
+pod 'KeychainAccess', '~> 4.1'
   target 'MaratBetProjectTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'MaratBetProjectUITests' do
-    # Pods for testing
-  end
 
 end

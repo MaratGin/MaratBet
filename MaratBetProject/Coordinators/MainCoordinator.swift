@@ -13,13 +13,14 @@ class MainCoordinator: Coordinator {
         case onboardingScreen
         case signUpScreen
         case signInScreen
+        case tapBar
     }
     private let window: UIWindow
     let navigationController = UINavigationController()
     private lazy var signInCoordinator = SignInCoordinator()
     private lazy var signUpCoordinator = SignUpCoordinator()
     private lazy var onboardingCoordinator = OnboardingCoordinator()
-
+    
     init(window: UIWindow) {
         self.window = window
     }
@@ -27,11 +28,18 @@ class MainCoordinator: Coordinator {
     func navigate(with route: Route) {
         switch route {
         case .signUpScreen:
+            signUpCoordinator.mainCoordinator = self
             setRootViewController(viewController: signUpCoordinator.configureMainController())
         case .signInScreen:
+            signInCoordinator.mainCoordinator = self
             setRootViewController(viewController: signInCoordinator.configureMainController())
         case .onboardingScreen:
+            onboardingCoordinator.mainCoordinator = self
             setRootViewController(viewController: onboardingCoordinator.configureMainController())
+        case .tapBar:
+            print("mainCoordinator")
+            let tapBarCoordinator = TapBarCoordinator(onboardingCoordinator: onboardingCoordinator, mainCoordinator: self)
+            setRootViewController(viewController: tapBarCoordinator.configureMainController())
         }
     }
     func setRootViewController(viewController: UIViewController) {

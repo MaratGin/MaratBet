@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 protocol SignInServiceProtocol {
-    func funcSendUserInfo(email: String, password: String, completion: @escaping (Result<(),SignInErrors>) -> Void)
+    func funcSendUserInfo(email: String, password: String, completion: @escaping (Result<(), SignInErrors>) -> Void)
 }
 // MARK: - SignIn network method
 class SignInService: SignInServiceProtocol {

@@ -12,14 +12,8 @@ class OnboardingViewController: UIViewController {
     var coordinator: OnboardingCoordinator?
     let boxHeight: CGFloat = 130
     // MARK: - UI elements
-    let mainLabel: UILabel = {
-        let text = "MaratBet"
-        let font = UIFont(name: "Futura Bold", size: 45)
-        let color = UIColor.systemYellow
-        let label = UILabel()
-        label.text = text
-        label.font = font
-        label.textColor = color
+    let mainLabel: LogoLabel = {
+       let label = LogoLabel()
         return label
     }()
     let mainImageView: UIImageView = {
@@ -29,28 +23,24 @@ class OnboardingViewController: UIViewController {
         imageView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
         return imageView
     }()
-    let signInButton: UIButton = {
-        let button = UIButton(type: .roundedRect)
-        button.backgroundColor = .black
-        button.titleLabel?.font = UIFont(name: "Futura Bold", size: 15)
-        button.setTitleColor(.white, for: .normal)
+    let signInButton: AuthButton = {
+        let button = AuthButton()
         button.setTitle("SignIn!", for: .normal)
+        button.layer.cornerRadius = 8
         return button
     }()
-    let signUpButton: UIButton = {
-        let button = UIButton(type: .roundedRect)
+    let signUpButton: AuthButton = {
+        let button = AuthButton()
+//        button.layer.borderColor =
         button.backgroundColor = .white
-        button.layer.borderColor  = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
-        button.layer.borderWidth = 2
-        button.titleLabel?.font = UIFont(name: "Futura Bold", size: 15)
-        button.setTitleColor(.black, for: .normal)
+        button.layer.borderColor  = UIColor.black.cgColor
         button.setTitle("SignUp!", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.layer.borderWidth = 2
         return button
     }()
-    let buttonsStackView: UIStackView = {
-        let buttonView = UIStackView(frame: .zero)
-        buttonView.backgroundColor = .white
-        buttonView.spacing = 20
+    let buttonsStackView: ButtonsStackView = {
+        let buttonView = ButtonsStackView()
         return buttonView
     }()
     override func viewDidLoad() {

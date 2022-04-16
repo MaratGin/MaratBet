@@ -22,6 +22,7 @@ class SignUpService: SignUpServiceProtocol {
         moyaProvider.request(.sendSignUpInfo(login: login, email: email, password: password)) { (result) in
             switch result {
             case .success(let response):
+                self.getToken(response: response)
                 print(result)
                 return completion(.success(()))
             case .failure(let error):
@@ -29,5 +30,14 @@ class SignUpService: SignUpServiceProtocol {
             }
         }
     }
+     func getToken(response: Response) {
+        let token = String(data: response.data, encoding: .utf8) ?? "nil"
+         print(token)
+        KeychainService.saveToken(token: token)
+    //        let keychain = KeyChainManager()
+    //        keychain.saveToken(token: response , key: "token")
+    }
 
 }
+
+
