@@ -34,11 +34,11 @@ class SignInViewModel: SignInViewModelProtocol {
     
     func signIn(login: String, password: String) {
         if login.isEmpty || password.isEmpty {
-            signInStatus.value = "Недопустимая длина 😱"
+            signInStatus.value = L10n.wrongLength😱
         } else {
             if !validator.checkLogin(login) || !validator.checkPassword(password) {
                 goToApp()
-                signInStatus.value = "Некорретно введен пароль, допускаются латинские буквы и цифры 🔴"
+                signInStatus.value = L10n.IncorrectPassword.nOnlyLatinSymblosAndNumbersAllowed🔴
             }        }            
         }
 //        signInService.funcSendUserInfo(email: login, password: password) {[weak self] result in
