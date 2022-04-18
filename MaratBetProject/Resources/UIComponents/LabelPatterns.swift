@@ -34,7 +34,7 @@ class StatusLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         text = "MaratBet"
-        font = UIFont(name: "Futura Bold", size: 20)
+        font = UIFont(name: "Futura Bold", size: 10)
         textColor = UIColor.white
         textAlignment = .center
     }

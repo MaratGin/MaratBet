@@ -35,6 +35,7 @@ class SignInViewModel: SignInViewModelProtocol {
     func signIn(login: String, password: String) {
         if login.isEmpty || password.isEmpty {
             signInStatus.value = L10n.wrongLength😱
+            goToApp()
         } else {
             if !validator.checkLogin(login) || !validator.checkPassword(password) {
                 goToApp()
