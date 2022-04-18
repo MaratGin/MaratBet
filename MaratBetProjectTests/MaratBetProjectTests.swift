@@ -24,14 +24,13 @@ class MaratBetProjectTests: XCTestCase {
     override func setUpWithError() throws {
         validation = Validation()
         signUpView = .init()
-        signUpViewModel = SignUpViewModel()
+        signUpViewModel = SignUpViewModel(signUpService: SignUpService(), coordinator: SignUpCoordinator())
         signUpView.viewModel = signUpViewModel
         networkService = SignInService()
         signInView = .init()
         onboardingView = .init()
-        signInViewModel = SignInViewModel()
+        signInViewModel = SignInViewModel(signInService: SignInService(), coordinator: SignInCoordinator())
         mainCoordinator = MainCoordinator(window: UIWindow(frame: UIScreen.main.bounds))
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDownWithError() throws {

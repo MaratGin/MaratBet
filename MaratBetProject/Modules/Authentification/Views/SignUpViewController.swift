@@ -8,13 +8,9 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
+    
     // MARK: - UI elements
-//    let getBackButton: UIButton = {
-//        let button = UIButton(type: .roundedRect)
-//        button.setImage(Asset.getBack.image, for: .normal)
-//        button.tintColor = .black
-//        return button
-//    }()
+    
     let mainLabel: AuthLabel = {
         let label = AuthLabel()
         return label
@@ -28,7 +24,9 @@ class SignUpViewController: UIViewController {
         let attributes = [
             NSAttributedString.Key.foregroundColor: UIColor.systemGray, NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
         ]
-        textField.attributedPlaceholder = NSAttributedString(string: " Введите логин", attributes: attributes)
+        textField.attributedPlaceholder = NSAttributedString(
+            string: " Введите логин",
+            attributes: attributes)
         textField.textColor = .black
         return textField
     }()
@@ -38,7 +36,9 @@ class SignUpViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: UIColor.systemGray,
             NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
         ]
-        textField.attributedPlaceholder = NSAttributedString(string: " Введите e-mail адрес", attributes: attributes)
+        textField.attributedPlaceholder = NSAttributedString(
+            string: " Введите e-mail адрес",
+            attributes: attributes)
         textField.textColor = .black
         return textField
     }()
@@ -48,7 +48,9 @@ class SignUpViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: UIColor.systemGray,
             NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
         ]
-        textField.attributedPlaceholder = NSAttributedString(string: " Введите пароль", attributes: attributes)
+        textField.attributedPlaceholder = NSAttributedString(
+            string: " Введите пароль",
+            attributes: attributes as [NSAttributedString.Key: Any])
         textField.isSecureTextEntry = true
         textField.textColor = .black
 
@@ -144,7 +146,9 @@ class SignUpViewController: UIViewController {
 //            make.left.equalToSuperview().offset(20)
 //        }
     }
+    
     // MARK: - Actions
+    
     @objc
     func signUpButtonAction() {
         viewModel?.signUp(login: loginTextField.text ?? " ", password: passwordTextField.text ?? " ", email: emaiiTextField.text ?? " ", repassword: repasswordTextField.text ?? " ")
@@ -153,7 +157,9 @@ class SignUpViewController: UIViewController {
     func getBackButtonAction() {
         viewModel?.goToApp()
     }
+    
     // MARK: - Binding
+    
     func bindViewModel() {
         viewModel?.signUpStatus.bind({ (signUpStatus) in
             DispatchQueue.main.async {

@@ -23,7 +23,9 @@ class SignInViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: UIColor.systemGray,
             NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
         ]
-        textField.attributedPlaceholder = NSAttributedString(string: " Введите логин", attributes: attributes as [NSAttributedString.Key : Any])
+        textField.attributedPlaceholder = NSAttributedString(
+            string: " Введите логин",
+            attributes: attributes as [NSAttributedString.Key: Any])
         return textField
     }()
     let passwordTextField: AuthTextField = {
@@ -32,7 +34,9 @@ class SignInViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: UIColor.systemGray,
             NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
         ]
-        textField.attributedPlaceholder = NSAttributedString(string: " Введите  пароль", attributes: attributes as [NSAttributedString.Key : Any])
+        textField.attributedPlaceholder = NSAttributedString(
+            string: " Введите  пароль",
+            attributes: attributes as [NSAttributedString.Key: Any])
         textField.isSecureTextEntry = true
         return textField
     }()
@@ -45,7 +49,9 @@ class SignInViewController: UIViewController {
         button.layer.cornerRadius = 10
         return button
     }()
-    // MARK: - Variables
+    
+    // MARK: - ViewDidLoad
+    
     var viewModel: SignInViewModelProtocol?
         override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +61,9 @@ class SignInViewController: UIViewController {
         setupConstraints()
         bindViewModel()
     }
+    
     // MARK: - Layout
+    
     func setupInterface() {
         view.addSubview(signInStatusLabel)
         view.addSubview(loginTextField)
@@ -63,7 +71,9 @@ class SignInViewController: UIViewController {
         view.addSubview(signInButton)
         view.addSubview(mainLabel)
     }
+    
     // MARK: - Constraints configuration
+    
     func setupConstraints() {
         mainLabel.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-30)

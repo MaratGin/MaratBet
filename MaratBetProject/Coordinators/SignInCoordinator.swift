@@ -7,29 +7,36 @@
 
 import Foundation
 import UIKit
+
 // MARK: - Coordinator for sign in screen
+
 class SignInCoordinator: Coordinator {
     enum Route {
         case signInScreen
         case appScreen
     }
+    
     // MARK: - Variables
-    private let navigationController = UINavigationController()
+    
     var mainCoordinator: MainCoordinator?
+    
+    // MARK: - Navigation method
     
     func navigate(with route: Route) {
         switch route {
         case .signInScreen:
-            let viewController = SignInViewController()
-            let signInService = SignInService()
-            viewController.viewModel = SignInViewModel(signInService: signInService, coordinator: self)
-            navigationController.pushViewController(viewController, animated: true)
-        case .appScreen:
             break
+        case .appScreen:
+            mainCoordinator?.navigate(with: .tabBar)
         }
     }
+    
+    // MARK: - ViewController configuration
+    
     func configureViewController(id: Int) -> UIViewController {
-            navigate(with: .signInScreen)
-        return navigationController
+        let viewController = SignInViewController()
+        let signInService = SignInService()
+        viewController.viewModel = SignInViewModel(signInService: signInService, coordinator: self)
+        return viewController
     }
 }

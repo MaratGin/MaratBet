@@ -22,7 +22,6 @@ override func setUpWithError() throws {
     let coordinator = SignUpCoordinator()
     let signUpViewModel = SignUpViewModel(signUpService: service, coordinator: coordinator)
     signUpView = .init()
-//    signUpViewModel.coordinator = coordinator
     self.signUpViewModel = signUpViewModel
     signUpView.viewModel = signUpViewModel
     self.coordinator = coordinator

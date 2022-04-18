@@ -11,35 +11,33 @@ import UIKit
 class MainCoordinator: Coordinator {
     enum Route {
         case onboardingScreen
-        case signUpScreen
-        case signInScreen
-        case tapBar
+        case tabBar
     }
     private let window: UIWindow
     let navigationController = UINavigationController()
-    private lazy var signInCoordinator = SignInCoordinator()
-    private lazy var signUpCoordinator = SignUpCoordinator()
-    private lazy var onboardingCoordinator = OnboardingCoordinator()
+
+    private lazy var onboardingCoordinator: OnboardingCoordinator = {
+       let coordinator = OnboardingCoordinator()
+       coordinator.mainCoordinator = self
+        return coordinator
+    }()
+    private lazy var tabBarCoordinator: TabBarCoordinator = {
+       let coordinator = TabBarCoordinator(onboardingCoordinator: onboardingCoordinator, mainCoordinator: self)
+        return coordinator
+    }()
     
     init(window: UIWindow) {
         self.window = window
     }
-    // MARK: - Naviagtion method
+    
+    // MARK: - Navigation method
+    
     func navigate(with route: Route) {
         switch route {
-        case .signUpScreen:
-            signUpCoordinator.mainCoordinator = self
-            setRootViewController(viewController: signUpCoordinator.configureMainController())
-        case .signInScreen:
-            signInCoordinator.mainCoordinator = self
-            setRootViewController(viewController: signInCoordinator.configureMainController())
         case .onboardingScreen:
-            onboardingCoordinator.mainCoordinator = self
             setRootViewController(viewController: onboardingCoordinator.configureMainController())
-        case .tapBar:
-            print("mainCoordinator")
-            let tapBarCoordinator = TapBarCoordinator(onboardingCoordinator: onboardingCoordinator, mainCoordinator: self)
-            setRootViewController(viewController: tapBarCoordinator.configureMainController())
+        case .tabBar:
+            setRootViewController(viewController: tabBarCoordinator.configureMainController())
         }
     }
     func setRootViewController(viewController: UIViewController) {

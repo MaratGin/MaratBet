@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - protocol
 protocol SignInViewModelProtocol {
-//    var signInStatus:
+    //    var signInStatus:
     func signIn(login: String, password: String)
     func goToApp()
     var coordinator: SignInCoordinator { get }
@@ -17,42 +17,49 @@ protocol SignInViewModelProtocol {
 }
 
 class SignInViewModel: SignInViewModelProtocol {
+    
     // MARK: - variables
-    var signInStatus: Observable<String>
+    var signInStatus: Observable<String> = Observable("")
     var validator: Validation
-//    let service: AuthentificationServiceProtocol! = nil
     var coordinator: SignInCoordinator
     var signInService: SignInService
     
     init(signInService: SignInService, coordinator: SignInCoordinator) {
         self.signInService = signInService
         self.coordinator = coordinator
-        signInStatus = Observable("")
         validator = Validation()
     }
-
+    
     // MARK: - sign in method
+    
     func signIn(login: String, password: String) {
         if login.isEmpty || password.isEmpty {
             signInStatus.value = "Недопустимая длина 😱"
         } else {
             if !validator.checkLogin(login) || !validator.checkPassword(password) {
+                goToApp()
                 signInStatus.value = "Некорретно введен пароль, допускаются латинские буквы и цифры 🔴"
-            }        }
-        signInService.funcSendUserInfo(email: login, password: password) {[weak self] result in
-            switch result {
-            case .success():
-                self?.signInStatus.value = "Успешно!🥰"
-            case .failure(_):
-                self?.signInStatus.value = "Ошибка соединения.. повториите вход🙁"
-            }
+            }        }            
         }
-    }
-    // MARK: - coordinator's navigation method call
+//        signInService.funcSendUserInfo(email: login, password: password) {[weak self] result in
+//            switch result {
+//            case .success():
+//                self?.signInStatus.value = "Успешно!🥰"
+//            case .failure(_):
+//                self?.signInStatus.value = "Ошибка соединения.. повториите вход🙁"
+//            }
+        
     func goToApp() {
         coordinator.navigate(with: .appScreen)
     }
 }
+    
+    // MARK: - coordinator's navigation method call
+    
+ 
+
+    
+
 protocol AuthentificationServiceProtocol {
     func signInService(login: String, password: String) -> Bool
 }
@@ -64,7 +71,7 @@ class AuthentificationMock: AuthentificationServiceProtocol {
             return true
         } else {
             return false
-
+            
         }
     }
 }
