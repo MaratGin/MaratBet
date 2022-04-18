@@ -44,8 +44,8 @@ class FeedViewModel: FeedViewModelProtocol {
                     let token = String(data: response.data, encoding: .utf8) ?? "nil"
 
                     try print(token)
-                      finalData = try! JSONDecoder().decode(MyResponse.self, from: response.data)
-\                } catch {
+                      finalData = try JSONDecoder().decode(MyResponse.self, from: response.data)
+                } catch {
                     print(Error.self)
                 }
                 self.signInStatus.value = finalData.response

@@ -40,7 +40,7 @@ class FeedViewController: UIViewController {
             make.top.equalToSuperview().offset(30)
             make.bottom.equalToSuperview().inset(50)
             make.centerX.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(0.8)
+            make.width.equalToSuperview()
         }
     }
     
