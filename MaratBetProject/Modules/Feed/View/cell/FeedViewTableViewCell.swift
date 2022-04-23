@@ -61,7 +61,7 @@ class FeedViewTableViewCell: UITableViewCell {
         contentView.addSubview(teamAButton)
         contentView.addSubview(teamBButton)
         contentView.addSubview(drawButton)
-
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -109,7 +109,7 @@ class FeedViewTableViewCell: UITableViewCell {
     func setupConstraints() {
         teamALogo.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
-            make.left.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(20)
         }
         dateLabel.snp.makeConstraints { make in
             make.left.equalTo(teamALogo.snp.right).offset(30)

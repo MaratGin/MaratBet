@@ -15,7 +15,20 @@ class AuthButton: UIButton {
         titleLabel?.font = UIFont(name: "Futura Bold", size: 15)
         setTitleColor(.white, for: .normal)
     }
-    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class OptionButton: UIButton {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .white
+        titleLabel?.font = UIFont(name: "Futura Bold", size: 15)
+        setTitleColor(.white, for: .normal)
+        layer.borderColor = UIColor.white.cgColor
+        layer.borderWidth = 3
+    }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

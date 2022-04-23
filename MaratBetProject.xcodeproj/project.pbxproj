@@ -40,6 +40,7 @@
 		EB51392A280D4B9B00E6EC59 /* FriendsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB513929280D4B9B00E6EC59 /* FriendsCoordinator.swift */; };
 		EB51392C280D4BA500E6EC59 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB51392B280D4BA500E6EC59 /* ProfileCoordinator.swift */; };
 		EB51392E280D4BAF00E6EC59 /* BalanceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB51392D280D4BAF00E6EC59 /* BalanceCoordinator.swift */; };
+		EB513930280DA6F500E6EC59 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB51392F280DA6F500E6EC59 /* Question.swift */; };
 		EBBEA08A2802E35A00F190E2 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0892802E35A00F190E2 /* KeychainService.swift */; };
 		EBBEA08D2803540100F190E2 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA08C2803540100F190E2 /* FeedViewController.swift */; };
 		EBBEA0902803542800F190E2 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA08F2803542800F190E2 /* FeedViewModel.swift */; };
@@ -116,6 +117,7 @@
 		EB513929280D4B9B00E6EC59 /* FriendsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCoordinator.swift; sourceTree = "<group>"; };
 		EB51392B280D4BA500E6EC59 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		EB51392D280D4BAF00E6EC59 /* BalanceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCoordinator.swift; sourceTree = "<group>"; };
+		EB51392F280DA6F500E6EC59 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		EBBEA0892802E35A00F190E2 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		EBBEA08C2803540100F190E2 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		EBBEA08F2803542800F190E2 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				EBBEA0BD28045EBA00F190E2 /* Score.swift */,
 				EB51391C280C67EE00E6EC59 /* Match.swift */,
 				EB513920280CB89800E6EC59 /* MyResponse.swift */,
+				EB51392F280DA6F500E6EC59 /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				EB225CF627FCABA7002E2769 /* SignUpCoordinator.swift in Sources */,
 				EB513928280D38D900E6EC59 /* ImageViewPatterns.swift in Sources */,
 				EBBEA08D2803540100F190E2 /* FeedViewController.swift in Sources */,
+				EB513930280DA6F500E6EC59 /* Question.swift in Sources */,
 				EB225D0F27FCADB8002E2769 /* AuthBinding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
