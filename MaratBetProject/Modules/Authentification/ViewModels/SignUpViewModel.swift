@@ -34,26 +34,26 @@ class SignUpViewModel: SignUpViewModelProtocol {
     // MARK: - signUp method
     func signUp(login: String, password: String, email: String, repassword: String) -> Bool {
         if login.isEmpty || password.isEmpty || email.isEmpty || repassword.isEmpty {
-            signUpStatus.value = "Некорректные данные 🥺"
+            signUpStatus.value = L10n.incorrectData🥺
             return false
         } else {
             if !validator.checkLogin(login) {
-                signUpStatus.value = "Некорретно введен логин, допускаются латинские буквы и цифры 🔴"
+                signUpStatus.value = L10n.IncorrectPassword.nOnlyLatinSymblosAndNumbersAllowed🔴
                 return false
             } else {
                 if !validator.checkEmail(email) {
-                    signUpStatus.value = "Некорректно введена почта! 🔴"
+                    signUpStatus.value = L10n.incorrectEMail🔴
                     return false
                 } else {
                     if !validator.checkPassword(password) {
-                        signUpStatus.value = "Некорретно введен пароль, допускаются латинские буквы и цифры 🔴"
+                        signUpStatus.value = L10n.IncorrectPassword.nOnlyLatinSymblosAndNumbersAllowed🔴
                         return false
                     } else {
                         if password != repassword {
-                            signUpStatus.value = "Введите пароли заново! 🔴"
+                            signUpStatus.value = L10n.enterPasswordsAgain🔴
                             return false
                         } else {
-                            signUpStatus.value = "Зарегестрирован! 🥰"
+                            signUpStatus.value = L10n.registered🥰
                             goToApp()
                         }
                     }

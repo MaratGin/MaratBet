@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/*
 // MARK: - Structs for factory pattern
 protocol Match {
     var teamAName: String {get set}
@@ -50,3 +50,4 @@ struct TennisMatch: Match {
         return "2players/unlimetedTime"
     }
 }
+*/

@@ -9,7 +9,6 @@ import Foundation
 struct Teams: Codable {
     let home: Home?
     let away: Away?
-    
 }
 
 struct Home: Codable {
@@ -25,4 +24,3 @@ struct Away: Codable {
     let logo: String?
     let winner: Bool?
 }
-

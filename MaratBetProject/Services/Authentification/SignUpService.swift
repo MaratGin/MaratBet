@@ -25,7 +25,7 @@ class SignUpService: SignUpServiceProtocol {
                 self.getToken(response: response)
                 print(result)
                 return completion(.success(()))
-            case .failure(let error):
+            case .failure(_):
                 return completion(.failure(.connectionError))
             }
         }

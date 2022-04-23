@@ -15,7 +15,6 @@ class LogoLabel: UILabel {
         font = UIFont(name: "Futura Bold", size: 45)
         textColor = UIColor.systemYellow
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -34,12 +33,8 @@ class AuthLabel: UILabel {
 class StatusLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        let text = "MaratBet"
-//        let font = UIFont(name: "Futura Bold", size: 20)
-//        let color = UIColor.white
-//        let label = UILabel()
         text = "MaratBet"
-        font = UIFont(name: "Futura Bold", size: 20)
+        font = UIFont(name: "Futura Bold", size: 10)
         textColor = UIColor.white
         textAlignment = .center
     }

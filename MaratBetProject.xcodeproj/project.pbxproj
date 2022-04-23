@@ -32,11 +32,19 @@
 		EB225D1A27FCAE29002E2769 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1927FCAE29002E2769 /* SignUpService.swift */; };
 		EB225D1D27FCAE78002E2769 /* ErrorEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1C27FCAE78002E2769 /* ErrorEnums.swift */; };
 		EB263B462800AD0C00E3F3B4 /* MaratBetIntegrationalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB263B452800AD0C00E3F3B4 /* MaratBetIntegrationalTests.swift */; };
+		EB51391D280C67EE00E6EC59 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB51391C280C67EE00E6EC59 /* Match.swift */; };
+		EB51391F280C728400E6EC59 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB51391E280C728400E6EC59 /* FeedCoordinator.swift */; };
+		EB513921280CB89800E6EC59 /* MyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB513920280CB89800E6EC59 /* MyResponse.swift */; };
+		EB513926280D365300E6EC59 /* FeedViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB513925280D365300E6EC59 /* FeedViewTableViewCell.swift */; };
+		EB513928280D38D900E6EC59 /* ImageViewPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB513927280D38D900E6EC59 /* ImageViewPatterns.swift */; };
+		EB51392A280D4B9B00E6EC59 /* FriendsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB513929280D4B9B00E6EC59 /* FriendsCoordinator.swift */; };
+		EB51392C280D4BA500E6EC59 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB51392B280D4BA500E6EC59 /* ProfileCoordinator.swift */; };
+		EB51392E280D4BAF00E6EC59 /* BalanceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB51392D280D4BAF00E6EC59 /* BalanceCoordinator.swift */; };
+		EB513930280DA6F500E6EC59 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB51392F280DA6F500E6EC59 /* Question.swift */; };
 		EBBEA08A2802E35A00F190E2 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0892802E35A00F190E2 /* KeychainService.swift */; };
 		EBBEA08D2803540100F190E2 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA08C2803540100F190E2 /* FeedViewController.swift */; };
 		EBBEA0902803542800F190E2 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA08F2803542800F190E2 /* FeedViewModel.swift */; };
-		EBBEA093280356EF00F190E2 /* TapBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA092280356EF00F190E2 /* TapBarViewController.swift */; };
-		EBBEA095280356FE00F190E2 /* TapBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA094280356FE00F190E2 /* TapBarCoordinator.swift */; };
+		EBBEA095280356FE00F190E2 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA094280356FE00F190E2 /* TabBarCoordinator.swift */; };
 		EBBEA09728037AE500F190E2 /* ButtonPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA09628037AE500F190E2 /* ButtonPatterns.swift */; };
 		EBBEA09928037E1000F190E2 /* StackViewPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA09828037E1000F190E2 /* StackViewPatterns.swift */; };
 		EBBEA09B28037E1C00F190E2 /* TextFieldPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA09A28037E1C00F190E2 /* TextFieldPatterns.swift */; };
@@ -45,7 +53,6 @@
 		EBBEA0A6280384CD00F190E2 /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0A5280384CD00F190E2 /* BalanceViewController.swift */; };
 		EBBEA0A9280384DC00F190E2 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0A8280384DC00F190E2 /* FriendsViewController.swift */; };
 		EBBEA0AF2804114700F190E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBBEA0B12804114700F190E2 /* Localizable.strings */; };
-		EBBEA0B4280444BC00F190E2 /* MatchListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0B3280444BC00F190E2 /* MatchListService.swift */; };
 		EBBEA0B628045E7E00F190E2 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0B528045E7E00F190E2 /* Fixture.swift */; };
 		EBBEA0B828045E8D00F190E2 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0B728045E8D00F190E2 /* League.swift */; };
 		EBBEA0BA28045E9900F190E2 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA0B928045E9900F190E2 /* Teams.swift */; };
@@ -102,11 +109,19 @@
 		EB225D1927FCAE29002E2769 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		EB225D1C27FCAE78002E2769 /* ErrorEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnums.swift; sourceTree = "<group>"; };
 		EB263B452800AD0C00E3F3B4 /* MaratBetIntegrationalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaratBetIntegrationalTests.swift; sourceTree = "<group>"; };
+		EB51391C280C67EE00E6EC59 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		EB51391E280C728400E6EC59 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
+		EB513920280CB89800E6EC59 /* MyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResponse.swift; sourceTree = "<group>"; };
+		EB513925280D365300E6EC59 /* FeedViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewTableViewCell.swift; sourceTree = "<group>"; };
+		EB513927280D38D900E6EC59 /* ImageViewPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewPatterns.swift; sourceTree = "<group>"; };
+		EB513929280D4B9B00E6EC59 /* FriendsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCoordinator.swift; sourceTree = "<group>"; };
+		EB51392B280D4BA500E6EC59 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		EB51392D280D4BAF00E6EC59 /* BalanceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCoordinator.swift; sourceTree = "<group>"; };
+		EB51392F280DA6F500E6EC59 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		EBBEA0892802E35A00F190E2 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		EBBEA08C2803540100F190E2 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		EBBEA08F2803542800F190E2 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
-		EBBEA092280356EF00F190E2 /* TapBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarViewController.swift; sourceTree = "<group>"; };
-		EBBEA094280356FE00F190E2 /* TapBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarCoordinator.swift; sourceTree = "<group>"; };
+		EBBEA094280356FE00F190E2 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		EBBEA09628037AE500F190E2 /* ButtonPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPatterns.swift; sourceTree = "<group>"; };
 		EBBEA09828037E1000F190E2 /* StackViewPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewPatterns.swift; sourceTree = "<group>"; };
 		EBBEA09A28037E1C00F190E2 /* TextFieldPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPatterns.swift; sourceTree = "<group>"; };
@@ -115,7 +130,6 @@
 		EBBEA0A5280384CD00F190E2 /* BalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
 		EBBEA0A8280384DC00F190E2 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		EBBEA0B02804114700F190E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		EBBEA0B3280444BC00F190E2 /* MatchListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListService.swift; sourceTree = "<group>"; };
 		EBBEA0B528045E7E00F190E2 /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		EBBEA0B728045E8D00F190E2 /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		EBBEA0B928045E9900F190E2 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
@@ -211,7 +225,11 @@
 				EB225CF327FCAB99002E2769 /* OnboardingCoordinator.swift */,
 				EB225CF527FCABA7002E2769 /* SignUpCoordinator.swift */,
 				EB225CF727FCABB3002E2769 /* SignInCoordinator.swift */,
-				EBBEA094280356FE00F190E2 /* TapBarCoordinator.swift */,
+				EBBEA094280356FE00F190E2 /* TabBarCoordinator.swift */,
+				EB51391E280C728400E6EC59 /* FeedCoordinator.swift */,
+				EB513929280D4B9B00E6EC59 /* FriendsCoordinator.swift */,
+				EB51392B280D4BA500E6EC59 /* ProfileCoordinator.swift */,
+				EB51392D280D4BAF00E6EC59 /* BalanceCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -225,7 +243,6 @@
 				EBBEA08B280353A400F190E2 /* Feed */,
 				EB225CFA27FCABCC002E2769 /* Authentification */,
 				EB225CF927FCABC3002E2769 /* Onboarding */,
-				EBBEA092280356EF00F190E2 /* TapBarViewController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -233,7 +250,6 @@
 		EB225CED27FCA9CD002E2769 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				EBBEA0B2280444A400F190E2 /* MatchList */,
 				EBBEA0882802E33D00F190E2 /* Keychain */,
 				EB225D1B27FCAE5D002E2769 /* Authentification */,
 				EB225D0D27FCAD8F002E2769 /* CoreData */,
@@ -306,6 +322,9 @@
 				EBBEA0B928045E9900F190E2 /* Teams.swift */,
 				EBBEA0BB28045EAB00F190E2 /* Goals.swift */,
 				EBBEA0BD28045EBA00F190E2 /* Score.swift */,
+				EB51391C280C67EE00E6EC59 /* Match.swift */,
+				EB513920280CB89800E6EC59 /* MyResponse.swift */,
+				EB51392F280DA6F500E6EC59 /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,6 +344,14 @@
 				EB225D1927FCAE29002E2769 /* SignUpService.swift */,
 			);
 			path = Authentification;
+			sourceTree = "<group>";
+		};
+		EB513922280D329200E6EC59 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				EB513925280D365300E6EC59 /* FeedViewTableViewCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		EBBEA0882802E33D00F190E2 /* Keychain */ = {
@@ -347,6 +374,7 @@
 		EBBEA08E2803540C00F190E2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EB513922280D329200E6EC59 /* cell */,
 				EBBEA08C2803540100F190E2 /* FeedViewController.swift */,
 			);
 			path = View;
@@ -359,6 +387,7 @@
 				EBBEA09828037E1000F190E2 /* StackViewPatterns.swift */,
 				EBBEA09A28037E1C00F190E2 /* TextFieldPatterns.swift */,
 				EBBEA09C28037E8B00F190E2 /* LabelPatterns.swift */,
+				EB513927280D38D900E6EC59 /* ImageViewPatterns.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -409,14 +438,6 @@
 				EBBEA0A8280384DC00F190E2 /* FriendsViewController.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		EBBEA0B2280444A400F190E2 /* MatchList */ = {
-			isa = PBXGroup;
-			children = (
-				EBBEA0B3280444BC00F190E2 /* MatchListService.swift */,
-			);
-			path = MatchList;
 			sourceTree = "<group>";
 		};
 		EBE9A8CE27FC417100436197 = {
@@ -686,11 +707,13 @@
 				EBE9A8DB27FC417100436197 /* AppDelegate.swift in Sources */,
 				EBBEA08A2802E35A00F190E2 /* KeychainService.swift in Sources */,
 				EB225CF027FCAB7B002E2769 /* Coordinator.swift in Sources */,
+				EB51391D280C67EE00E6EC59 /* Match.swift in Sources */,
 				EBBEA0B628045E7E00F190E2 /* Fixture.swift in Sources */,
 				EB225D1327FCADE0002E2769 /* Factory.swift in Sources */,
+				EB51392A280D4B9B00E6EC59 /* FriendsCoordinator.swift in Sources */,
 				EB225D0A27FCACFB002E2769 /* User.swift in Sources */,
 				EB225CF827FCABB3002E2769 /* SignInCoordinator.swift in Sources */,
-				EBBEA095280356FE00F190E2 /* TapBarCoordinator.swift in Sources */,
+				EBBEA095280356FE00F190E2 /* TabBarCoordinator.swift in Sources */,
 				EB225CE927FCA839002E2769 /* Assets.swift in Sources */,
 				EB225D1627FCAE06002E2769 /* MoyaConfiguration.swift in Sources */,
 				EB225CF427FCAB99002E2769 /* OnboardingCoordinator.swift in Sources */,
@@ -701,12 +724,12 @@
 				EB225D1827FCAE20002E2769 /* SignInService.swift in Sources */,
 				EBBEA09928037E1000F190E2 /* StackViewPatterns.swift in Sources */,
 				EB225CE827FCA839002E2769 /* Strings.swift in Sources */,
+				EB513926280D365300E6EC59 /* FeedViewTableViewCell.swift in Sources */,
 				EBBEA0B828045E8D00F190E2 /* League.swift in Sources */,
-				EBBEA093280356EF00F190E2 /* TapBarViewController.swift in Sources */,
 				EB225D0527FCACB8002E2769 /* SignInViewModel.swift in Sources */,
-				EBBEA0B4280444BC00F190E2 /* MatchListService.swift in Sources */,
 				EB225D1A27FCAE29002E2769 /* SignUpService.swift in Sources */,
 				EBBEA09D28037E8B00F190E2 /* LabelPatterns.swift in Sources */,
+				EB51392E280D4BAF00E6EC59 /* BalanceCoordinator.swift in Sources */,
 				EB225D0127FCAC63002E2769 /* SignInViewController.swift in Sources */,
 				EBBEA0902803542800F190E2 /* FeedViewModel.swift in Sources */,
 				EBBEA0BE28045EBA00F190E2 /* Score.swift in Sources */,
@@ -717,11 +740,16 @@
 				EBBEA0A9280384DC00F190E2 /* FriendsViewController.swift in Sources */,
 				EB225CFF27FCABFF002E2769 /* OnboardingViewController.swift in Sources */,
 				EB225D0327FCAC79002E2769 /* SignUpViewController.swift in Sources */,
+				EB513921280CB89800E6EC59 /* MyResponse.swift in Sources */,
 				EBBEA0BC28045EAB00F190E2 /* Goals.swift in Sources */,
+				EB51392C280D4BA500E6EC59 /* ProfileCoordinator.swift in Sources */,
 				EB225D0C27FCAD76002E2769 /* Matches.swift in Sources */,
 				EB225D1D27FCAE78002E2769 /* ErrorEnums.swift in Sources */,
+				EB51391F280C728400E6EC59 /* FeedCoordinator.swift in Sources */,
 				EB225CF627FCABA7002E2769 /* SignUpCoordinator.swift in Sources */,
+				EB513928280D38D900E6EC59 /* ImageViewPatterns.swift in Sources */,
 				EBBEA08D2803540100F190E2 /* FeedViewController.swift in Sources */,
+				EB513930280DA6F500E6EC59 /* Question.swift in Sources */,
 				EB225D0F27FCADB8002E2769 /* AuthBinding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

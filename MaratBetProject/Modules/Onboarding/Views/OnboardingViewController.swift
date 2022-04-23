@@ -45,6 +45,7 @@ class OnboardingViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("ewmkmewm")
         signInButton.addTarget(self, action: #selector(signInButtonAction), for: .touchUpInside)
         signUpButton.addTarget(self, action: #selector(signUpButtonAction), for: .touchUpInside)
         setupInterface()
