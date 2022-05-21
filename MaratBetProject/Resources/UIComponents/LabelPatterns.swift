@@ -42,3 +42,28 @@ class StatusLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+class BetNameLabel: UILabel {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        font = UIFont(name: "Futura Bold", size: 10)
+        textColor = UIColor.black
+        textAlignment = .center
+        adjustsFontSizeToFitWidth = true
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+class CoefficientLabel: UILabel {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        font = UIFont(name: "Futura Bold", size: 20)
+        textColor = Colors.goldTabBarItemColor
+        textAlignment = .left
+        adjustsFontSizeToFitWidth = true
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}

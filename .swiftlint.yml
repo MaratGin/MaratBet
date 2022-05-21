@@ -1,7 +1,9 @@
 excluded:
   - Pods/
   
-line_length: 200
+line_length: 500
+function_body_length: 60
 
 disabled_rules:
 - trailing_whitespace
+- empty_enum_arguments

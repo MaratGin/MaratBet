@@ -56,22 +56,30 @@ class TabBarCoordinator: Coordinator {
     // MARK: - TabBar configuration
     
     func configureMainController() -> UIViewController {
-        let feedController = feedCoordinator.configureMainController()
+        var feedController = feedCoordinator.configureMainController()
+        var feedImage = Asset.house.image
+        var profileImage = Asset.person.image
+        var friendsImage = Asset.person2.image
+        var balanceImage = Asset.bitcoinsignCircle.image
         feedController.tabBarItem = UITabBarItem(title: "Feed",
-                                                 image: UIImage(systemName: "house"),
+                                                 image: feedImage,
                                                  tag: 0)
         let profileController = profileCoordinator.configureMainController()
         profileController.tabBarItem = UITabBarItem(title: "profile",
-                                                    image: UIImage(systemName: "person"),
-                                                    tag: 0)
+                                                    image: profileImage,
+                                                    tag: 1)
         let friendsController = friendsCoordinator.configureMainController()
         friendsController.tabBarItem = UITabBarItem(title: "friends",
-                                                    image: UIImage(systemName: "person.2"),
-                                                    tag: 0)
+                                                    image: friendsImage,
+                                                    tag: 2)
         let balanceController = balanceCoordinator.configureMainController()
         balanceController.tabBarItem = UITabBarItem(title: "balance",
-                                                    image: UIImage(systemName: "bitcoinsign.circle"),
-                                                    tag: 0)
+                                                    image: balanceImage,
+                                                    tag: 3)
+//        rootViewController.tabBar.backgroundColor = .black
+//        rootViewController.editButtonItem.tintColor = Colors.goldTabBarItemColor
+//        rootViewController.tabBar.tintColor = Colors.goldTabBarItemColor
+//        rootViewController.colo
         rootViewController.viewControllers = [feedController, profileController, friendsController, balanceController]
         navigate(with: .feed)
         return rootViewController

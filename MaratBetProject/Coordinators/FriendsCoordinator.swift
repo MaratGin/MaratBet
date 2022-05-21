@@ -26,7 +26,6 @@ class FriendsCoordinator: Coordinator {
     
     // MARK: - Initialisation
 
-    
     init(parent: TabBarCoordinator) {
         self.parentCoordinator = parent
     }
@@ -41,7 +40,6 @@ class FriendsCoordinator: Coordinator {
             navigationController.pushViewController(viewController, animated: true)
         }
     }
-    
     
     // MARK: - ViewController configuration
 

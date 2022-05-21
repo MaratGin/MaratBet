@@ -6,7 +6,8 @@
 //
 
 import Foundation
-struct Match: Codable {
+struct FootballMatch: Codable, SportCell {
+    var type: String?
     let fixture: Fixture?
     let league: League?
     let teams: Teams?

@@ -7,10 +7,3 @@
 
 import Foundation
 import UIKit
-//class TeamLogo: UIImageView {
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        
-//         
-//    }
-//}
