@@ -10,6 +10,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Полная линия
+  internal static let allOdds = L10n.tr("Localizable", "All odds")
   /// Введите email
   internal static let enterEMail = L10n.tr("Localizable", "enter e-mail")
   /// Введите логин
@@ -24,6 +26,8 @@ internal enum L10n {
   internal static let incorrectData🥺 = L10n.tr("Localizable", "Incorrect data 🥺")
   /// Некорректно введена почта! 🔴
   internal static let incorrectEMail🔴 = L10n.tr("Localizable", "Incorrect e-mail 🔴")
+  /// Матчи
+  internal static let matches = L10n.tr("Localizable", "Matches")
   /// Зарегестрирован! 🥰
   internal static let registered🥰 = L10n.tr("Localizable", "Registered! 🥰")
   /// Войти!

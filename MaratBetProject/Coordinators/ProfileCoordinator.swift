@@ -18,7 +18,6 @@ class ProfileCoordinator: Coordinator {
 
     private let navigationController = UINavigationController()
     
-    
     // MARK: - Routes
 
     enum Route {
@@ -38,11 +37,9 @@ class ProfileCoordinator: Coordinator {
     
     // MARK: - Initialisation
 
-    
     init(parent: TabBarCoordinator) {
         self.parentCoordinator = parent
     }
-    
     
     // MARK: - ViewController configuration
 

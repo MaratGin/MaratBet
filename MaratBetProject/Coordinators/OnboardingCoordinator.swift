@@ -58,4 +58,3 @@ class OnboardingCoordinator: OnboardingCoordinatorProtocol {
             return navigationController
         }
 }
-

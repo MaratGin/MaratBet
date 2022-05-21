@@ -9,18 +9,12 @@
 import Foundation
 import UIKit
 import Moya
-struct Question  {
+struct Question {
     let image: UIImage?
     let text: String?
     let optionA: String?
     let optionB: String?
     let optionC: String?
     let optionD: String?
-    let answer: Answer?
-}
-enum Answer {
-    case a
-    case b
-    case c
-    case d
+    let answer: String?
 }

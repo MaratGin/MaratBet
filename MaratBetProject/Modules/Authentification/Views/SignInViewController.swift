@@ -81,14 +81,14 @@ class SignInViewController: UIViewController {
             make.centerX.equalTo(self.view)
         }
         loginTextField.snp.makeConstraints { make in
-            make.height.equalTo(25)
+            make.height.equalTo(35)
 
             make.right.equalToSuperview().offset(-40)
             make.top.equalTo(mainLabel.snp.bottom).offset(60)
             make.width.equalToSuperview().multipliedBy(0.8)
         }
         passwordTextField.snp.makeConstraints { make in
-            make.height.equalTo(25)
+            make.height.equalTo(35)
             make.right.equalToSuperview().offset(-40)
             make.top.equalTo(loginTextField.snp.bottom).offset(20)
             make.width.equalToSuperview().multipliedBy(0.8)

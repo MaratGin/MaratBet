@@ -13,6 +13,21 @@ struct League: Codable {
     let country: String?
     let logo: String?
     let flag: String?
-    let season: Int?
+//    let season: Int?
     let round: String?
+}
+
+struct HockeyLeague: Codable {
+    let id: Int?
+    let name: String?
+    let type: String?
+    let logo: String?
+    let season: Int?
+}
+struct BasktetballLeague: Codable {
+    let id: Int?
+    let name: String?
+    let type: String?
+    let logo: String?
+    let season: String?
 }

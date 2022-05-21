@@ -12,7 +12,7 @@ struct Fixture: Codable {
     let timezone: String?
     let date: String?
     let timestamp: Int?
-    let periods: Periods?
+    let periods: FootballPeriods?
     let venue: Venue?
     let status: Status?
 
@@ -24,7 +24,7 @@ struct Venue: Codable {
     let city: String?
 }
 
-struct Periods: Codable {
+ struct FootballPeriods: Codable {
     let first: Int?
     let second: Int?
 }

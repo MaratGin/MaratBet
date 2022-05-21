@@ -9,13 +9,13 @@
 import Foundation
 import Moya
 
-enum MoyaServices {
+enum AuthMoyaConfiguration {
     case sendSignUpInfo(login: String, email: String, password: String)
     case sendSignInInfo(email: String, password: String)
-    case getMatches
+    case getQuestions
 }
 
-extension MoyaServices: TargetType {
+extension AuthMoyaConfiguration: TargetType {
 
     var baseURL: URL {
         switch self {
@@ -23,8 +23,8 @@ extension MoyaServices: TargetType {
             return URL(string: "http://localhost:8080")!
         case .sendSignInInfo(_, _):
             return URL(string: "http://localhost:8080")!
-        case .getMatches:
-           return  URL(string: "https://v3.football.api-sports.io")!
+        case .getQuestions:
+            return URL(string: "http://localhost:8080")!
         }
     }
 //    var MatchListURL: URL {return URL(string: "https://v3.football.api-sports.io")!}
@@ -38,9 +38,8 @@ extension MoyaServices: TargetType {
             return "/registration"
         case .sendSignInInfo:
             return "/signIn"
-        case .getMatches:
-//            return "v3/fixtures?league=39&season=2020"
-            return "/fixtures"
+        case .getQuestions:
+            return "/questions"
         }
     }
     
@@ -50,7 +49,7 @@ extension MoyaServices: TargetType {
                return .post
         case .sendSignInInfo:
             return .post
-        case .getMatches:
+        case .getQuestions:
             return .get
         }
     }
@@ -61,12 +60,8 @@ extension MoyaServices: TargetType {
             return .requestParameters(parameters: ["login" : login, "email" : email, "password" : password], encoding: JSONEncoding.default)
         case .sendSignInInfo(let email, let password):
             return .requestParameters(parameters: ["email": email, "password": password], encoding: JSONEncoding.default)
-        case .getMatches:
-            return .requestParameters(parameters: [
-                "date": "2022-04-16",
-                "league": 39,
-                "season": 2021
-            ], encoding: URLEncoding.queryString)
+        case .getQuestions:
+            return .requestPlain
         }
     }
     var headers: [String : String]? {
@@ -75,17 +70,9 @@ extension MoyaServices: TargetType {
             return["Content-Type": "application/json"]
         case .sendSignUpInfo(login: _, email: _, password: _):
             return["Content-Type": "application/json"]
-        case .getMatches:
-            return [
-//                "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
-//                    "X-RapidAPI-Key": "1f370125c8msh68d348664965b81p15de67jsnb3956c25cc45"
-                "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
-                    "X-RapidAPI-Key": "34f9afd2d14cad74151cf93ca1783fb0"
-            ]
-            
+        case .getQuestions:
+            return["Content-Type": "application/json"]
         }
-        
-            
     }
 }
 

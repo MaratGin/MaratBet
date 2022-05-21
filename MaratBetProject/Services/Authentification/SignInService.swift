@@ -13,15 +13,15 @@ protocol SignInServiceProtocol {
 }
 // MARK: - SignIn network method
 class SignInService: SignInServiceProtocol {
-    private let moyaProvider = MoyaProvider<MoyaServices>()
+    private let moyaProvider = MoyaProvider<AuthMoyaConfiguration>()
 
     func funcSendUserInfo(email: String, password: String, completion: @escaping (Result<(), SignInErrors>) -> Void) {
         moyaProvider.request(.sendSignInInfo(email: email, password: password)) { (result) in
                 switch result {
-                case .success(let response):
+                case .success(_):
                     print(result)
                     return completion(.success(()))
-                case .failure(let error):
+                case .failure(_):
                     return completion(.failure(.connectionError))
                 }
     }

@@ -29,9 +29,23 @@ internal enum Asset {
   internal static let neymar = ImageAsset(name: "Neymar")
   internal static let nigeria = ImageAsset(name: "Nigeria")
   internal static let pique = ImageAsset(name: "Pique")
+  internal static let antenna = SymbolAsset(name: "antenna")
   internal static let balanceIcon = ImageAsset(name: "balanceIcon")
+  internal static let basketball = ImageAsset(name: "basketball")
+  internal static let bitcoinsignCircle = SymbolAsset(name: "bitcoinsign.circle")
+  internal static let chart = SymbolAsset(name: "chart")
+  internal static let flame = SymbolAsset(name: "flame")
+  internal static let football = ImageAsset(name: "football")
+  internal static let footballqq = ImageAsset(name: "footballqq")
   internal static let friendsIcon = ImageAsset(name: "friendsIcon")
+  internal static let hockeyFly = ImageAsset(name: "hockey-fly")
+  internal static let hockey = ImageAsset(name: "hockey")
+  internal static let hockeyMAn = ImageAsset(name: "hockeyMAn")
+  internal static let hockeyq = ImageAsset(name: "hockeyq")
   internal static let homeIcon = ImageAsset(name: "homeIcon")
+  internal static let house = SymbolAsset(name: "house")
+  internal static let person2 = SymbolAsset(name: "person.2")
+  internal static let person = SymbolAsset(name: "person")
   internal static let profileIcon = ImageAsset(name: "profileIcon")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
@@ -137,6 +151,39 @@ internal extension ImageAsset.Image {
     self.init(named: asset.name)
     #endif
   }
+}
+
+internal struct SymbolAsset {
+  internal fileprivate(set) var name: String
+
+  #if os(iOS) || os(tvOS) || os(watchOS)
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  internal typealias Configuration = UIImage.SymbolConfiguration
+  internal typealias Image = UIImage
+
+  @available(iOS 12.0, tvOS 12.0, watchOS 5.0, *)
+  internal var image: Image {
+    let bundle = BundleToken.bundle
+    #if os(iOS) || os(tvOS)
+    let image = Image(named: name, in: bundle, compatibleWith: nil)
+    #elseif os(watchOS)
+    let image = Image(named: name)
+    #endif
+    guard let result = image else {
+      fatalError("Unable to load symbol asset named \(name).")
+    }
+    return result
+  }
+
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  internal func image(with configuration: Configuration) -> Image {
+    let bundle = BundleToken.bundle
+    guard let result = Image(named: name, in: bundle, with: configuration) else {
+      fatalError("Unable to load symbol asset named \(name).")
+    }
+    return result
+  }
+  #endif
 }
 
 // swiftlint:disable convenience_type

@@ -151,7 +151,8 @@ class SignUpViewController: UIViewController {
     
     @objc
     func signUpButtonAction() {
-        viewModel?.signUp(login: loginTextField.text ?? " ", password: passwordTextField.text ?? " ", email: emaiiTextField.text ?? " ", repassword: repasswordTextField.text ?? " ")
+      var result =  viewModel?.signUp(login: loginTextField.text ?? " ", password: passwordTextField.text ?? " ", email: emaiiTextField.text ?? " ", repassword: repasswordTextField.text ?? " ")
+        result?.toggle()
     }
     @objc
     func getBackButtonAction() {

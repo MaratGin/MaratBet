@@ -15,7 +15,7 @@ protocol SignUpServiceProtocol {
 // MARK: - SignUp network method
 
 class SignUpService: SignUpServiceProtocol {
-    let moyaProvider = MoyaProvider<MoyaServices>()
+    let moyaProvider = MoyaProvider<AuthMoyaConfiguration>()
     
     func funcSendUserInfo(login: String, email: String, password: String, completion: @escaping (Result<(), SignUpErrors>) -> Void) {
         print("here----------------------------------")

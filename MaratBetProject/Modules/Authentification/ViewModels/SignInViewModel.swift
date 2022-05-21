@@ -57,10 +57,6 @@ class SignInViewModel: SignInViewModelProtocol {
     
     // MARK: - coordinator's navigation method call
     
- 
-
-    
-
 protocol AuthentificationServiceProtocol {
     func signInService(login: String, password: String) -> Bool
 }
