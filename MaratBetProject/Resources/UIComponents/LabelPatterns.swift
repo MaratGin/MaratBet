@@ -108,10 +108,10 @@ class StatisticNameLabel: UILabel {
 class TableLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        font = UIFont(name: "Futura Bold", size: 14)
-        textColor = .black
+        font = UIFont(name: "Futura Bold", size: 12)
+        textColor = .white
         textAlignment = .left
-        adjustsFontSizeToFitWidth = true
+//        adjustsFontSizeToFitWidth = true
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

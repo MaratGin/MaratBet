@@ -33,6 +33,7 @@ class StatisticsDetailTableViewCell: UITableViewCell {
         contentView.addSubview(positionLabel)
         contentView.addSubview(diff)
         contentView.addSubview(points)
+        contentView.backgroundColor = .black
         setupConstraint()
     }
     
@@ -45,8 +46,9 @@ class StatisticsDetailTableViewCell: UITableViewCell {
        
     }
     func setupConstraint() {
-        let width = contentView.frame.width / 20
+        let width = (contentView.frame.width / 20 )
         let value = Int((contentView.frame.width - 10 - 53 - 95 - (width * 6)) / 6)
+        print("ContentView = \(width)")
         positionLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview()

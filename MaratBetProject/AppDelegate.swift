@@ -36,8 +36,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("ewmkmewm1")
         mainCoordinator.navigate(with: .onboardingScreen)
         print("ewmkmewm1")
+        
+        if #available(iOS 15, *) {
+                        let navigationBarAppearance = UINavigationBarAppearance()
+                        navigationBarAppearance.configureWithOpaqueBackground()
+                        navigationBarAppearance.titleTextAttributes = [
+                            NSAttributedString.Key.foregroundColor : UIColor.white
+                        ]
+                        navigationBarAppearance.backgroundColor = UIColor.black
+                        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+                        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+                        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+                    let tabBarApperance = UITabBarAppearance()
+                    tabBarApperance.configureWithOpaqueBackground()
+                    tabBarApperance.backgroundColor = UIColor.black
+                    UITabBar.appearance().scrollEdgeAppearance = tabBarApperance
+                    UITabBar.appearance().standardAppearance = tabBarApperance
+                }
         return true
     }
+    
+  
     
     // MARK: UISceneSession Lifecycle
     /*

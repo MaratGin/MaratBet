@@ -51,12 +51,14 @@ class FeedViewTableViewCell: UITableViewCell {
         var label = UILabel()
         label.adjustsFontSizeToFitWidth = true
         label.font = UIFont.systemFont(ofSize: 11.0)
+        label.textColor = .black
         return label
     }()
     let teamBLabel: UILabel = {
         var label = UILabel()
         label.adjustsFontSizeToFitWidth = true
         label.font = UIFont.systemFont(ofSize: 11.0)
+        label.textColor = .black
         return label
     }()
     let dateLabel: UILabel = {

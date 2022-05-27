@@ -20,7 +20,7 @@ class SignInViewController: UIViewController {
     var signInStatusLabel: AuthLabel = {
         let label = AuthLabel()
         label.text = ""
-        label.font = UIFont(name: "Futura Bold", size: 10)
+        label.font = UIFont(name: "Futura Bold", size: 12)
         label.textColor = UIColor.red
         label.numberOfLines = 3
         return label
@@ -35,9 +35,9 @@ class SignInViewController: UIViewController {
     var customPasswordTextField: CustomTextField = {
         let textField = CustomTextField(placeHolder: "password..")
         textField.backgroundColor = .clear
+        textField.isSecureTextEntry = true
         return textField
     }()
-    
     let emailImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = Asset.person.image
@@ -170,7 +170,7 @@ class SignInViewController: UIViewController {
     func bindViewModel() {
         viewModel?.signInStatus.bind({ (signInStatus) in
             DispatchQueue.main.async {
-                self.signInStatusLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                self.signInStatusLabel.textColor = .red
                 self.signInStatusLabel.text = signInStatus
             }
         })}

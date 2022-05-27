@@ -25,7 +25,9 @@ class StatisticsDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        containerView.backgroundColor = .white
+        view.backgroundColor = .black
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        containerView.backgroundColor = .black
         view.addSubview(tableView)
         view.backgroundColor = .white
         tableView.delegate = self
@@ -56,6 +58,7 @@ class StatisticsDetailViewController: UIViewController {
     func setupConstraints() {
         let width = view.frame.width / 20
         let value = Int((view.frame.width - 10 - 53 - 95 - (width * 6)) / 6)
+        print("View = \(width)")
         containerView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(80)
             make.leading.equalToSuperview()
