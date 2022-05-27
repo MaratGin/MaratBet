@@ -185,7 +185,7 @@ class SignUpViewController: UIViewController {
         }
         passwordImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.height.equalTo(30)
+            make.height.equalTo(35)
             make.width.equalTo(30)
             make.centerY.equalToSuperview()
         }
@@ -204,7 +204,7 @@ class SignUpViewController: UIViewController {
         }
         repasswordImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.height.equalTo(30)
+            make.height.equalTo(35)
             make.width.equalTo(30)
             make.centerY.equalToSuperview()
         }

@@ -65,7 +65,7 @@ class CustomTextField: UITextField {
         font = UIFont(name: "Futura Bold", size: 14)
         returnKeyType = .next
         
-        attributedPlaceholder = NSAttributedString(string: placeHolder ?? "", attributes: [NSAttributedString.Key.font: UIFont(name: "Futura Bold", size: 14) ?? .systemFont(ofSize: 10), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        attributedPlaceholder = NSAttributedString(string: placeHolder ?? "", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14) ?? .systemFont(ofSize: 10), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         
         autocorrectionType = .no
         autocapitalizationType = .none
