@@ -111,6 +111,7 @@ class TableLabel: UILabel {
         font = UIFont(name: "Futura Bold", size: 12)
         textColor = .white
         textAlignment = .left
+        adjustsFontSizeToFitWidth = true
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
