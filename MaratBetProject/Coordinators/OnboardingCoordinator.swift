@@ -57,4 +57,11 @@ class OnboardingCoordinator: OnboardingCoordinatorProtocol {
             navigate(with: .onboarding)
             return navigationController
         }
+    func renewMainController() -> UIViewController {
+        var navigationArray = navigationController.viewControllers
+        navigationArray.remove(at: navigationArray.count - 1)
+        navigationController.viewControllers = navigationArray
+        navigate(with: .onboarding)
+        return navigationController
+    }
 }

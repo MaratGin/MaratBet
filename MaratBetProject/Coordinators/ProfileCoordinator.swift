@@ -22,6 +22,7 @@ class ProfileCoordinator: Coordinator {
 
     enum Route {
         case profile
+        case leave
     }
     
     // MARK: - Navigation method
@@ -29,9 +30,12 @@ class ProfileCoordinator: Coordinator {
     func navigate(with route: Route) {
         switch route {
         case .profile:
+            let viewModel = ProfileViewModel(coordinator: self)
             let viewController = ProfileViewController()
-            //            viewController.viewModel = FeedViewModel(coordinator: self)
+            viewController.viewModel = viewModel
             navigationController.pushViewController(viewController, animated: true)
+        case .leave:
+            parentCoordinator.navigate(with: .leave)
         }
     }
     

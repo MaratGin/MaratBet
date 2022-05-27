@@ -38,7 +38,7 @@ class SignUpViewModel: SignUpViewModelProtocol {
             return false
         } else {
             if !validator.checkLogin(login) {
-                signUpStatus.value = L10n.IncorrectPassword.nOnlyLatinSymblosAndNumbersAllowed🔴
+                signUpStatus.value = L10n.incorrectLogin
                 return false
             } else {
                 if !validator.checkEmail(email) {
@@ -53,31 +53,25 @@ class SignUpViewModel: SignUpViewModelProtocol {
                             signUpStatus.value = L10n.enterPasswordsAgain🔴
                             return false
                         } else {
+                            KeychainService.saveBalance(balance: 1230)
+                            KeychainService.saveLogin(login: login)
+                            KeychainService.savePassword(password: password)
                             signUpStatus.value = L10n.registered🥰
                             goToApp()
+                            return true
                         }
                     }
                 }
         }
         }
-        // MARK: - network result handling
-     /*
-        signUpService.funcSendUserInfo(login: login, email: email, password: password) { [weak self] result in
-            switch result {
-            case .success():
-                self?.signUpStatus.value = "Token was succesfully saved!"
-            case .failure(_):
-                print("error")
-                self.goToApp()
-                        }
-        }
-      */
-        return true
 }
+    func setNewData() {
+        
+    }
+    
     // MARK: - coordinator's navigation method call
     
     func goToApp() {
-        print("goToApp")
         coordinator.navigate(with: .appScreen)
     }
 }

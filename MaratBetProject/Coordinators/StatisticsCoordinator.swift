@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class FriendsCoordinator: Coordinator {
+class StatisticsCoordinator: Coordinator {
     
     // MARK: - Internal variables
 
@@ -21,7 +21,8 @@ class FriendsCoordinator: Coordinator {
     // MARK: - Routes
 
     enum Route {
-        case friends
+        case statistic
+        case detail(viewModel: StatisticsViewModelProtocol, leagueID: Int, row: Int)
     }
     
     // MARK: - Initialisation
@@ -34,9 +35,17 @@ class FriendsCoordinator: Coordinator {
     
     func navigate(with route: Route) {
         switch route {
-        case .friends:
-            let viewController = FriendsViewController()
-            //            viewController.viewModel = FeedViewModel(coordinator: self)
+        case .statistic:
+            let viewController = StatisticsViewController()
+//            let viewController = StatisticsCollectionViewController(collectionViewLayout: StatisticsLayout())
+            let viewModel = StatisticsViewModel(coordinator: self)
+            viewController.viewModel = viewModel
+            navigationController.pushViewController(viewController, animated: true)
+        case .detail(let viewModel, let leagueID, let row):
+            let viewController = StatisticsDetailViewController()
+            viewController.viewModel = viewModel
+            viewController.leagueID = leagueID
+            viewController.row = row
             navigationController.pushViewController(viewController, animated: true)
         }
     }
@@ -44,7 +53,7 @@ class FriendsCoordinator: Coordinator {
     // MARK: - ViewController configuration
 
     func configureMainController() -> UIViewController {
-        navigate(with: .friends)
+        navigate(with: .statistic)
         return navigationController
     }
 }

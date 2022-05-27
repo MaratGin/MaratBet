@@ -11,10 +11,10 @@ class FeedViewController: UIViewController {
     
     private enum Constraints {
         static let viewBottomDelimeter = 20.0
-        static let viewBottom = 15
+        static let viewBottom = 100
         static let viewLeading = 10
         static let viewWidth = 0.7
-        static let viewHeight = 0.1
+        static let viewHeight = 0.05
         static let labelLeading = 10
     }
 
@@ -25,6 +25,7 @@ class FeedViewController: UIViewController {
     var collectionView = FeedColView()
     fileprivate var currentData: DataType = .football
     var contentOffSet = 0.0
+    let userPredictionViewController = UserPredictionViewController()
     
     var viewModel: FeedViewModelProtocol?
     var sportCells: [Sport] = [
@@ -43,10 +44,13 @@ class FeedViewController: UIViewController {
         view.layer.cornerRadius = 10
         view.layer.borderColor = Colors.flameColor.cgColor
         view.layer.borderWidth = 1
+        view.backgroundColor = .black
         view.isHidden = true
         return view
     }()
     let coefficientLabel = CoefficientLabel()
+    let predictionsCountLabel = CoefficientLabel()
+    let countLabel = CoefficientLabel()
     
     // MARK: - VC lifecycle
     
@@ -68,8 +72,10 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        viewModel?.getAllMatches()
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(placeBet))
         configureData()
+        countLabel.text = L10n.eventS
+        coefficientLabel.text = "1.0"
         view.backgroundColor = .systemCyan
         view.backgroundColor = Colors.grayViewColor
         tableView.backgroundColor = Colors.grayViewColor
@@ -77,9 +83,11 @@ class FeedViewController: UIViewController {
         view.addSubview(tableView)
         view.addSubview(collectionView)
         view.addSubview(userPredictionView)
-        view.bringSubviewToFront(userPredictionView)
-    
         userPredictionView.addSubview(coefficientLabel)
+        userPredictionView.addSubview(countLabel)
+        userPredictionView.addSubview(predictionsCountLabel)
+        view.bringSubviewToFront(userPredictionView)
+        userPredictionView.addGestureRecognizer(gesture)
         setupConstraints()
         tableView.delegate = self
         tableView.dataSource = self
@@ -87,7 +95,6 @@ class FeedViewController: UIViewController {
         tableView.reloadData()
         tableView.register(FeedViewTableViewCell.self, forCellReuseIdentifier: FeedViewTableViewCell.identifier)
         layout.scrollDirection = .horizontal
-//        layout.minimumInteritemSpacing = 5
         collectionView.backgroundColor = .black
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -95,7 +102,6 @@ class FeedViewController: UIViewController {
         collectionView.contentInset = centerItemsInCollectionView(cellWidth: 60, numberOfItems: Double(sportCells.count), spaceBetweenCell: 10, collectionView: collectionView)
         tableView.rowHeight = UITableView.automaticDimension
         view.backgroundColor = .black
-
     }
     
     // MARK: - constraintConfiguration
@@ -103,54 +109,86 @@ class FeedViewController: UIViewController {
     func setupConstraints() {
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-//            make.top.equalToSuperview().offset(30)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.height.lessThanOrEqualTo(Constants.colViewHeight)
         }
         tableView.snp.makeConstraints { make in
-//            make.top.equalToSuperview().offset(30)
             make.top.equalTo(collectionView.snp.bottom).offset(Constants.tabViewTopOffset)
             make.bottom.equalToSuperview()
             make.centerX.equalToSuperview()
             make.width.equalToSuperview()
         }
-        print("IAM HERE!")
         userPredictionView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().inset(Constraints.viewBottom)
-            make.leading.equalToSuperview().inset(Constraints.viewLeading)
             make.width.equalToSuperview().multipliedBy(Constraints.viewWidth)
             make.height.equalToSuperview().multipliedBy(Constraints.viewHeight)
         }
-        print("IAM HERE!")
-
         coefficientLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(Constraints.labelLeading)
-//            make.height.equalToSuperview().multipliedBy()
+            make.top.equalToSuperview()
+            make.width.equalTo(50)
+            make.bottom.equalToSuperview()
         }
+        predictionsCountLabel.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(3)
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.width.equalTo(50)
+        }
+        countLabel.snp.makeConstraints { make in
+            make.trailing.equalTo(predictionsCountLabel.snp.leading).inset(6)
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.width.equalTo(150)
+        }
+        
     }
     
-    // MARK: - put CollectionVIew elements in the center
+    // MARK: - put CollectionView elements in the center
     
     func centerItemsInCollectionView(cellWidth: Double, numberOfItems: Double, spaceBetweenCell: Double, collectionView: UICollectionView) -> UIEdgeInsets {
         let totalWidth = cellWidth * numberOfItems
         let totalSpacingWidth = spaceBetweenCell * (numberOfItems - 1)
         let leftInset = (view.frame.width - CGFloat(totalWidth + totalSpacingWidth)) / 2
         let rightInset = leftInset
-//        Swift.print("-----------12-31-31-3-21---- /n \(leftInset) sdsdsdsdsdsdsd  \(rightInset)")
         return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
     }
     
-    func updateUserPrediction() {
-        
+    func updateUserPrediction(prediction: UserPrediction) {
+        let doubleCoef = Double(coefficientLabel.text ?? "2.0") ?? 1.0
+        var value =  doubleCoef * (Double(prediction.coeficient ?? "2.0") ?? 1.0)
+        value = Double(round(value * 1000) / 1000)
+        coefficientLabel.text = String(value)
+        predictionsCountLabel.text = String(currentUserPredictions.count)
+    }
+    
+    func divideUserPrediction(prediction: UserPrediction) {
+        let doubleCoef = Double(coefficientLabel.text ?? "2.0") ?? 1.0
+        var value =  doubleCoef / (Double(prediction.coeficient ?? "2.0") ?? 1.0)
+        value = Double(round(value * 1000) / 1000)
+        coefficientLabel.text = String(value)
+        predictionsCountLabel.text = String(currentUserPredictions.count)
+        if currentUserPredictions.count == 0 {
+            userPredictionView.isHidden = true
+            coefficientLabel.text = "1.0"
+        }
     }
     
     // MARK: - getData from ViewModel
     
     func configureData() {
         viewModel?.getHockeyMatches(league: Constants.nhlLeague)
-        viewModel?.getFootballMatches(league: Constants.englandPL)
+        viewModel?.getHockeyMatches(league: 111)
+        viewModel?.getFootballMatches(league: Constants.championsLeague)
+        viewModel?.getFootballMatches(league: Constants.russianPL)
         viewModel?.getBasketballMatches(league: Constants.nbaLeague)
+    }
+    
+    @objc
+    func placeBet() {
+        viewModel?.showBetDetail(predictions: currentUserPredictions)
     }
     
     // MARK: - Binding
@@ -161,8 +199,6 @@ class FeedViewController: UIViewController {
             print("binding!")
 
             DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//                print(loadedData.count)
                 Swift.print("Sended\(loadedData.count)")
                 
                 for item in 0..<loadedData.count {
@@ -183,8 +219,6 @@ class FeedViewController: UIViewController {
                 if self.basketballData.count > 1 {
                     self.basketballData.removeFirst()
                 }
-    
-//                print(self.hockeyData.count)
                 for item in 0..<self.sportCells.count {
                     if self.sportCells[item].name == "hockey" {
                         self.sportCells[item].isSelected = true
@@ -192,46 +226,13 @@ class FeedViewController: UIViewController {
                         self.sportCells[item].isSelected = false
                     }
                 }
-                print("\(self.footballData.count) /// \(self.basketballData.count)//\(self.hockeyData.count)  ")
                 self.currentData = .hockey
                 self.sportCells[2].isSelected = true
                 self.collectionView.reloadData()
                 self.tableView.reloadData()
             }
         })
-        
     }
-    
-    // MARK: - hide navBar and sport icons when scrolling (doesnt work)
-    /*
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-            //
-        contentOffSet = self.collectionView.contentOffset.y;
-        }
-
-        func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            //
-
-            let scrollPos = self.collectionView.contentOffset.y ;
-
-            if(scrollPos >= contentOffSet ){
-                UIApplication.shared.isStatusBarHidden = true
-                UIView.animate(withDuration: 0.5, animations: {
-                    
-                    
-self.navigationController?.isNavigationBarHidden = true
-                }, completion: nil)
-            } else {
-                //Slide it up incrementally, etc.
-                UIApplication.shared.isStatusBarHidden = false
-                UIView.animate(withDuration: 0.5, animations: {
-                    //
-self.navigationController?.isNavigationBarHidden = false
-                }, completion: nil)
-            }
-        }
-     */
-  
 }
 
 // MARK: - UITableView extension 
@@ -248,7 +249,6 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configureHockeyCell(match: hockeyData[indexPath.row])
             cell.delegate = self
 
-
         case  .basketball:
             cell.configureBasketballCell(match: basketballData[indexPath.row])
             cell.delegate = self
@@ -256,8 +256,6 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             cell.configureCell(match: footballData[indexPath.row])
             cell.delegate = self
-
-            
         }
         cell.backgroundColor = .clear
         return cell
@@ -265,13 +263,10 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             switch currentData {
             case  .football:
-//            print("football \(footballData.count)")
                 return footballData.count
             case  .hockey:
-//                    print("hockey \(hockeyData.count)")
                 return hockeyData.count
             case  .basketball:
-//                    print("basketball \(basketBallData.count)")
                 return basketballData.count
             default:
                 return footballData.count
@@ -280,15 +275,15 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch currentData {
         case  .football:
-            viewModel?.goToDetail(cell: footballData[indexPath.row], dataType: .football, matchID: footballData[indexPath.row].fixture?.id ?? 100)
+            viewModel?.goToDetail(cell: footballData[indexPath.row], dataType: .football, matchID: footballData[indexPath.row].fixture?.id ?? 100, predictions: currentUserPredictions)
 //            BetMoyaConfiguration.
         case  .hockey:
-            viewModel?.goToDetail(cell: hockeyData[indexPath.row], dataType: .hockey, matchID: hockeyData[indexPath.row].id ?? 100)
+            viewModel?.goToDetail(cell: hockeyData[indexPath.row], dataType: .hockey, matchID: hockeyData[indexPath.row].id ?? 100, predictions: currentUserPredictions)
 
         case  .basketball:
-            viewModel?.goToDetail(cell: basketballData[indexPath.row], dataType: .basketball, matchID: basketballData[indexPath.row].id ?? 100)
+            viewModel?.goToDetail(cell: basketballData[indexPath.row], dataType: .basketball, matchID: basketballData[indexPath.row].id ?? 100, predictions: currentUserPredictions)
         default:
-            viewModel?.goToDetail(cell: footballData[indexPath.row], dataType: .football, matchID: footballData[indexPath.row].fixture?.id ?? 100)
+            viewModel?.goToDetail(cell: footballData[indexPath.row], dataType: .football, matchID: footballData[indexPath.row].fixture?.id ?? 100, predictions: currentUserPredictions)
     }
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -376,22 +371,33 @@ class FeedColView: UICollectionView {
 }
 extension FeedViewController: SendUserPredictionDelegate {
     func sendPrediction(prediction: UserPrediction) {
-        print("------------- -------- --    --------")
-            if prediction.update ?? false  {
+            if prediction.update ?? false {
+                for item in 0..<currentUserPredictions.count {
+                    if prediction.matchID == self.currentUserPredictions[item].matchID {
+                        self.currentUserPredictions.remove(at: item)
+                        self.divideUserPrediction(prediction: prediction)
+                        break
+                    }
+                }
                 self.currentUserPredictions.append(prediction)
-                self.updateUserPrediction()
+                self.updateUserPrediction(prediction: prediction)
+                UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
+                    self.userPredictionView.isHidden = false
+                }, completion: nil )
             } else {
                 for item in 0..<self.currentUserPredictions.count {
-                    if prediction.matchID ==  self.currentUserPredictions[item].matchID {
+                    print("YEY")
+                    if prediction.matchID == self.currentUserPredictions[item].matchID {
+                        print("HEYEY")
                         self.currentUserPredictions.remove(at: item)
-                        self.updateUserPrediction()
+                        self.divideUserPrediction(prediction: prediction)
+                        break
                     }
-                    
                 }
             }
-
     }
 }
+
 private struct Constants {
    static let footballMatchConst = FootballMatch(fixture: Fixture(id: 12, referee: "1312", timezone: "1211", date: "2022-04-16T14:00:00+00:00", timestamp: 12312, periods: nil, venue: nil, status: nil), league: nil, teams: Teams(home: Home(id: 1, name: "-----", logo: "https://media.api-sports.io/football/teams/71.png", winner: true), away: Away(id: 12, name: "asada2", logo: "https://media.api-sports.io/football/teams/71.png", winner: false)), goals: nil, score: nil)
     static let hockeyMatchConst = HockeyMatch(id: nil, date: "2022-04-16T14:00:00+00:00", time: nil, timestamp: nil, timezone: nil, week: nil, timer: nil, status: nil, country: nil, league: nil, teams: HockeyTeams(home: TeamData(id: 1, name: "Teaam1", logo: "https://media.api-sports.io/football/teams/71.png"), away: TeamData(id: 2, name: "Teaam2", logo: "https://media.api-sports.io/football/teams/71.png")), scores: nil, periods: nil, events: nil, type: "hockey")
@@ -401,6 +407,8 @@ private struct Constants {
     static let europaLeague = 3
     static let seriaA = 135
     static let bundesliga = 79
+    static let russianPL = 235
+    static let hockeyWC = 111
     static let laLiga = 140
     static let nbaLeague = 12
     static let russiaVTB = 82

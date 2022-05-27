@@ -12,6 +12,16 @@ import Foundation
 internal enum L10n {
   /// Полная линия
   internal static let allOdds = L10n.tr("Localizable", "All odds")
+  /// Лига Аргентины
+  internal static let argentinaLeague = L10n.tr("Localizable", "Argentina League")
+  /// Баланс
+  internal static let balance = L10n.tr("Localizable", "Balance")
+  /// История ставок
+  internal static let betsHistory = L10n.tr("Localizable", "Bets history")
+  /// Лига Бразилии
+  internal static let brazilLeague = L10n.tr("Localizable", "Brazil league")
+  /// Бундеслига
+  internal static let bundesliga = L10n.tr("Localizable", "Bundesliga")
   /// Введите email
   internal static let enterEMail = L10n.tr("Localizable", "enter e-mail")
   /// Введите логин
@@ -22,20 +32,42 @@ internal enum L10n {
   internal static let enterPasswordAgain = L10n.tr("Localizable", "enter password again")
   /// Введите пароли заново! 🔴
   internal static let enterPasswordsAgain🔴 = L10n.tr("Localizable", "Enter passwords again 🔴")
+  /// Эредивизи
+  internal static let eredivisi = L10n.tr("Localizable", "Eredivisi")
+  /// Событий/я: 
+  internal static let eventS = L10n.tr("Localizable", "Event/s: ")
+  /// ФНЛ
+  internal static let fnl = L10n.tr("Localizable", "FNL")
   /// Некорректные данные 🥺
   internal static let incorrectData🥺 = L10n.tr("Localizable", "Incorrect data 🥺")
   /// Некорректно введена почта! 🔴
   internal static let incorrectEMail🔴 = L10n.tr("Localizable", "Incorrect e-mail 🔴")
+  /// Некорректный логин!
+  internal static let incorrectLogin = L10n.tr("Localizable", "incorrect login!")
+  ///  Ла лига
+  internal static let laLiga = L10n.tr("Localizable", "La liga")
+  ///  Лига 1
+  internal static let ligue1 = L10n.tr("Localizable", "Ligue 1")
   /// Матчи
   internal static let matches = L10n.tr("Localizable", "Matches")
+  /// Лига Португалии
+  internal static let portugalLeague = L10n.tr("Localizable", "Portugal league")
+  /// Премьер Лига
+  internal static let premierLeague = L10n.tr("Localizable", "Premier league")
   /// Зарегестрирован! 🥰
   internal static let registered🥰 = L10n.tr("Localizable", "Registered! 🥰")
+  /// РПЛ
+  internal static let rpl = L10n.tr("Localizable", "RPL")
+  /// Серия А
+  internal static let seriaA = L10n.tr("Localizable", "Seria A")
   /// Войти!
   internal static let signIn = L10n.tr("Localizable", "signIn!")
   /// Зарегистрироваться!
   internal static let signUp = L10n.tr("Localizable", "signUp!")
   /// Успешно!🥰
   internal static let succesful🥰 = L10n.tr("Localizable", "Succesful! 🥰")
+  /// Такой логин уже существует!
+  internal static let thisLoginIsAlreadyExists = L10n.tr("Localizable", "this login is already exists!")
   /// Недопустимая длина 😱
   internal static let wrongLength😱 = L10n.tr("Localizable", "Wrong length 😱")
 

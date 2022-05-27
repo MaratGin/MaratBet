@@ -35,21 +35,19 @@ class SignInViewModel: SignInViewModelProtocol {
     func signIn(login: String, password: String) {
         if login.isEmpty || password.isEmpty {
             signInStatus.value = L10n.wrongLength😱
-            goToApp()
         } else {
             if !validator.checkLogin(login) || !validator.checkPassword(password) {
-                goToApp()
                 signInStatus.value = L10n.IncorrectPassword.nOnlyLatinSymblosAndNumbersAllowed🔴
-            }        }            
+            } else {
+                if password == KeychainService.loadPassword() && login == KeychainService.loadLogin() {
+                    L10n.succesful🥰
+                    goToApp()
+                }
+                
+            }
+            
         }
-//        signInService.funcSendUserInfo(email: login, password: password) {[weak self] result in
-//            switch result {
-//            case .success():
-//                self?.signInStatus.value = "Успешно!🥰"
-//            case .failure(_):
-//                self?.signInStatus.value = "Ошибка соединения.. повториите вход🙁"
-//            }
-        
+        }
     func goToApp() {
         coordinator.navigate(with: .appScreen)
     }

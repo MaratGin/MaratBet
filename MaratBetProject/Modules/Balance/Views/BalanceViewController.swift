@@ -17,7 +17,6 @@ class BalanceViewController: UIViewController {
         Question(image: Asset.nigeria.image, text: "Какой флаг изрбражен на фото?", optionA: "Ангола", optionB: "Нигерия", optionC: "Монголия", optionD: "Морокко", answer: "b")
     ]
     var questionNumber = 0
-    
     let questionLabel: UILabel  = {
         let label = UILabel()
         label.font = UIFont(name: "Futura Bold", size: 15)
@@ -52,13 +51,11 @@ class BalanceViewController: UIViewController {
         view.addSubview(buttonB)
         view.addSubview(buttonC)
         view.addSubview(buttonD)
-        buttonA.layer.cornerRadius = 35
     }
     
     func bindViewModel() {
         viewModel?.status.bind({ (loadedData) in
             DispatchQueue.main.async {
-                print("Sended")
                 self.data = loadedData
             }
         })}
@@ -89,14 +86,16 @@ class BalanceViewController: UIViewController {
         buttonB.setTitle(question.optionB, for: .normal)
         buttonC.setTitle(question.optionC, for: .normal)
         buttonD.setTitle(question.optionD, for: .normal)
-
     }
     
     @objc
     func buttonAction(_ sender: UIButton) {
-        
         if sender == buttonA {
+            
             if data[questionNumber].answer == "a" {
+                var value = Int(KeychainService.loadbalance() ?? "1230") ?? 1230
+                value += 200
+                KeychainService.saveBalance(balance: value)
                 UIView.animate(withDuration: 0.5, delay: .zero, options: .curveLinear, animations: {
                     self.buttonA.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
                     self.buttonA.backgroundColor = .green
@@ -126,6 +125,9 @@ class BalanceViewController: UIViewController {
         }
         if sender == buttonB {
             if data[questionNumber].answer == "b" {
+                var value = Int(KeychainService.loadbalance() ?? "1230") ?? 1230
+                value += 200
+                KeychainService.saveBalance(balance: value)
                 UIView.animate(withDuration: 0.4, delay: .zero, options: .curveLinear, animations: {
                     self.buttonB.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
                     self.buttonB.backgroundColor = .green
@@ -156,6 +158,9 @@ class BalanceViewController: UIViewController {
         }
         if sender == buttonC {
             if data[questionNumber].answer == "c" {
+                var value = Int(KeychainService.loadbalance() ?? "1230") ?? 1230
+                value += 200
+                KeychainService.saveBalance(balance: value)
                 UIView.animate(withDuration: 0.4, delay: .zero, options: .curveLinear, animations: {
                     self.buttonC.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
                     self.buttonC.backgroundColor = Colors.hexStringToUIColor(hex: "0FEA31")
@@ -186,6 +191,9 @@ class BalanceViewController: UIViewController {
         }
         if sender == buttonD {
             if data[questionNumber].answer == "d" {
+                var value = Int(KeychainService.loadbalance() ?? "1230") ?? 1230
+                value += 200
+                KeychainService.saveBalance(balance: value)
                 UIView.animate(withDuration: 0.4, delay: .zero, options: .curveLinear, animations: {
                     self.buttonD.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
                     self.buttonD.backgroundColor = Colors.hexStringToUIColor(hex: "#57D738")

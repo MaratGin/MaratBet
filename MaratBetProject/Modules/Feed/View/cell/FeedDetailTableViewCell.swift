@@ -6,31 +6,28 @@
 //
 
 import Foundation
-//
-//  FeedViewTableViewCell.swift
-//  MaratBetProject
-//
-//  Created by Marat Giniyatov on 18.04.2022.
-//
 
 import UIKit
 
 class FeedDetailTableViewCell: UITableViewCell {
-    
+   
     // MARK: - constants
     
     static let identifier = "FeedDetailTableViewCell"
     
     // MARK: - variables
     
-    let bets: [Bet] = []
-
+    var bets: [Values] = []
+    var collectionView = EventsColView()
+    var isButtonHidden = true
+    var identifierNumber = 1
+    var currentPrediction: [UserPrediction] = []
+    
     // MARK: - UI elements
     
     let matchView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-//        view.layer.cornerRadius = 5
         view.layer.borderColor = UIColor.black.cgColor
         view.layer.borderWidth = 0
         
@@ -51,27 +48,29 @@ class FeedDetailTableViewCell: UITableViewCell {
     }()
     let scrollView = UIScrollView()
     let betNameLabel = BetNameLabel()
+    let hideButton = HideButton()
     
     // MARK: - Cell initialisation
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupNavigationBar()
-       
+        collectionView.backgroundColor = .clear
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(EventCollectionViewCell.self, forCellWithReuseIdentifier: EventCollectionViewCell.identifier)
         contentView.backgroundColor = UIColor(white: 1, alpha: 1)
+        hideButton.addTarget(self, action: #selector(hideButtonAction), for: .touchUpInside)
         contentView.addSubview(matchView)
         matchView.addSubview(additionalView)
         matchView.addSubview(betNameLabel)
-        additionalView.addSubview(scrollView)
-        scrollView.addSubview(buttonsStackView)
-        betNameLabel.font = UIFont(name: "Futura Bold", size: 19)
+        matchView.addSubview(collectionView)
+        matchView.addSubview(hideButton)
+        betNameLabel.font = UIFont(name: "Futura Bold", size: 22)
         betNameLabel.textAlignment = .left
         buttonsStackView.backgroundColor = .clear
         contentView.backgroundColor = .clear
         setupConstraints()
-//        scrollView.backgroundColor = .red
-//        buttonsStackView.backgroundColor = .red
-//        teamAButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        
     }
     
     func makeShadows() {
@@ -87,61 +86,27 @@ class FeedDetailTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    func setupNavigationBar() {
-     
+  
+    @objc
+    func hideButtonAction() {
+        isButtonHidden.toggle()
+        collectionView.reloadData()
     }
     
     // MARK: - Cell configuration
     
     func configureCell(bet: Bet) {
         betNameLabel.text = bet.name
-        let count = bet.values?.count ?? 0
-        for item in 0..<count {
-//            print(bet.name)
-//            print("\(bet.values?[item].value) // \(bet.values?[item].odd) ")
-            let button = BetButton()
-//            let optionNameLabel = UILabel()
-//            let valueString = String(bet.values?[item].value)
-//            let text =  StringOrDouble.double(<#T##Double#>).
-//            optionNameLabel.text = " pred : \(bet.values?[item].odd ?? "1.8")"
-//            optionNameLabel.font = UIFont(name: "Futura Bold", size: 2)
-//            optionNameLabel.adjustsFontSizeToFitWidth = true
-//            optionNameLabel.textAlignment = .center
-            let string: String
-            switch bet.values?[item].value {
-            case .double(let value):
-                string  = String(value)
-            case .string(let value):
-                string = value
-            case .none:
-                string = ""
-            }
-            button.setTitle("\(string ) - \(bet.values?[item].odd ?? "1.8")", for: .normal)
-//            optionNameLabel.snp.makeConstraints { make in
-////                make.trailing.equalToSuperview()
-////                make.leading.equalToSuperview()
-////                make.height.equalTo(button.frame.height).multipliedBy(0.5)
-//                make.centerX.equalToSuperview()
-//                make.centerY.equalToSuperview()
-//            }
-            button.titleLabel?.snp.makeConstraints { make in
-                make.trailing.equalToSuperview().inset(Constants.buttonInsets)
-                make.leading.equalToSuperview().inset(Constants.buttonInsets)
-                make.centerX.equalToSuperview()
-            }
-            buttonsStackView.addArrangedSubview(button)
-//            buttonsStackView.addSubview(button)
-            button.snp.makeConstraints { make in
-                make.height.equalToSuperview().multipliedBy(Constants.buttonHeight)
-                make.width.equalTo(button.snp.height).multipliedBy(Constants.buttonWidth)
-            }
-        }
+        guard let values = bet.values else { return }
+        bets = values
+        collectionView.reloadData()
     }
     
     @objc
     func buttonAction(_ sender: UIButton) {
-     
+
     }
+    
     func colorButton(sender: UIButton) {
         UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
             sender.backgroundColor =  Colors.chosenButton
@@ -163,43 +128,87 @@ class FeedDetailTableViewCell: UITableViewCell {
             make.top.equalToSuperview().inset(Constants.viewTopInset)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
-//            make.height.equalToSuperview().multipliedBy(0.7)
             make.bottom.equalToSuperview()
         }
         betNameLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(Constants.betNameTop)
             make.leading.equalToSuperview().offset(Constants.betNameLeft)
-            make.trailing.equalToSuperview()
-//            make.height.lessThanOrEqualTo(matchView.snp.height).multipliedBy(0.2)
+            make.trailing.equalToSuperview().inset(20)
             make.height.equalTo(Constants.betNameHeight)
         }
-        additionalView.snp.makeConstraints { make in
-            make.top.equalTo(betNameLabel.snp.bottom).offset(Constants.viewTopInset)
-            make.trailing.equalToSuperview().offset(Constants.addViewTrailing)
-            make.leading.equalToSuperview().offset(Constants.addViewTrailing)
-//            make.height.equalToSuperview().multipliedBy(0.5)
-            make.bottom.equalToSuperview().inset(Constants.addViewBottom)
+        hideButton.snp.makeConstraints { make in
+            make.centerY.equalTo(betNameLabel.snp.centerY)
+            make.trailing.equalToSuperview().inset(5)
+            make.height.equalTo(betNameLabel.snp.height)
+            make.leading.equalTo(betNameLabel.snp.trailing)
+            
         }
-        scrollView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-                    }
-        buttonsStackView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(betNameLabel.snp.bottom).offset(10)
+            make.bottom.equalToSuperview().inset(5)
             make.trailing.equalToSuperview()
             make.leading.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.height.equalToSuperview()
         }
+        
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 }
 
+  // MARK: - extension
+
+extension FeedDetailTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCollectionViewCell.identifier, for: indexPath) as? EventCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.contentView.backgroundColor = .clear
+        cell.configure(value: self.bets[indexPath.row])
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        bets.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            if bets.count == 2 {
+                let yourWidth = self.collectionView.bounds.width/2.0
+                return CGSize(width: yourWidth - 5, height: 40.0)
+            }
+            if bets.count % 2 == 0 {
+                let yourWidth = (self.collectionView.bounds.width -  CGFloat(Constants.spacingBetweenCells * 2))/2.0
+                print("width chet \(yourWidth)")
+                return CGSize(width: yourWidth, height: 40.0)
+            } else {
+                let yourWidth = (self.collectionView.bounds.width - CGFloat(Constants.spacingBetweenCells * 3))/3.0
+                print("width nechet \(yourWidth)")
+                return CGSize(width: yourWidth, height: 40.0)
+            }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    }
+    
+}
+class EventsColView: UICollectionView {
+    init() {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = CGFloat(Constants.spacingBetweenCells)
+        layout.minimumLineSpacing = CGFloat(Constants.spacingBetweenRows)
+        layout.scrollDirection = .horizontal
+        super.init(frame: .zero, collectionViewLayout: layout)
+     }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 private struct Constants {
+    static let spacingBetweenCells = 3
+    static let spacingBetweenRows = 3
     static let viewTopInset = 5
     static let viewBottomInset = 5
     static let addViewTrailing = 5

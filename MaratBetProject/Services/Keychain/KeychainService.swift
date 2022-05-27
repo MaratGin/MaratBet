@@ -10,13 +10,32 @@ import KeychainAccess
 
 enum KeychainService {
     private static let keychain = Keychain(service: "com.maratbetproject")
-    static func saveToken(token: String) {
-        keychain["token"] = token
+    static func saveLogin(login: String) {
+        keychain["token"] = login
     }
-    static func loadToken(token: String) -> String? {
+    static func loadLogin() -> String? {
         return keychain["token"]
     }
-    static func deleteToken(token: String) {
+    static func deleteLogin(login: String) {
         keychain["token"] = nil
     }
+    static func saveBalance(balance: Int) {
+        keychain["balance"] = String(balance)
+    }
+    static func loadbalance() -> String? {
+        return keychain["balance"]
+    }
+    static func deleteBalance() {
+        keychain["balance"] = nil
+    }
+    static func savePassword(password: String) {
+        keychain["password"] = password
+    }
+    static func loadPassword() -> String? {
+        return keychain["password"]
+    }
+    static func deleteLogin(password: String) {
+        keychain["password"] = nil
+    }
+    
 }

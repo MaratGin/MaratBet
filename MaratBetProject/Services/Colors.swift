@@ -18,6 +18,10 @@ class Colors {
     static let detailViewBackground = hexStringToUIColor(hex: "#33FF8C")
     static let goldTabBarItemColor = hexStringToUIColor(hex: "#FFD700")
     static let whiteColor = hexStringToUIColor(hex: "#F5F6F5")
+    static let darkerButtonColor = hexStringToUIColor(hex: "#DBDBDB")
+    static let greenColor = hexStringToUIColor(hex: "#32A852")
+    static let orangeColor = hexStringToUIColor(hex: "#FFA500")
+    static let redColor = hexStringToUIColor(hex: "#FF2900")
     
     static func hexStringToUIColor (hex: String) -> UIColor {
         var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

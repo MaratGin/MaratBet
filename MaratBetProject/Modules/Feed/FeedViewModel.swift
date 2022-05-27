@@ -10,15 +10,16 @@ import Foundation
 import Moya
 import CoreText
 import QuartzCore
+
 // MARK: - ViewModel's protocol
 
 protocol FeedViewModelProtocol {
     func getFootballMatches(league: Int)
     func getHockeyMatches(league: Int)
     func getBasketballMatches(league: Int)
-    func getFootballBets()
     func getAllMatches()
-    func goToDetail(cell: SportCell, dataType: DataType, matchID: Int)
+    func showBetDetail(predictions: [UserPrediction])
+    func goToDetail(cell: SportCell, dataType: DataType, matchID: Int, predictions: [UserPrediction])
     var coordinator: FeedCoordinator { get }
     var matchStatus: Observable<[SportCell]> { get }
     var betStatus: Observable<BetInfo> { get  }
@@ -27,6 +28,7 @@ protocol FeedViewModelProtocol {
 class FeedViewModel: FeedViewModelProtocol {
    
     // MARK: - Variables
+    
     var coordinator: FeedCoordinator
     var matchStatus: Observable<[SportCell]>
     var betStatus: Observable<BetInfo>
@@ -45,7 +47,7 @@ class FeedViewModel: FeedViewModelProtocol {
         self.betStatus = Observable(BetInfo(league: nil, fixture: nil, update: nil, bookmakers: nil))
     }
     
-    func goToDetail(cell: SportCell, dataType: DataType, matchID: Int) {
+    func goToDetail(cell: SportCell, dataType: DataType, matchID: Int, predictions: [UserPrediction]) {
         print("detail")
         var betRequestType = BetMoyaConfiguration.getFootballBets(matchID: matchID)
         var finalData = BetResponse(get: nil, parameters: nil, errors: nil, results: nil, paging: nil, response: [])
@@ -65,21 +67,22 @@ class FeedViewModel: FeedViewModelProtocol {
                 print("success")
 
                 do {
-                    let token = String(data: response.data, encoding: .utf8) ?? "nil"
-//                    try print(token)
+                    _ = String(data: response.data, encoding: .utf8) ?? "nil"
                       finalData = try JSONDecoder().decode(BetResponse.self, from: response.data)
-//                    print(finalData.get?.description)
                 } catch {
-                    print("123123")
-//                    print(error.localizedDescription)
                     print(String(describing: error))
                 }
-                self.coordinator.navigate(with: .detail(matchData: cell, bookmaker: finalData.response ?? []))
+                self.coordinator.navigate(with: .detail(matchData: cell, bookmaker: finalData.response ?? [], predictions: predictions))
             case .failure(let error):
-                print(error)
+                print(error.localizedDescription)
             }
 
         })
+    }
+    
+    func showBetDetail(predictions: [UserPrediction]) {
+        coordinator.navigate(with: .betDetail(predictions: predictions))
+        
     }
     
     func getAllMatches() {
@@ -89,7 +92,6 @@ class FeedViewModel: FeedViewModelProtocol {
     }
 
     func getFootballMatches(league: Int) {
-        // TODO: -weak self
         print("getFootballMatches")
         
         moyaMatchProvider.request(.getFootballMatches(league: league)) { (result) in
@@ -99,10 +101,8 @@ class FeedViewModel: FeedViewModelProtocol {
             case .success(let response):
                 var finalData = MyFootballResponse(get: nil, parametrs: nil, errors: nil, paging: nil, response: [])
                 do {
-                    let token = String(data: response.data, encoding: .utf8) ?? "nil"
-                    try print(token)
+                    _ = String(data: response.data, encoding: .utf8) ?? "nil"
                       finalData = try JSONDecoder().decode(MyFootballResponse.self, from: response.data)
-//                    print(finalData.get?.description)
                 } catch {
                     print("123123")
                 print(Error.self)
@@ -110,54 +110,39 @@ class FeedViewModel: FeedViewModelProtocol {
                 for item in 0..<finalData.response.count {
                     finalData.response[item].type = "football"
                 }
-//                self.matchStatus.value += finalData.response
                 self.matchStatus.value = finalData.response
-//                self.signInStatus.value = finalData.response
                 print(" footbalwwl \(finalData.response.count)")
             case .failure(let error):
-                print(error)
+                print(String(describing: error))
             }
         }
 
     }
-
-    
     func getHockeyMatches(league: Int) {
-        print("HOCKEY!")
-
         var finalData = MyHockeyResponse(get: nil, parameters: nil, errors: nil, response: [])
         moyaMatchProvider.request(.getHockeyMatches(league: league)) { (result) in
-            print("in closure!")
-
             switch result {
             case .success(let response):
-                
                 do {
-//                    let token = String(data: response.data, encoding: .utf8) ?? "nil"
-//                    print(token)
                       finalData = try JSONDecoder().decode(MyHockeyResponse.self, from: response.data)
                     for item in 0..<finalData.response.count {
                         finalData.response[item].type = "hockey"
                     }
                 } catch {
-//                    self.errorrr = error.self
                     print(error.localizedDescription)
                 }
                 self.matchStatus.value = finalData.response
             case .failure(let error):
-                print(error)
+                print(String(describing: error))
             }
         }
     }
-    
     func getBasketballMatches(league: Int)  {
         moyaMatchProvider.request(.getBasketBallMatches(league: league)) { (result) in
             switch result {
             case .success(let response):
                 var finalData = MyBasketBallResponse(get: nil, parameters: nil, errors: nil, results: nil, response: [BasketBallMatch(id: nil, date: nil, time: nil, timestamp: nil, timezone: nil, stage: nil, week: nil, status: nil, league: nil, country: nil, teams: nil, scores: nil)])
                 do {
-                   // let token = String(data: response.data, encoding: .utf8) ?? "nil"
-//                    try print(token)
                       finalData = try JSONDecoder().decode(MyBasketBallResponse.self, from: response.data)
                 } catch {
                     print(Error.self)
@@ -169,27 +154,12 @@ class FeedViewModel: FeedViewModelProtocol {
                 print(" basketww \(finalData.response.count)")
                 self.allData += finalData.response
             case .failure(let error):
-                print(error)
+                print(String(describing: error))
             }
         }
     }
     
-    func getHockeyBets() {
-        
-        
-    }
-    func getBasketballBets() {
-        
-    }
-    func getTop() {
-        
-    }
-    func getFootballBets() {
-            print("")
-       
 }
-}
-
 private struct Constants {
     static let englandPL = 39
     static let championsLeague = 2
@@ -202,4 +172,3 @@ private struct Constants {
     static let nhlLeague = 57
     static let khlLeague = 35
 }
-//FootballMatch(fixture: nil, league: nil, teams: nil, goals: nil, score: nil),HockeyMatch(country: nil, date: nil, events: nil, id: nil, league: nil, periods: nil, scores: nil, status: nil, teams: nil, time: nil, timer: nil, timestamp: nil, timezone: nil, week: nil),BasketBallMatch(id: nil, date: nil, time: nil, timestamp: nil, timezone: nil, stage: nil, week: nil, status: nil, league: nil, country: nil, teams: nil, scores: nil)

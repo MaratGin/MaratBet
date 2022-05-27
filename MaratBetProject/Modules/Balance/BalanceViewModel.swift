@@ -11,6 +11,7 @@ import Moya
 protocol BalanceViewModelProtocol {
     func getQuestions()
     var status: Observable<[Question]> { get }
+    func updateBalance(balance: String)
 }
 
 class BalanceViewModel: BalanceViewModelProtocol {
@@ -19,6 +20,7 @@ class BalanceViewModel: BalanceViewModelProtocol {
     var coordinator: BalanceCoordinator
     var status: Observable<[Question]>
     var moyaProvider: MoyaProvider<AuthMoyaConfiguration>
+    var balanceStatus: Observable<String>
     
     // MARK: - Initialisation
 
@@ -26,6 +28,7 @@ class BalanceViewModel: BalanceViewModelProtocol {
         self.coordinator = coordinator
         self.moyaProvider =  MoyaProvider<AuthMoyaConfiguration>()
         self.status = Observable([Question(image: nil, text: nil, optionA: nil, optionB: nil, optionC: nil, optionD: nil, answer: nil)])
+        self.balanceStatus = Observable("100")
     }
     func getQuestions() {
         moyaProvider.request(.getQuestions) { (result) in
@@ -42,5 +45,9 @@ class BalanceViewModel: BalanceViewModelProtocol {
                 print(error)
             }
         }
+    }
+    
+    func updateBalance(balance: String) {
+        balanceStatus.value = balance
     }
 }

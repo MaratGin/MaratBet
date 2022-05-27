@@ -3,7 +3,11 @@ excluded:
   
 line_length: 500
 function_body_length: 60
+type_body_length: 400
+function_body_length: 120
+file_length: 500
 
 disabled_rules:
 - trailing_whitespace
 - empty_enum_arguments
+- for_where

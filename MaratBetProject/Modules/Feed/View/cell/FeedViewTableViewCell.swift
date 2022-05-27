@@ -19,11 +19,10 @@ class FeedViewTableViewCell: UITableViewCell {
     var teamBisChosen = false
     var drawIsChosen = false
     var userStatus: Observable<UserPrediction> = Observable(UserPrediction(coeficient: nil, teamAName: nil, teamBName: nil, league: nil, date: nil, update: true, event: nil, matchID: 100))
-    var teamACoef = 1.7
-    var teamBCoef = 2
-    var drawCoef = 3
+    var teamACoef = Double(round(Double.random(in: 10..<100) * 10) / 100)
+    var teamBCoef = Double(round(Double.random(in: 10..<100) * 10) / 100)
+    var drawCoef = Double(round(Double.random(in: 10..<100) * 10) / 100)
     var matchId = 0
-
 
     // MARK: - UI elements
     
@@ -51,13 +50,13 @@ class FeedViewTableViewCell: UITableViewCell {
     let teamALabel: UILabel = {
         var label = UILabel()
         label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont.systemFont(ofSize: 12.0)
+        label.font = UIFont.systemFont(ofSize: 11.0)
         return label
     }()
     let teamBLabel: UILabel = {
         var label = UILabel()
         label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont.systemFont(ofSize: 12.0)
+        label.font = UIFont.systemFont(ofSize: 11.0)
         return label
     }()
     let dateLabel: UILabel = {
@@ -71,7 +70,8 @@ class FeedViewTableViewCell: UITableViewCell {
         button.backgroundColor = Colors.buttonColor
         button.layer.cornerRadius = 10
         button.setTitle("П1 =  2", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         button.setTitleColor(UIColor.black, for: .normal)
         return button
     }()
@@ -79,7 +79,7 @@ class FeedViewTableViewCell: UITableViewCell {
         var button = UIButton(type: .system)
         button.backgroundColor = Colors.buttonColor
         button.layer.cornerRadius = 10
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         button.setTitleColor(UIColor.black, for: .normal)
         return button
     }()
@@ -87,7 +87,7 @@ class FeedViewTableViewCell: UITableViewCell {
         var button = UIButton(type: .system)
         button.backgroundColor = Colors.buttonColor
         button.layer.cornerRadius = 10
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         button.setTitleColor(UIColor.black, for: .normal)
         return button
     }()
@@ -128,6 +128,7 @@ class FeedViewTableViewCell: UITableViewCell {
     func configureCell(match: FootballMatch) {
         matchId = match.fixture?.id ?? 100
         DispatchQueue.global().async { [weak self] in
+            
             if let data = try? Data(contentsOf: URL(string: match.teams?.home?.logo ?? " ") ?? URL(string: "https://media.api-sports.io/football/teams/71.png")! ) {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
@@ -158,8 +159,9 @@ class FeedViewTableViewCell: UITableViewCell {
         teamALabel.text = match.teams?.home?.name
         teamBLabel.text = match.teams?.away?.name
         dateLabel.text = DateConfigurator.configureDate(date: match.fixture?.date ?? "2021-01-12T20:15:00+00:00")
-        teamBButton.setTitle("П1 =  1.7", for: .normal)
-        drawButton.setTitle("Х =  3.2", for: .normal)
+        teamAButton.setTitle(" П1 =\(String(teamACoef))", for: .normal)
+        teamBButton.setTitle(" П2 =\(String(teamBCoef))", for: .normal)
+        drawButton.setTitle(" X =\(String(drawCoef))", for: .normal)
     }
     
     func configureBasketballCell(match: BasketBallMatch) {
@@ -173,7 +175,7 @@ class FeedViewTableViewCell: UITableViewCell {
                 }
             }
         }
-        
+
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: URL(string: match.teams?.away?.logo ?? " ") ?? URL(string: "http://assets.stickpng.com/images/58419ce2a6515b1e0ad75a69.png")! ) {
                 if let image = UIImage(data: data) {
@@ -195,8 +197,9 @@ class FeedViewTableViewCell: UITableViewCell {
         teamALabel.text = match.teams?.home?.name
         teamBLabel.text = match.teams?.away?.name
         dateLabel.text = DateConfigurator.configureDate(date: match.date ?? "2021-01-12T20:15:00+00:00")
-        teamBButton.setTitle("П1 =  1.7", for: .normal)
-        drawButton.setTitle("Х =  3.2", for: .normal)
+        teamAButton.setTitle(" П1 =\(String(teamACoef))", for: .normal)
+        teamBButton.setTitle(" П2 =\(String(teamBCoef))", for: .normal)
+        drawButton.setTitle(" X =\(String(drawCoef))", for: .normal)
     }
     
     func configureHockeyCell(match: HockeyMatch) {
@@ -210,7 +213,7 @@ class FeedViewTableViewCell: UITableViewCell {
                 }
             }
         }
-        
+
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: URL(string: match.teams?.away?.logo ?? " ") ?? URL(string: "https://media.api-sports.io/football/teams/71.png")! ) {
                 if let image = UIImage(data: data) {
@@ -232,8 +235,9 @@ class FeedViewTableViewCell: UITableViewCell {
         teamALabel.text = match.teams?.home?.name
         teamBLabel.text = match.teams?.away?.name
         dateLabel.text = DateConfigurator.configureDate(date: match.date ?? "2021-01-12T20:15:00+00:00")
-        teamBButton.setTitle("П1 =  1.7", for: .normal)
-        drawButton.setTitle("Х =  3.2", for: .normal)
+        teamAButton.setTitle(" П1 =  \(String(teamACoef))", for: .normal)
+        teamBButton.setTitle(" П2 =  \(String(teamBCoef))", for: .normal)
+        drawButton.setTitle(" X =\(String(drawCoef))", for: .normal)
     }
     @objc
     func buttonAction(_ sender: UIButton) {
@@ -242,7 +246,9 @@ class FeedViewTableViewCell: UITableViewCell {
             if teamAisChosen {
                 teamAisChosen = false
                 clearButton(sender: sender)
-                let value = UserPrediction(coeficient: String(teamACoef) , teamAName: teamALabel.text, teamBName: teamBLabel.text, league: "Premier League", date: dateLabel.text, update: false, event: "", matchID: matchId)
+                let value = UserPrediction(coeficient: String(teamACoef), teamAName: teamALabel.text, teamBName: teamBLabel.text, league: "Premier League", date: dateLabel.text, update: false, event: "", matchID: matchId)
+                delegate?.sendPrediction(prediction: value)
+
             } else {
                 colorButton(sender: sender)
                 teamBisChosen ? clearButton(sender: teamBButton) : ()
@@ -250,8 +256,7 @@ class FeedViewTableViewCell: UITableViewCell {
                 teamBisChosen = false
                 drawIsChosen = false
                 teamAisChosen = true
-                
-                    let value = UserPrediction(coeficient: String(self.teamACoef) , teamAName: self.teamALabel.text, teamBName: self.teamBLabel.text, league: "Premier League", date: self.dateLabel.text, update: true, event: "1st Win", matchID: self.matchId)
+                    let value = UserPrediction(coeficient: String(self.teamACoef), teamAName: self.teamALabel.text, teamBName: self.teamBLabel.text, league: "Premier League", date: self.dateLabel.text, update: true, event: "1st Win", matchID: self.matchId)
                 delegate?.sendPrediction(prediction: value)
                 
             }
@@ -259,7 +264,8 @@ class FeedViewTableViewCell: UITableViewCell {
             if teamBisChosen {
                 clearButton(sender: sender)
                 teamBisChosen = false
-                let value = UserPrediction(coeficient: String(teamBCoef) , teamAName: teamALabel.text, teamBName: teamBLabel.text, league: "Premier League", date: dateLabel.text, update: false, event: "", matchID: matchId)
+                let value = UserPrediction(coeficient: String(teamBCoef), teamAName: teamALabel.text, teamBName: teamBLabel.text, league: "Premier League", date: dateLabel.text, update: false, event: "", matchID: matchId)
+                delegate?.sendPrediction(prediction: value)
             } else {
                 colorButton(sender: sender)
                 teamAisChosen ? clearButton(sender: teamAButton) : ()
@@ -267,13 +273,16 @@ class FeedViewTableViewCell: UITableViewCell {
                 teamAisChosen = false
                 drawIsChosen = false
                 teamBisChosen = true
-                let value = UserPrediction(coeficient: String(teamBCoef) , teamAName: teamALabel.text, teamBName: teamBLabel.text, league: "Premier League", date: dateLabel.text, update: true, event: "2nd Win", matchID: matchId)
+                let value = UserPrediction(coeficient: String(teamBCoef), teamAName: teamALabel.text, teamBName: teamBLabel.text, league: "Premier League", date: dateLabel.text, update: true, event: "2nd Win", matchID: matchId)
+                delegate?.sendPrediction(prediction: value)
+
             }
         case drawButton:
             if drawIsChosen {
                 clearButton(sender: sender)
                 drawIsChosen = false
-                let value = UserPrediction(coeficient: String(drawCoef) , teamAName: teamALabel.text, teamBName: teamBLabel.text, league: "Premier League", date: dateLabel.text, update: false, event: "", matchID: matchId)
+                let value = UserPrediction(coeficient: String(drawCoef), teamAName: teamALabel.text, teamBName: teamBLabel.text, league: "Premier League", date: dateLabel.text, update: false, event: "", matchID: matchId)
+                delegate?.sendPrediction(prediction: value)
             } else {
                 colorButton(sender: sender)
                 teamAisChosen ? clearButton(sender: teamAButton) : ()
@@ -281,7 +290,8 @@ class FeedViewTableViewCell: UITableViewCell {
                 teamAisChosen = false
                 teamBisChosen = false
                 drawIsChosen = true
-                let value = UserPrediction(coeficient: String(drawCoef) , teamAName: teamALabel.text, teamBName: teamBLabel.text, league: "Premier League", date: dateLabel.text, update: true, event: "draw", matchID: matchId)
+                let value = UserPrediction(coeficient: String(drawCoef), teamAName: teamALabel.text, teamBName: teamBLabel.text, league: "Premier League", date: dateLabel.text, update: true, event: "draw", matchID: matchId)
+                delegate?.sendPrediction(prediction: value)
             }
         default:
             break
@@ -365,7 +375,5 @@ class FeedViewTableViewCell: UITableViewCell {
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
     }
-    
 }

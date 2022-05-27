@@ -12,6 +12,7 @@ class MainCoordinator: Coordinator {
     enum Route {
         case onboardingScreen
         case tabBar
+        case leave
     }
     private let window: UIWindow
     let navigationController = UINavigationController()
@@ -38,7 +39,9 @@ class MainCoordinator: Coordinator {
             setRootViewController(viewController: onboardingCoordinator.configureMainController())
         case .tabBar:
             setRootViewController(viewController: tabBarCoordinator.configureMainController())
-        }
+        case .leave:
+            print("HIHIH")
+            setRootViewController(viewController: onboardingCoordinator.renewMainController())        }
     }
     func setRootViewController(viewController: UIViewController) {
         window.rootViewController = viewController

@@ -13,7 +13,7 @@ class TabBarCoordinator: Coordinator {
     
     lazy var rootViewController = UITabBarController()
     lazy var feedCoordinator = FeedCoordinator(parent: self)
-    lazy var friendsCoordinator = FriendsCoordinator(parent: self)
+    lazy var statisticsCoordinator = StatisticsCoordinator(parent: self)
     lazy var profileCoordinator = ProfileCoordinator(parent: self)
     lazy var balanceCoordinator = BalanceCoordinator(parent: self)
     
@@ -36,6 +36,7 @@ class TabBarCoordinator: Coordinator {
         case balance
         case profile
         case friends
+        case leave
     }
     
     // MARK: - Navigation method
@@ -50,17 +51,19 @@ class TabBarCoordinator: Coordinator {
             rootViewController.selectedIndex = 2
         case .friends:
             rootViewController.selectedIndex = 3
+        case .leave:
+            mainCoordinator.navigate(with: .leave)
         }
     }
     
     // MARK: - TabBar configuration
     
     func configureMainController() -> UIViewController {
-        var feedController = feedCoordinator.configureMainController()
-        var feedImage = Asset.house.image
-        var profileImage = Asset.person.image
-        var friendsImage = Asset.person2.image
-        var balanceImage = Asset.bitcoinsignCircle.image
+        let feedController = feedCoordinator.configureMainController()
+        let feedImage = Asset.house.image
+        let profileImage = Asset.person.image
+        let statImage = Asset.chart.image
+        let balanceImage = Asset.bitcoinsignCircle.image
         feedController.tabBarItem = UITabBarItem(title: "Feed",
                                                  image: feedImage,
                                                  tag: 0)
@@ -68,18 +71,14 @@ class TabBarCoordinator: Coordinator {
         profileController.tabBarItem = UITabBarItem(title: "profile",
                                                     image: profileImage,
                                                     tag: 1)
-        let friendsController = friendsCoordinator.configureMainController()
-        friendsController.tabBarItem = UITabBarItem(title: "friends",
-                                                    image: friendsImage,
+        let friendsController = statisticsCoordinator.configureMainController()
+        friendsController.tabBarItem = UITabBarItem(title: "statistics",
+                                                    image: statImage,
                                                     tag: 2)
         let balanceController = balanceCoordinator.configureMainController()
         balanceController.tabBarItem = UITabBarItem(title: "balance",
                                                     image: balanceImage,
                                                     tag: 3)
-//        rootViewController.tabBar.backgroundColor = .black
-//        rootViewController.editButtonItem.tintColor = Colors.goldTabBarItemColor
-//        rootViewController.tabBar.tintColor = Colors.goldTabBarItemColor
-//        rootViewController.colo
         rootViewController.viewControllers = [feedController, profileController, friendsController, balanceController]
         navigate(with: .feed)
         return rootViewController

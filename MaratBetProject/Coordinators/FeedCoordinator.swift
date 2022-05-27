@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import FittedSheets
 
 class FeedCoordinator: Coordinator {
     
@@ -23,7 +24,9 @@ class FeedCoordinator: Coordinator {
     
     enum  Route {
         case feed
-        case detail(matchData: SportCell, bookmaker: [BetInfo])
+        case detail(matchData: SportCell, bookmaker: [BetInfo], predictions: [UserPrediction])
+        case statistics
+        case betDetail(predictions: [UserPrediction])
     }
     
     // MARK: - Initialisation
@@ -42,13 +45,23 @@ class FeedCoordinator: Coordinator {
             navigationController.pushViewController(viewController, animated: true)
             navigationController.navigationBar.barTintColor = UIColor.black
             navigationController.navigationBar.barStyle = .black
-        case .detail(let matchData, let betInfo):
+        case .detail(let matchData, let betInfo, let predicions):
             let viewController = FeedDetailViewController()
             viewController.matchData = matchData
             viewController.betInfo = betInfo
+            viewController.predictions = predicions
             navigationController.pushViewController(viewController, animated: true)
             navigationController.navigationBar.barTintColor = UIColor.black
             navigationController.navigationBar.barStyle = .black
+        case .statistics: break
+            
+        case .betDetail(let predictions):
+            let viewController = UserPredictionViewController()
+            viewController.predictions = predictions
+            let sheetController = SheetViewController(controller: viewController, sizes: [.intrinsic, .fullscreen])
+            navigationController.present(sheetController, animated: true, completion: nil)
+        }
+            
 //            let label = UILabel()
 //            label.textColor = UIColor.white
 //            label.font = UIFont(name: "Futura Bold", size: 20)
@@ -67,7 +80,7 @@ class FeedCoordinator: Coordinator {
 //                make.trailing.equalToSuperview()
 //                make.height.equalTo(20)
 //            }
-        }
+       
     }
     
     // MARK: - ViewController configuration

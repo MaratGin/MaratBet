@@ -5,6 +5,7 @@
 //  Created by Marat Giniyatov on 04.04.2022.
 //
 // swiftlint:disable all
+
 import Foundation
 import Moya
 
@@ -18,7 +19,6 @@ class SignUpService: SignUpServiceProtocol {
     let moyaProvider = MoyaProvider<AuthMoyaConfiguration>()
     
     func funcSendUserInfo(login: String, email: String, password: String, completion: @escaping (Result<(), SignUpErrors>) -> Void) {
-        print("here----------------------------------")
         moyaProvider.request(.sendSignUpInfo(login: login, email: email, password: password)) { (result) in
             switch result {
             case .success(let response):
@@ -30,14 +30,13 @@ class SignUpService: SignUpServiceProtocol {
             }
         }
     }
-     func getToken(response: Response) {
+    func getToken(response: Response) {
         let token = String(data: response.data, encoding: .utf8) ?? "nil"
-         print(token)
-        KeychainService.saveToken(token: token)
-    //        let keychain = KeyChainManager()
-    //        keychain.saveToken(token: response , key: "token")
+        print(token)
+        KeychainService.saveLogin(login: token)
+        
     }
-
+    
 }
 
 

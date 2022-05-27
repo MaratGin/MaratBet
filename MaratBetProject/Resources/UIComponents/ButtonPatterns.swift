@@ -53,3 +53,14 @@ class BetButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 }
+class HideButton: UIButton {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .clear
+        setImage(Asset.arrow.image, for: .normal)
+        tintColor = .black
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}

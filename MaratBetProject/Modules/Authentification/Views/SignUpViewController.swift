@@ -13,145 +13,227 @@ class SignUpViewController: UIViewController {
     
     let mainLabel: AuthLabel = {
         let label = AuthLabel()
+        label.textColor = Colors.greenColor
+        label.textAlignment = .center
         return label
     }()
     var signUpStatusLabel: StatusLabel = {
-        let label = StatusLabel()        
+        let label = StatusLabel()
+        label.textColor = .red
+        label.text = ""
+        label.numberOfLines = 3
         return label
     }()
-    let loginTextField: AuthTextField = {
-        let textField = AuthTextField()
-        let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.systemGray, NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
-        ]
-        textField.attributedPlaceholder = NSAttributedString(
-            string: " Введите логин",
-            attributes: attributes)
-        textField.textColor = .black
+    let emailContainer = UIView()
+    let passwordContainer = UIView()
+    let loginContainer = UIView()
+    let repasswordContainer = UIView()
+    
+    var customEmailTextField: CustomTextField = {
+        let textField = CustomTextField(placeHolder: "email..")
+        textField.backgroundColor = .clear
         return textField
     }()
-    let emaiiTextField: AuthTextField = {
-        let textField = AuthTextField()
-        let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.systemGray,
-            NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
-        ]
-        textField.attributedPlaceholder = NSAttributedString(
-            string: " Введите e-mail адрес",
-            attributes: attributes)
-        textField.textColor = .black
+    var customLoginTextField: CustomTextField = {
+        let textField = CustomTextField(placeHolder: "login..")
+        textField.backgroundColor = .clear
         return textField
     }()
-    let passwordTextField: AuthTextField = {
-        let textField = AuthTextField()
-        let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.systemGray,
-            NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
-        ]
-        textField.attributedPlaceholder = NSAttributedString(
-            string: " Введите пароль",
-            attributes: attributes as [NSAttributedString.Key: Any])
+    var customPasswordTextField: CustomTextField = {
+        let textField = CustomTextField(placeHolder: "password..")
         textField.isSecureTextEntry = true
-        textField.textColor = .black
+        textField.backgroundColor = .clear
+        return textField
+    }()
+    var customRepasswordTextField: CustomTextField = {
+        let textField = CustomTextField(placeHolder: "re-type password..")
+        textField.isSecureTextEntry = true
+        textField.backgroundColor = .clear
+        return textField
+    }()
+    
+    let loginImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = Asset.person.image
+        imageView.tintColor = Colors.greenColor
+        return imageView
+    }()
+    let emailImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = Asset.envelope.image
+        imageView.tintColor = Colors.greenColor
+        return imageView
+    }()
+    let passwordImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = Asset.key.image
+        imageView.tintColor = Colors.greenColor
 
-        return textField
+        return imageView
     }()
-    let repasswordTextField: AuthTextField = {
-        let textField = AuthTextField()
-        let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.systemGray,
-            NSAttributedString.Key.font: UIFont(name: "Futura", size: 11)
-        ]
-        textField.attributedPlaceholder = NSAttributedString(string: " Введите пароль заново", attributes: attributes)
-        textField.isSecureTextEntry = true
-        textField.textColor = .black
-        return textField
+    let repasswordImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = Asset.key.image
+        imageView.tintColor = Colors.greenColor
+
+        return imageView
     }()
+   
     let signUpButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.backgroundColor = .black
         button.titleLabel?.font = UIFont(name: "Futura Bold", size: 15)
         button.setTitleColor(.white, for: .normal)
         button.setTitle("SignIn!", for: .normal)
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 1
+        button.layer.borderColor = Colors.greenColor.cgColor
+        button.layer.borderWidth = 2
         return button
     }()
+    
     // MARK: - Variables
+    
     var viewModel: SignUpViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = Colors.greenColor
         view.backgroundColor = .white
         signUpButton.addTarget(self, action: #selector(signUpButtonAction), for: .touchUpInside)
         setupInterface()
         setupConstraints()
         bindViewModel()
     }
+    
     // MARK: - Layout
+    
     func setupInterface() {
+        emailContainer.addSubview(customEmailTextField)
+        emailContainer.addSubview(emailImageView)
+        loginContainer.addSubview(customLoginTextField)
+        loginContainer.addSubview(loginImageView)
+        passwordContainer.addSubview(customPasswordTextField)
+        passwordContainer.addSubview(passwordImageView)
+        repasswordContainer.addSubview(customRepasswordTextField)
+        repasswordContainer.addSubview(repasswordImageView)
+        emailContainer.addSeparatorLine(color: Colors.greenColor)
+        passwordContainer.addSeparatorLine(color: Colors.greenColor)
+        repasswordContainer.addSeparatorLine(color: Colors.greenColor)
+        loginContainer.addSeparatorLine(color: Colors.greenColor)
+        view.addSubview(emailContainer)
+        view.addSubview(loginContainer)
+        view.addSubview(passwordContainer)
+        view.addSubview(repasswordContainer)
         view.addSubview(mainLabel)
         view.addSubview(signUpStatusLabel)
-        view.addSubview(loginTextField)
-        view.addSubview(passwordTextField)
-        view.addSubview(repasswordTextField)
         view.addSubview(signUpButton)
-        view.addSubview(emaiiTextField)
+        view.backgroundColor = .black
     }
+    
     // MARK: - Constraints configuration
+    
     func setupConstraints() {
+        
         mainLabel.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-30)
-            make.top.equalToSuperview().offset(100)
-            make.centerX.equalTo(self.view)
+            make.top.equalToSuperview().offset(60)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(70)
         }
-        loginTextField.snp.makeConstraints { make in
-            make.height.equalTo(25)
-            make.right.equalToSuperview().offset(-30)
-            make.top.equalTo(mainLabel.snp.bottom).offset(60)
+        
+        emailContainer.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.8)
+            make.height.equalTo(60)
+            make.top.equalToSuperview().offset(150)
         }
-        emaiiTextField.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-30)
-            make.top.equalTo(loginTextField.snp.bottom).offset(20)
+        emailImageView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.height.equalTo(30)
+            make.width.equalTo(30)
+            make.centerY.equalToSuperview()
+        }
+        customEmailTextField.snp.makeConstraints { make in
+            make.leading.equalTo(emailImageView.snp.trailing).offset(15)
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalToSuperview()
+        }
+        loginContainer.snp.makeConstraints { make in
+            make.top.equalTo(emailContainer.snp.bottom).offset(20)
             make.width.equalToSuperview().multipliedBy(0.8)
-            make.height.equalTo(25)
+            make.height.equalTo(60)
+            make.centerX.equalToSuperview()
         }
-        passwordTextField.snp.makeConstraints { make in
-            make.height.equalTo(25)
-            make.right.equalToSuperview().offset(-30)
-            make.top.equalTo(emaiiTextField.snp.bottom).offset(20)
+        loginImageView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.height.equalTo(30)
+            make.width.equalTo(30)
+            make.centerY.equalToSuperview()
+        }
+        customLoginTextField.snp.makeConstraints { make in
+            make.leading.equalTo(loginImageView.snp.trailing).offset(15)
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalToSuperview()
+        }
+        passwordContainer.snp.makeConstraints { make in
+            make.top.equalTo(loginContainer.snp.bottom).offset(20)
             make.width.equalToSuperview().multipliedBy(0.8)
+            make.height.equalTo(60)
+            make.centerX.equalToSuperview()
         }
-        repasswordTextField.snp.makeConstraints { make in
-            make.height.equalTo(25)
-            make.right.equalToSuperview().offset(-30)
-            make.top.equalTo(passwordTextField.snp.bottom).offset(20)
+        passwordImageView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.height.equalTo(30)
+            make.width.equalTo(30)
+            make.centerY.equalToSuperview()
+        }
+        customPasswordTextField.snp.makeConstraints { make in
+            make.leading.equalTo(passwordImageView.snp.trailing).offset(15)
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalToSuperview()
+        }
+        
+        repasswordContainer.snp.makeConstraints { make in
+            make.top.equalTo(passwordContainer.snp.bottom).offset(20)
             make.width.equalToSuperview().multipliedBy(0.8)
+            make.height.equalTo(60)
+            make.centerX.equalToSuperview()
         }
+        repasswordImageView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.height.equalTo(30)
+            make.width.equalTo(30)
+            make.centerY.equalToSuperview()
+        }
+        customRepasswordTextField.snp.makeConstraints { make in
+            make.leading.equalTo(repasswordImageView.snp.trailing).offset(15)
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalToSuperview()
+        }
+        
         signUpStatusLabel.snp.makeConstraints { make in
-            make.top.equalTo(signUpButton.snp.bottom).offset(40)
+            make.top.equalTo(signUpButton.snp.bottom).offset(20)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
         }
         signUpButton.snp.makeConstraints { make in
-            make.top.equalTo(repasswordTextField.snp.bottom).offset(40)
+            make.top.equalTo(repasswordContainer.snp.bottom).offset(20)
             make.height.equalTo(40)
-            make.width.equalToSuperview().multipliedBy(1.0 / 2.5)
-            make.centerX.equalTo(self.view)
+            make.width.equalToSuperview().multipliedBy(0.7)
+            make.centerX.equalToSuperview()
+            
         }
-//        getBackButton.snp.makeConstraints { make in
-//            make.width.equalTo(33)
-//            make.height.equalTo(33)
-//            make.top.equalToSuperview().offset(55)
-//            make.left.equalToSuperview().offset(20)
-//        }
     }
     
     // MARK: - Actions
     
     @objc
     func signUpButtonAction() {
-      var result =  viewModel?.signUp(login: loginTextField.text ?? " ", password: passwordTextField.text ?? " ", email: emaiiTextField.text ?? " ", repassword: repasswordTextField.text ?? " ")
+      var result =  viewModel?.signUp(login: customLoginTextField.text ?? " ", password: customPasswordTextField.text ?? " ", email: customEmailTextField.text ?? " ", repassword: customRepasswordTextField.text ?? " ")
         result?.toggle()
     }
     @objc
@@ -165,7 +247,7 @@ class SignUpViewController: UIViewController {
         viewModel?.signUpStatus.bind({ (signUpStatus) in
             DispatchQueue.main.async {
                 self.signUpStatusLabel.text = signUpStatus
-                self.signUpStatusLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                self.signUpStatusLabel.textColor = .red
             }
         })
         }
