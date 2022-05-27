@@ -1,13 +1,9 @@
-//
-//  StatisticsDetailViewController.swift
-//  MaratBetProject
-//
-//  Created by Marat Giniyatov on 27.05.2022.
-//
-
 import UIKit
 
 class StatisticsDetailViewController: UIViewController {
+
+    
+    // MARK: - Variables
 
     var statistics: [Standing] = []
     var viewModel: StatisticsViewModelProtocol?
@@ -55,6 +51,8 @@ class StatisticsDetailViewController: UIViewController {
         bindViewModel()
     }
     
+    // MARK: - Constraints
+
     func setupConstraints() {
         let width = view.frame.width / 20
         let value = Int((view.frame.width - 10 - 53 - 95 - (width * 6)) / 6)
@@ -128,6 +126,9 @@ class StatisticsDetailViewController: UIViewController {
         
     }
 }
+
+// MARK: - TableView extension
+
 extension StatisticsDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StatisticsDetailTableViewCell.identifier, for: indexPath) as? StatisticsDetailTableViewCell else { return UITableViewCell() }

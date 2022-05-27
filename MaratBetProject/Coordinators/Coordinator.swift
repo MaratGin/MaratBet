@@ -1,5 +1,7 @@
 import UIKit
+
 // MARK: - Coordinator protocol
+
 protocol Coordinator {
     associatedtype Route
     func navigate(with route: Route)

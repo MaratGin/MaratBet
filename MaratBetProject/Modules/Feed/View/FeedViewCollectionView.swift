@@ -9,12 +9,16 @@ import UIKit
 
 class FeedViewCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    // MARK: - Constants
+
     let sportCells: [Sport] = [
         Sport(name: "Top!", icon: Asset.flame.image, selectedColor: Colors.flameColor, isSelected: false),
         Sport(name: "Football", icon: Asset.football.image, selectedColor: Colors.footballIconColor, isSelected: false),
         Sport(name: "Hockey", icon: Asset.hockey.image, selectedColor: Colors.hockeyIconColor, isSelected: false),
         Sport(name: "BasketBall", icon: Asset.basketball.image, selectedColor: Colors.basketballIconColor, isSelected: false)
     ]
+    // MARK: - initialisation
+
     init() {
        let layout = UICollectionViewFlowLayout()
        layout.scrollDirection = .horizontal
@@ -27,6 +31,9 @@ class FeedViewCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - CollectionView methods
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         sportCells.count
     }
@@ -39,8 +46,4 @@ class FeedViewCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
         cell.configure(sport: sportCells[indexPath.row])
         return cell
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 60 , height: 20)
-//    }
 }

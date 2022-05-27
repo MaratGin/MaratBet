@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 protocol OnboardingCoordinatorProtocol: Coordinator {
 }
+
 // MARK: - Coordinator for Onboarding screen
+
 class OnboardingCoordinator: OnboardingCoordinatorProtocol {
     
     enum Route {
@@ -19,6 +21,7 @@ class OnboardingCoordinator: OnboardingCoordinatorProtocol {
     }
     
     // MARK: - Variables
+    
     private let navigationController = UINavigationController()
     var mainCoordinator: MainCoordinator?
     private lazy var signInCoordinator: SignInCoordinator = {

@@ -1,15 +1,8 @@
-//
-//
-//  SignUpViewModel.swift
-//  MaratBet
-//
-//  Created by Marat Giniyatov on 11.03.2022.
-//
-
 import Foundation
 import UIKit
 
 // MARK: - Sign up protocol
+
 protocol SignUpViewModelProtocol {
     func signUp(login: String, password: String, email: String, repassword: String) -> Bool
     var coordinator: SignUpCoordinator { get }
@@ -19,19 +12,23 @@ protocol SignUpViewModelProtocol {
 class SignUpViewModel: SignUpViewModelProtocol {
     
     // MARK: - variables
+    
     var signUpStatus: Observable<String>
     var validator: Validation
     var coordinator: SignUpCoordinator
     var signUpService: SignUpService
     
     // MARK: - initialisation method
+    
     init(signUpService: SignUpService, coordinator: SignUpCoordinator) {
         self.signUpService = signUpService
         self.coordinator = coordinator
         signUpStatus = Observable("")
         validator = Validation()
     }
+    
     // MARK: - signUp method
+    
     func signUp(login: String, password: String, email: String, repassword: String) -> Bool {
         if login.isEmpty || password.isEmpty || email.isEmpty || repassword.isEmpty {
             signUpStatus.value = L10n.incorrectData🥺
@@ -65,9 +62,6 @@ class SignUpViewModel: SignUpViewModelProtocol {
         }
         }
 }
-    func setNewData() {
-        
-    }
     
     // MARK: - coordinator's navigation method call
     

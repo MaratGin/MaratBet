@@ -8,6 +8,9 @@
 import UIKit
 
 class StatisticsDetailTableViewCell: UITableViewCell {
+    
+    // MARK: - Variables
+    
     static let identifier = "StatisticsDetailTableViewCell"
     let positionLabel = TableLabel()
     let teamImage = UIImageView()
@@ -45,6 +48,9 @@ class StatisticsDetailTableViewCell: UITableViewCell {
         super.awakeFromNib()
        
     }
+    
+    // MARK: - Constraints
+
     func setupConstraint() {
         let width = (contentView.frame.width / 20 )
         let value = Int((contentView.frame.width - 10 - 53 - 95 - (width * 6)) / 6)
@@ -107,6 +113,8 @@ class StatisticsDetailTableViewCell: UITableViewCell {
         
     }
     
+    // MARK: - Cell configuration
+
     func configure(team: Standing, row: Int) {
         positionLabel.text = String(team.rank ?? 1)
         DispatchQueue.global().async { [weak self] in
@@ -126,6 +134,7 @@ class StatisticsDetailTableViewCell: UITableViewCell {
         diff.text = String((team.goalsDiff ?? 20))
         points.text = String((team.points ?? 20))
     }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

@@ -7,7 +7,9 @@
 
 import Foundation
 import UIKit
+
 // MARK: - Coordinator for sign up screen
+
 class SignUpCoordinator: Coordinator {
     
     enum Route {

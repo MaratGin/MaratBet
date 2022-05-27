@@ -8,6 +8,7 @@
 import Foundation
 
 // MARK: - Binding class
+
 class Observable<T> {
     typealias Listener = (T) -> Void
     private var listener: [Listener] = []

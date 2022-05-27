@@ -14,6 +14,8 @@ protocol SendUserPredictionCollectionDelegate: AnyObject {
 
 class EventCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Variables
+
     static let identifier = "eventCollectionViewCell"
     weak var delegate: SendUserPredictionCollectionDelegate?
 
@@ -23,6 +25,8 @@ class EventCollectionViewCell: UICollectionViewCell {
     let isColored = false
     var coefficient = 2.0
     
+    // MARK: - Cell initialisation
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .clear
@@ -33,6 +37,8 @@ class EventCollectionViewCell: UICollectionViewCell {
         setupConstraints()
     }
     
+    // MARK: - Button Action
+
     @objc
     func buttonAction() {
         if isColored {
@@ -43,6 +49,8 @@ class EventCollectionViewCell: UICollectionViewCell {
         
     }
   
+    // MARK: - Cell configuration
+
     func configure(value: Values) {
         print("Config!")
         eventButton.titleLabel?.text = value.odd
@@ -77,12 +85,17 @@ class EventCollectionViewCell: UICollectionViewCell {
         eventLabel.adjustsFontSizeToFitWidth = true
         backgroundColor = .white
     }
+    
+    // MARK: - method to color button
+
     func colorButton(sender: UIButton) {
         UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
             sender.backgroundColor =  Colors.chosenButton
             sender.setTitleColor(.white, for: .normal)
         }, completion: nil )
     }
+    // MARK: - method to uncolor button
+
     func clearButton(sender: UIButton) {
         UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
             sender.backgroundColor =  Colors.buttonColor
@@ -94,12 +107,13 @@ class EventCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Constraints
+
     func setupConstraints() {
         nameView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview().inset(3)
             make.trailing.equalToSuperview()
-//            make.width.equalTo(eventButton.snp.width)
             make.height.equalTo(15)
         }
         eventLabel.snp.makeConstraints { make in

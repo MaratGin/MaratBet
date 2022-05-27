@@ -16,7 +16,7 @@ enum AuthMoyaConfiguration {
 }
 
 extension AuthMoyaConfiguration: TargetType {
-
+    
     var baseURL: URL {
         switch self {
         case .sendSignUpInfo(_, _, _):
@@ -27,10 +27,6 @@ extension AuthMoyaConfiguration: TargetType {
             return URL(string: "http://localhost:8080")!
         }
     }
-//    var MatchListURL: URL {return URL(string: "https://v3.football.api-sports.io")!}
-//    var APIKey: String {return "1f370125c8msh68d348664965b81p15de67jsnb3956c25cc45"}
-//    var APIHost: String {return "api-football-v1.p.rapidapi.com"}
-    
     
     var path: String {
         switch self {
@@ -46,7 +42,7 @@ extension AuthMoyaConfiguration: TargetType {
     var method: Moya.Method {
         switch self {
         case .sendSignUpInfo:
-               return .post
+            return .post
         case .sendSignInInfo:
             return .post
         case .getQuestions:
@@ -64,6 +60,7 @@ extension AuthMoyaConfiguration: TargetType {
             return .requestPlain
         }
     }
+    
     var headers: [String : String]? {
         switch self {
         case .sendSignInInfo(email: _, password: _):

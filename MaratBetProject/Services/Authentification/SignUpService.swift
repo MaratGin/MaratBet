@@ -32,9 +32,7 @@ class SignUpService: SignUpServiceProtocol {
     }
     func getToken(response: Response) {
         let token = String(data: response.data, encoding: .utf8) ?? "nil"
-        print(token)
         KeychainService.saveLogin(login: token)
-        
     }
     
 }

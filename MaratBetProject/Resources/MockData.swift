@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - Mock data class
+
 class MockData {
     static let leagues: [StatisticTeam] = [
         StatisticTeam(name: L10n.premierLeague, image: Asset.epl.image, leagueID: 39),

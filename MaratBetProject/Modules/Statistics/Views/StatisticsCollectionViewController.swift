@@ -10,6 +10,9 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class StatisticsCollectionViewController: UICollectionViewController {
+    
+    // MARK: - Variables
+
     var leagues: [StatisticTeam] = []
     var viewModel: StatisticsViewModelProtocol?
 
@@ -25,6 +28,8 @@ class StatisticsCollectionViewController: UICollectionViewController {
     }
     
 }
+
+// MARK: - CollectionVIew extension
 
 extension StatisticsCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

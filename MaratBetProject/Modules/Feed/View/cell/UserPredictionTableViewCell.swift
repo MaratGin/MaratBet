@@ -10,10 +10,14 @@ import UIKit
 
 class UserPredictionTableViewCell: UITableViewCell {
     
+    // MARK: - Constants
+
     static let identifier = "userPredictionTableViewCell"
     let sportLabel: UILabel = BetNameLabel()
     let coefLabel: UILabel = BetNameLabel()
     
+    // MARK: - Initialisation
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(sportLabel)
@@ -23,6 +27,8 @@ class UserPredictionTableViewCell: UITableViewCell {
         coefLabel.adjustsFontSizeToFitWidth = true
     }
   
+    // MARK: - Cell configuration
+
     func configure(prediction: UserPrediction) {
         if let matchID = prediction.matchID, let teamA = prediction.teamAName, let teamB = prediction.teamBName {
             sportLabel.text = "\(String(describing: matchID)), \(teamA) vs \(teamB)"
@@ -34,6 +40,8 @@ class UserPredictionTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Constraints
+
     func setupConstraints() {
         coefLabel.snp.makeConstraints { make in
             make.trailing.equalToSuperview()

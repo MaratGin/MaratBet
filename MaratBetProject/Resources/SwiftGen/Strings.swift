@@ -36,8 +36,12 @@ internal enum L10n {
   internal static let eredivisi = L10n.tr("Localizable", "Eredivisi")
   /// Событий/я: 
   internal static let eventS = L10n.tr("Localizable", "Event/s: ")
+  /// Ошибка
+  internal static let failure = L10n.tr("Localizable", "Failure")
   /// ФНЛ
   internal static let fnl = L10n.tr("Localizable", "FNL")
+  /// Некоррктная сумма ставки!
+  internal static let incorrectBetValue = L10n.tr("Localizable", "Incorrect bet value!")
   /// Некорректные данные 🥺
   internal static let incorrectData🥺 = L10n.tr("Localizable", "Incorrect data 🥺")
   /// Некорректно введена почта! 🔴
@@ -70,6 +74,8 @@ internal enum L10n {
   internal static let thisLoginIsAlreadyExists = L10n.tr("Localizable", "this login is already exists!")
   /// Недопустимая длина 😱
   internal static let wrongLength😱 = L10n.tr("Localizable", "Wrong length 😱")
+  /// Ваша ставка подтверждена!
+  internal static let yourBetHasBeenPlaced = L10n.tr("Localizable", "Your bet has been placed")
 
   internal enum IncorrectLogin {
     /// Некорретно введен логин, допускаются латинские буквы и цифры 🔴

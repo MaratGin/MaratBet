@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 class Colors {
+    // MARK: - Colors constants
+
     static let grayViewColor = hexStringToUIColor(hex: "#F0EFF1")
     static let buttonColor = hexStringToUIColor(hex: "#E2E1E3")
     static let flameColor = hexStringToUIColor(hex: "#DF5722")
@@ -23,6 +25,8 @@ class Colors {
     static let orangeColor = hexStringToUIColor(hex: "#FFA500")
     static let redColor = hexStringToUIColor(hex: "#FF2900")
     
+    // MARK: - Generate UIColor from hex
+
     static func hexStringToUIColor (hex: String) -> UIColor {
         var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 

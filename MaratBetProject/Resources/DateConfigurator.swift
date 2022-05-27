@@ -7,17 +7,22 @@
 
 import Foundation
 class DateConfigurator {
+    
+    // MARK: - Date configuration
+
     static func configureDate(date: String) -> String {
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         let dateFormatterPrint = DateFormatter()
         let locale = Locale.current
-//        print("saklmdakldmalkdlkaslkdmamd\(locale.identifier)")
         dateFormatterPrint.dateFormat = DateFormatter.dateFormat(fromTemplate: "MMM.dd, HH:mm", options: 0, locale: locale)
         let date: Date? = dateFormatterGet.date(from: date)
         return dateFormatterPrint.string(from: date!)
     }
 }
+
+// MARK: - Date patterns
+
 /*
 formatdate("Mdyyyy") // "1/2/1984"
 formatdate("yyyyMMdd") // "01/02/1984"

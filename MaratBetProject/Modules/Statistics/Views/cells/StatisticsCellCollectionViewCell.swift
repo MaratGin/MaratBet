@@ -8,6 +8,9 @@
 import UIKit
 
 class StatisticsCellCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - Constants
+    
     static let identifier = "StatisticsCellTableViewCell"
     let imageView = UIImageView()
     let nameLabel = StatisticNameLabel()
@@ -15,6 +18,7 @@ class StatisticsCellCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(imageView)
@@ -27,10 +31,15 @@ class StatisticsCellCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Cell configuration
+
     func configure(team: StatisticTeam) {
         imageView.image = team.image
         nameLabel.text = team.name
     }
+    
+    // MARK: - Constraints
+
     func setupConstraints() {
         imageView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -46,6 +55,9 @@ class StatisticsCellCollectionViewCell: UICollectionViewCell {
             make.leading.equalToSuperview()
         }
     }
+    
+    // MARK: - Layout override method
+
     override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
       super.apply(layoutAttributes)
       

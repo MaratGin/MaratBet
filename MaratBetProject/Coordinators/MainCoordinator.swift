@@ -7,7 +7,9 @@
 
 import Foundation
 import UIKit
+
 // MARK: - Main coordinator
+
 class MainCoordinator: Coordinator {
     enum Route {
         case onboardingScreen
@@ -43,6 +45,7 @@ class MainCoordinator: Coordinator {
             print("HIHIH")
             setRootViewController(viewController: onboardingCoordinator.renewMainController())        }
     }
+    
     func setRootViewController(viewController: UIViewController) {
         window.rootViewController = viewController
         window.makeKeyAndVisible()

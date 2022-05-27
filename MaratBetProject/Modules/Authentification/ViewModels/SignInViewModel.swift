@@ -40,7 +40,7 @@ class SignInViewModel: SignInViewModelProtocol {
                 signInStatus.value = L10n.IncorrectPassword.nOnlyLatinSymblosAndNumbersAllowed🔴
             } else {
                 if password == KeychainService.loadPassword() && login == KeychainService.loadLogin() {
-                    L10n.succesful🥰
+                    signInStatus.value = L10n.succesful🥰
                     goToApp()
                 }
                 
@@ -48,6 +48,7 @@ class SignInViewModel: SignInViewModelProtocol {
             
         }
         }
+
     func goToApp() {
         coordinator.navigate(with: .appScreen)
     }

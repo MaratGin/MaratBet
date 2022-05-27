@@ -11,6 +11,8 @@ import SnapKit
 
 class FeedDetailViewController: UIViewController {
     
+    // MARK: - Constraints constants
+    
     private enum Constraints {
         static let viewBottomDelimeter = 20.0
         static let viewBottom = 100
@@ -61,7 +63,6 @@ class FeedDetailViewController: UIViewController {
         view.addSubview(userPredictionView)
         view.addSubview(tableView)
         setupConstraints()
-//        tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
         tableView.register(FeedDetailTableViewCell.self, forCellReuseIdentifier: FeedDetailTableViewCell.identifier)
         tableView.delegate = self
@@ -71,6 +72,9 @@ class FeedDetailViewController: UIViewController {
         tableView.reloadData()
         print(bets.count)
     }
+    
+    // MARK: - Constraints
+    
     func setupConstraints() {
         tableView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -105,11 +109,15 @@ class FeedDetailViewController: UIViewController {
         }
     }
     
+    // MARK: - Button action
+    
     @objc
     func hideButtonAction() {
         tableView.reloadData()
     }
 }
+
+// MARK: - TableView extension
 
 extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -137,11 +145,11 @@ extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
         if count % 2 == 0 {
             let yourHeight = 40 * (count / 2 )
             print("height chet \(yourHeight) /// \(count)")
-                return CGFloat(yourHeight)
-            } else {
-                let yourHeight = 40 * (count / 3 )
-                print("height nechet\(yourHeight) /// \(count)")
-                return CGFloat(yourHeight)
-            }
+            return CGFloat(yourHeight)
+        } else {
+            let yourHeight = 40 * (count / 3 )
+            print("height nechet\(yourHeight) /// \(count)")
+            return CGFloat(yourHeight)
+        }
     }
 }

@@ -61,26 +61,6 @@ class FeedCoordinator: Coordinator {
             let sheetController = SheetViewController(controller: viewController, sizes: [.intrinsic, .fullscreen])
             navigationController.present(sheetController, animated: true, completion: nil)
         }
-            
-//            let label = UILabel()
-//            label.textColor = UIColor.white
-//            label.font = UIFont(name: "Futura Bold", size: 20)
-//            navigationController.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: label)
-//            navigationController.setNeedsStatusBarAppearanceUpdate()
-//            let view: UIView  = {
-//               let view = UIView()
-//                view.backgroundColor = Colors.detailViewBackground
-//
-//                return view
-//            }()
-//            navigationController.navigationItem.backBarButtonItem?.customView = view
-//            view.snp.makeConstraints { make in
-//                make.top.equalToSuperview().offset(5)
-//                make.leading.equalToSuperview()
-//                make.trailing.equalToSuperview()
-//                make.height.equalTo(20)
-//            }
-       
     }
     
     // MARK: - ViewController configuration

@@ -30,10 +30,8 @@
 		EB225D0527FCACB8002E2769 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D0427FCACB8002E2769 /* SignInViewModel.swift */; };
 		EB225D0727FCACCE002E2769 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D0627FCACCE002E2769 /* SignUpViewModel.swift */; };
 		EB225D0A27FCACFB002E2769 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D0927FCACFB002E2769 /* User.swift */; };
-		EB225D0C27FCAD76002E2769 /* Matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D0B27FCAD76002E2769 /* Matches.swift */; };
 		EB225D0F27FCADB8002E2769 /* AuthBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D0E27FCADB8002E2769 /* AuthBinding.swift */; };
 		EB225D1127FCADC7002E2769 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1027FCADC7002E2769 /* Validation.swift */; };
-		EB225D1327FCADE0002E2769 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1227FCADE0002E2769 /* Factory.swift */; };
 		EB225D1627FCAE06002E2769 /* AuthMoyaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1527FCAE06002E2769 /* AuthMoyaConfiguration.swift */; };
 		EB225D1827FCAE20002E2769 /* SignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1727FCAE20002E2769 /* SignInService.swift */; };
 		EB225D1A27FCAE29002E2769 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB225D1927FCAE29002E2769 /* SignUpService.swift */; };
@@ -48,7 +46,6 @@
 		EB51391F280C728400E6EC59 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB51391E280C728400E6EC59 /* FeedCoordinator.swift */; };
 		EB513921280CB89800E6EC59 /* MyFootballResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB513920280CB89800E6EC59 /* MyFootballResponse.swift */; };
 		EB513926280D365300E6EC59 /* FeedViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB513925280D365300E6EC59 /* FeedViewTableViewCell.swift */; };
-		EB513928280D38D900E6EC59 /* ImageViewPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB513927280D38D900E6EC59 /* ImageViewPatterns.swift */; };
 		EB51392A280D4B9B00E6EC59 /* StatisticsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB513929280D4B9B00E6EC59 /* StatisticsCoordinator.swift */; };
 		EB51392C280D4BA500E6EC59 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB51392B280D4BA500E6EC59 /* ProfileCoordinator.swift */; };
 		EB51392E280D4BAF00E6EC59 /* BalanceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB51392D280D4BAF00E6EC59 /* BalanceCoordinator.swift */; };
@@ -143,10 +140,8 @@
 		EB225D0427FCACB8002E2769 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		EB225D0627FCACCE002E2769 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		EB225D0927FCACFB002E2769 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		EB225D0B27FCAD76002E2769 /* Matches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matches.swift; sourceTree = "<group>"; };
 		EB225D0E27FCADB8002E2769 /* AuthBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBinding.swift; sourceTree = "<group>"; };
 		EB225D1027FCADC7002E2769 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		EB225D1227FCADE0002E2769 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		EB225D1527FCAE06002E2769 /* AuthMoyaConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMoyaConfiguration.swift; sourceTree = "<group>"; };
 		EB225D1727FCAE20002E2769 /* SignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInService.swift; sourceTree = "<group>"; };
 		EB225D1927FCAE29002E2769 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
@@ -161,7 +156,6 @@
 		EB51391E280C728400E6EC59 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
 		EB513920280CB89800E6EC59 /* MyFootballResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFootballResponse.swift; sourceTree = "<group>"; };
 		EB513925280D365300E6EC59 /* FeedViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewTableViewCell.swift; sourceTree = "<group>"; };
-		EB513927280D38D900E6EC59 /* ImageViewPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewPatterns.swift; sourceTree = "<group>"; };
 		EB513929280D4B9B00E6EC59 /* StatisticsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCoordinator.swift; sourceTree = "<group>"; };
 		EB51392B280D4BA500E6EC59 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		EB51392D280D4BAF00E6EC59 /* BalanceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCoordinator.swift; sourceTree = "<group>"; };
@@ -325,7 +319,6 @@
 				EB225D0E27FCADB8002E2769 /* AuthBinding.swift */,
 				EB225D1027FCADC7002E2769 /* Validation.swift */,
 				EB3D9F642815D91500D6D91C /* Colors.swift */,
-				EB225D1227FCADE0002E2769 /* Factory.swift */,
 				EB225D1C27FCAE78002E2769 /* ErrorEnums.swift */,
 			);
 			path = Services;
@@ -378,7 +371,6 @@
 			isa = PBXGroup;
 			children = (
 				EB225D0927FCACFB002E2769 /* User.swift */,
-				EB225D0B27FCAD76002E2769 /* Matches.swift */,
 				EBBEA0B528045E7E00F190E2 /* Fixture.swift */,
 				EBBEA0B728045E8D00F190E2 /* League.swift */,
 				EBBEA0B928045E9900F190E2 /* Teams.swift */,
@@ -477,7 +469,6 @@
 				EBBEA09828037E1000F190E2 /* StackViewPatterns.swift */,
 				EBBEA09A28037E1C00F190E2 /* TextFieldPatterns.swift */,
 				EBBEA09C28037E8B00F190E2 /* LabelPatterns.swift */,
-				EB513927280D38D900E6EC59 /* ImageViewPatterns.swift */,
 				EB9A528E28402D3500D3FF8D /* UIImage+Decompression.swift */,
 				EB9A529C28407D4E00D3FF8D /* UIView+Extension.swift */,
 			);
@@ -823,7 +814,6 @@
 				EB51391D280C67EE00E6EC59 /* FootballMatch.swift in Sources */,
 				EBBEA0B628045E7E00F190E2 /* Fixture.swift in Sources */,
 				EBF8B9F8284008B6009D23BD /* StatisticsCellCollectionViewCell.swift in Sources */,
-				EB225D1327FCADE0002E2769 /* Factory.swift in Sources */,
 				EB51392A280D4B9B00E6EC59 /* StatisticsCoordinator.swift in Sources */,
 				EB225D0A27FCACFB002E2769 /* User.swift in Sources */,
 				EB225CF827FCABB3002E2769 /* SignInCoordinator.swift in Sources */,
@@ -878,12 +868,10 @@
 				EB0F5D832825AD7C00FAEC7A /* MyHockeyResponse.swift in Sources */,
 				EBC0308E281FC32B00E91C19 /* Sport.swift in Sources */,
 				EB51392C280D4BA500E6EC59 /* ProfileCoordinator.swift in Sources */,
-				EB225D0C27FCAD76002E2769 /* Matches.swift in Sources */,
 				EBFC3409282B01A000AE381E /* FeedDetailTableViewCell.swift in Sources */,
 				EB225D1D27FCAE78002E2769 /* ErrorEnums.swift in Sources */,
 				EB51391F280C728400E6EC59 /* FeedCoordinator.swift in Sources */,
 				EB225CF627FCABA7002E2769 /* SignUpCoordinator.swift in Sources */,
-				EB513928280D38D900E6EC59 /* ImageViewPatterns.swift in Sources */,
 				EBF8B9FA28400A88009D23BD /* StatisticsViewModel.swift in Sources */,
 				EBBEA08D2803540100F190E2 /* FeedViewController.swift in Sources */,
 				EB2DAD24283D6A4600CC4396 /* UserPredictionTableViewCell.swift in Sources */,

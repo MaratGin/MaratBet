@@ -236,6 +236,7 @@ class SignUpViewController: UIViewController {
       var result =  viewModel?.signUp(login: customLoginTextField.text ?? " ", password: customPasswordTextField.text ?? " ", email: customEmailTextField.text ?? " ", repassword: customRepasswordTextField.text ?? " ")
         result?.toggle()
     }
+    
     @objc
     func getBackButtonAction() {
         viewModel?.goToApp()

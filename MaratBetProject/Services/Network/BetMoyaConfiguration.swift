@@ -18,7 +18,6 @@ extension BetMoyaConfiguration: TargetType {
     var baseURL: URL {
         switch self {
         case .getFootballBets:
-          // return  URL(string: "https://api-football-v1.p.rapidapi.com/v3")!
             return URL(string: "https://v3.football.api-sports.io")!
         case .getHockeyBets:
             return URL(string: "https://v1.hockey.api-sports.io")!
@@ -26,9 +25,6 @@ extension BetMoyaConfiguration: TargetType {
             return URL(string: "https://v1.basketball.api-sports.io")!
         }
     }
-//    var MatchListURL: URL {return URL(string: "https://v3.football.api-sports.io")!}
-//    var APIKey: String {return "1f370125c8msh68d348664965b81p15de67jsnb3956c25cc45"}
-//    var APIHost: String {return "api-football-v1.p.rapidapi.com"}
     
     var path: String {
         switch self {
@@ -73,20 +69,18 @@ extension BetMoyaConfiguration: TargetType {
         case .getFootballBets:
             return [
                 "X-RapidAPI-Host": "v3.football.api-sports.io",
-                    "X-RapidAPI-Key": "7535a6498e04ead516f323a8dcd09c2b"
-//                "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
-//                    "X-RapidAPI-Key": "1f370125c8msh68d348664965b81p15de67jsnb3956c25cc45"
+                "X-RapidAPI-Key": "7535a6498e04ead516f323a8dcd09c2b"
             ]
         case .getHockeyBets:
             return [
-                                "X-RapidAPI-Host": "v1.hockey.api-sports.io",
-                                    "X-RapidAPI-Key": "7535a6498e04ead516f323a8dcd09c2b"
-                            ]
+                "X-RapidAPI-Host": "v1.hockey.api-sports.io",
+                "X-RapidAPI-Key": "7535a6498e04ead516f323a8dcd09c2b"
+            ]
         case .getBasketballBets:
             return [
-                                "X-RapidAPI-Host": "v1.basketball.api-sports.io",
-                                    "X-RapidAPI-Key": "7535a6498e04ead516f323a8dcd09c2b"
-                            ]
+                "X-RapidAPI-Host": "v1.basketball.api-sports.io",
+                "X-RapidAPI-Key": "7535a6498e04ead516f323a8dcd09c2b"
+            ]
         }
-}
+    }
 }

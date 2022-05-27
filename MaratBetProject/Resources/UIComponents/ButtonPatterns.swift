@@ -45,7 +45,6 @@ class BetButton: UIButton {
         super.init(frame: frame)
         backgroundColor = Colors.buttonColor
         layer.cornerRadius = 5
-//        titleLabel?.font = UIFont(name: "Futura Bold", size: 12)
         titleLabel?.adjustsFontSizeToFitWidth = true
         setTitleColor(UIColor.black, for: .normal)
     }

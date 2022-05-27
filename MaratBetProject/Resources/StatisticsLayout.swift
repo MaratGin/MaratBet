@@ -36,7 +36,6 @@ class StatisticsLayout: UICollectionViewLayout {
   }
   
   var width: CGFloat {
-    
     return collectionView!.bounds.width
   }
   
@@ -58,7 +57,6 @@ extension StatisticsLayout {
   }
   
   override func prepare() {
-    print(1)
     cache.removeAll(keepingCapacity: false)
     
     let standardHeight = StatisticsLayoutConstants.Cell.standardHeight

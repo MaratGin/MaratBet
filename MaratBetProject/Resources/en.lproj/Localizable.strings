@@ -38,3 +38,6 @@
 "RPL" = "РПЛ";
 "this login is already exists!" = "Такой логин уже существует!";
 "incorrect login!" = "Некорректный логин!";
+"Incorrect bet value!" = "Некоррктная сумма ставки!";
+"Failure" = "Ошибка";
+"Your bet has been placed" = "Ваша ставка подтверждена!";

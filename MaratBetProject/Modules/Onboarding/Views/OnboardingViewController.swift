@@ -8,10 +8,14 @@ import UIKit
 import SnapKit
 
 class OnboardingViewController: UIViewController {
+    
     // MARK: - Variables
+    
     var coordinator: OnboardingCoordinator?
     let boxHeight: CGFloat = 130
+    
     // MARK: - UI elements
+    
     let mainLabel: LogoLabel = {
        let label = LogoLabel()
         return label
@@ -31,7 +35,6 @@ class OnboardingViewController: UIViewController {
     }()
     let signUpButton: AuthButton = {
         let button = AuthButton()
-//        button.layer.borderColor =
         button.backgroundColor = .white
         button.layer.borderColor  = UIColor.black.cgColor
         button.setTitle("SignUp!", for: .normal)

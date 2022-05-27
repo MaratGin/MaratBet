@@ -15,6 +15,7 @@ protocol BalanceViewModelProtocol {
 }
 
 class BalanceViewModel: BalanceViewModelProtocol {
+    
     // MARK: - Variables
 
     var coordinator: BalanceCoordinator

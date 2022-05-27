@@ -157,7 +157,6 @@ class SignInViewController: UIViewController {
     
     @objc
     func signInButtonAction() {
-        print("bfahdshbjfbahbh")
         viewModel?.signIn(login: customEmailTextField.text ?? " ", password: customPasswordTextField.text ?? " ")
     }
     

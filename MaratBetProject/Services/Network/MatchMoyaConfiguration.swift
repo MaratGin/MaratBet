@@ -25,7 +25,7 @@ extension MatchMoyaConfiguration: TargetType {
             return URL(string: "https://v1.basketball.api-sports.io")!
         }
     }
-
+    
     var path: String {
         switch self {
         case .getFootballMatches:
@@ -72,18 +72,18 @@ extension MatchMoyaConfiguration: TargetType {
         case .getFootballMatches:
             return [
                 "X-RapidAPI-Host": "v3.football.api-sports.io",
-                    "X-RapidAPI-Key": "7535a6498e04ead516f323a8dcd09c2b"
+                "X-RapidAPI-Key": "7535a6498e04ead516f323a8dcd09c2b"
             ]
         case .getHockeyMatches:
             return [
-                                "X-RapidAPI-Host": "v1.hockey.api-sports.io",
-                                    "X-RapidAPI-Key": "7535a6498e04ead516f323a8dcd09c2b"
-                            ]
+                "X-RapidAPI-Host": "v1.hockey.api-sports.io",
+                "X-RapidAPI-Key": "7535a6498e04ead516f323a8dcd09c2b"
+            ]
         case .getBasketBallMatches:
             return [
-                                "X-RapidAPI-Host": "v1.basketball.api-sports.io",
-                                    "X-RapidAPI-Key": "7535a6498e04ead516f323a8dcd09c2b"
-                            ]
+                "X-RapidAPI-Host": "v1.basketball.api-sports.io",
+                "X-RapidAPI-Key": "7535a6498e04ead516f323a8dcd09c2b"
+            ]
         }
-}
+    }
 }

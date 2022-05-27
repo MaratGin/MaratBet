@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 enum DataType {
     case top
     case football

@@ -11,6 +11,8 @@ import PhotosUI
 
 class ProfileViewController: UIViewController {
     
+    // MARK: - Variables
+
     var viewModel: ProfileViewModelProtocol?
     let backgroundProfile = UIView()
     let refreshButton = UIButton()
@@ -48,6 +50,9 @@ class ProfileViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         putTestData()
     }
+    
+    // MARK: - Refresh button action
+
     @objc
     func putTestData() {
         backgroundProfile.backgroundColor = .black
@@ -57,11 +62,16 @@ class ProfileViewController: UIViewController {
         nicknameLabel.textAlignment = .center
         historyLabel.text = L10n.betsHistory
     }
+    
+    // MARK: - Leave account button action
 
     @objc
     func leaveAccount() {
         viewModel?.leaveAccount()
     }
+    
+    // MARK: - Constraints
+
     func setupConstraints() {
         backgroundProfile.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -83,6 +93,8 @@ class ProfileViewController: UIViewController {
         }
     }
 }
+
+// MARK: - TableViewExtension
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

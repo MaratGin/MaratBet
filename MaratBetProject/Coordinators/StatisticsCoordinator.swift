@@ -37,7 +37,6 @@ class StatisticsCoordinator: Coordinator {
         switch route {
         case .statistic:
             let viewController = StatisticsViewController()
-//            let viewController = StatisticsCollectionViewController(collectionViewLayout: StatisticsLayout())
             let viewModel = StatisticsViewModel(coordinator: self)
             viewController.viewModel = viewModel
             navigationController.pushViewController(viewController, animated: true)

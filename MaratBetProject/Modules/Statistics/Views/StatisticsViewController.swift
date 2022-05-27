@@ -1,14 +1,9 @@
-//
-//  StatisticsViewController.swift
-//  MaratBetProject
-//
-//  Created by Marat Giniyatov on 26.05.2022.
-//
-
 import UIKit
 
 class StatisticsViewController: UIViewController {
     
+    // MARK: - Variables
+
     var leagues: [StatisticTeam] = []
     let collectionView = StatisticsColView()
     var viewModel: StatisticsViewModelProtocol?
@@ -32,6 +27,9 @@ class StatisticsViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
+    // MARK: - Constraints
+
     func setupConstraints() {
         collectionView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
@@ -41,6 +39,8 @@ class StatisticsViewController: UIViewController {
         }
     }
 }
+
+// MARK: - CollectionView extension
 
 extension StatisticsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -62,6 +62,9 @@ extension StatisticsViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
 }
+
+// MARK: - Custom collectionView
+
 class StatisticsColView: UICollectionView {
     init() {
         var preferredStatusBarStyle: UIStatusBarStyle {

@@ -7,7 +7,9 @@
 
 import Foundation
 class Validation {
+    
 // MARK: - Method to check is string an email or not
+    
 func checkEmail(_ email: String) -> Bool {
     let result: Bool
     let regex = "[A-Z0-9a-z]{1,64}@[0-9A-Za-z]{1,64}\\.[a-z]{2,64}"
@@ -17,6 +19,7 @@ func checkEmail(_ email: String) -> Bool {
 }
 
 // MARK: - Method to check correction of the password
+    
 func checkPassword(_ email: String) -> Bool {
     let result: Bool
     let regex = "(?=.*[0-9])[a-zA-Z0-9]{6,64}"
@@ -28,7 +31,7 @@ func checkPassword(_ email: String) -> Bool {
 
     func checkLogin(_ login: String) -> Bool {
         let result: Bool
-        let regex = "(?=.*[0-9])[a-zA-Z0-9]{6,12}"
+        let regex = "[a-zA-Z0-9]{5,12}"
         let loginPred = NSPredicate(format: "SELF MATCHES %@", regex)
         result = loginPred.evaluate(with: login)
         return result

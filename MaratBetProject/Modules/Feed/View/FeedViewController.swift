@@ -17,9 +17,9 @@ class FeedViewController: UIViewController {
         static let viewHeight = 0.05
         static let labelLeading = 10
     }
-
+    
     // MARK: - variables
-
+    
     let tableView = UITableView()
     let layout = UICollectionViewFlowLayout()
     var collectionView = FeedColView()
@@ -61,7 +61,7 @@ class FeedViewController: UIViewController {
         navigationController?.navigationBar.barStyle = .black
         setNeedsStatusBarAppearanceUpdate()
     }
-
+    
     override func viewDidLayoutSubviews() {
         let label = UILabel()
         label.textColor = Colors.goldTabBarItemColor
@@ -105,7 +105,7 @@ class FeedViewController: UIViewController {
     }
     
     // MARK: - constraintConfiguration
-
+    
     func setupConstraints() {
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
@@ -181,8 +181,8 @@ class FeedViewController: UIViewController {
     func configureData() {
         viewModel?.getHockeyMatches(league: Constants.nhlLeague)
         viewModel?.getHockeyMatches(league: 111)
-        viewModel?.getFootballMatches(league: Constants.championsLeague)
-        viewModel?.getFootballMatches(league: Constants.russianPL)
+         viewModel?.getFootballMatches(league: Constants.championsLeague)
+           viewModel?.getFootballMatches(league: Constants.russianPL)
         viewModel?.getBasketballMatches(league: Constants.nbaLeague)
     }
     
@@ -192,12 +192,12 @@ class FeedViewController: UIViewController {
     }
     
     // MARK: - Binding
-  
+    
     func bindViewModel() {
         viewModel?.matchStatus.bind({ (loadedData) in
-        
+            
             print("binding!")
-
+            
             DispatchQueue.main.async {
                 Swift.print("Sended\(loadedData.count)")
                 
@@ -244,15 +244,15 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         case  .football:
             cell.configureCell(match: footballData[indexPath.row])
             cell.delegate = self
-
+            
         case  .hockey:
             cell.configureHockeyCell(match: hockeyData[indexPath.row])
             cell.delegate = self
-
+            
         case  .basketball:
             cell.configureBasketballCell(match: basketballData[indexPath.row])
             cell.delegate = self
-
+            
         default:
             cell.configureCell(match: footballData[indexPath.row])
             cell.delegate = self
@@ -261,30 +261,29 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            switch currentData {
-            case  .football:
-                return footballData.count
-            case  .hockey:
-                return hockeyData.count
-            case  .basketball:
-                return basketballData.count
-            default:
-                return footballData.count
+        switch currentData {
+        case  .football:
+            return footballData.count
+        case  .hockey:
+            return hockeyData.count
+        case  .basketball:
+            return basketballData.count
+        default:
+            return footballData.count
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch currentData {
         case  .football:
             viewModel?.goToDetail(cell: footballData[indexPath.row], dataType: .football, matchID: footballData[indexPath.row].fixture?.id ?? 100, predictions: currentUserPredictions)
-//            BetMoyaConfiguration.
         case  .hockey:
             viewModel?.goToDetail(cell: hockeyData[indexPath.row], dataType: .hockey, matchID: hockeyData[indexPath.row].id ?? 100, predictions: currentUserPredictions)
-
+            
         case  .basketball:
             viewModel?.goToDetail(cell: basketballData[indexPath.row], dataType: .basketball, matchID: basketballData[indexPath.row].id ?? 100, predictions: currentUserPredictions)
         default:
             viewModel?.goToDetail(cell: footballData[indexPath.row], dataType: .football, matchID: footballData[indexPath.row].fixture?.id ?? 100, predictions: currentUserPredictions)
-    }
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -299,7 +298,6 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.identifier, for: indexPath) as? FeedCollectionViewCell else {
             return UICollectionViewCell()
         }
-//        cell.backgroundColor = .yellow
         cell.layer.backgroundColor = UIColor.black.cgColor
         cell.contentView.backgroundColor = .black
         if sportCells[indexPath.row].isSelected {
@@ -310,29 +308,29 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.configure(sport: self.sportCells[indexPath.row])
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         sportCells.count
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(
-                width: 60, height: self.collectionView.frame.height)
-        }
+        return CGSize(
+            width: 60, height: self.collectionView.frame.height)
+    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
             sportCells[indexPath.row].isSelected = true
             for item in 0...sportCells.count - 1 where
-                sportCells[indexPath.row].name != sportCells[item].name {
-                    sportCells[item].isSelected = false
+            sportCells[indexPath.row].name != sportCells[item].name {
+                sportCells[item].isSelected = false
             }
             collectionView.reloadData()
         case 1:
             sportCells[indexPath.row].isSelected = true
             collectionView.reloadData()
             for item in 0...sportCells.count - 1 where
-                sportCells[indexPath.row].name != sportCells[item].name {
-                    sportCells[item].isSelected = false
+            sportCells[indexPath.row].name != sportCells[item].name {
+                sportCells[item].isSelected = false
             }
             currentData = .football
             tableView.reloadData()
@@ -340,8 +338,8 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
             sportCells[indexPath.row].isSelected = true
             collectionView.reloadData()
             for item in 0...sportCells.count - 1 where
-                sportCells[indexPath.row].name != sportCells[item].name {
-                    sportCells[item].isSelected = false
+            sportCells[indexPath.row].name != sportCells[item].name {
+                sportCells[item].isSelected = false
             }
             currentData = .hockey
             tableView.reloadData()
@@ -349,7 +347,7 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
             sportCells[indexPath.row].isSelected = true
             collectionView.reloadData()
             for item in 0...sportCells.count - 1 where sportCells[indexPath.row].name != sportCells[item].name {
-                    sportCells[item].isSelected = false
+                sportCells[item].isSelected = false
             }
             currentData = .basketball
             tableView.reloadData()
@@ -358,48 +356,56 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
 }
+
+// MARK: - Custom collectionView
+
 class FeedColView: UICollectionView {
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
-     }
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+// MARK: - Delegate extension
+
 extension FeedViewController: SendUserPredictionDelegate {
     func sendPrediction(prediction: UserPrediction) {
-            if prediction.update ?? false {
-                for item in 0..<currentUserPredictions.count {
-                    if prediction.matchID == self.currentUserPredictions[item].matchID {
-                        self.currentUserPredictions.remove(at: item)
-                        self.divideUserPrediction(prediction: prediction)
-                        break
-                    }
-                }
-                self.currentUserPredictions.append(prediction)
-                self.updateUserPrediction(prediction: prediction)
-                UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
-                    self.userPredictionView.isHidden = false
-                }, completion: nil )
-            } else {
-                for item in 0..<self.currentUserPredictions.count {
-                    print("YEY")
-                    if prediction.matchID == self.currentUserPredictions[item].matchID {
-                        print("HEYEY")
-                        self.currentUserPredictions.remove(at: item)
-                        self.divideUserPrediction(prediction: prediction)
-                        break
-                    }
+        if prediction.update ?? false {
+            for item in 0..<currentUserPredictions.count {
+                if prediction.matchID == self.currentUserPredictions[item].matchID {
+                    self.currentUserPredictions.remove(at: item)
+                    self.divideUserPrediction(prediction: prediction)
+                    break
                 }
             }
+            self.currentUserPredictions.append(prediction)
+            self.updateUserPrediction(prediction: prediction)
+            UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
+                self.userPredictionView.isHidden = false
+            }, completion: nil )
+        } else {
+            for item in 0..<self.currentUserPredictions.count {
+                print("YEY")
+                if prediction.matchID == self.currentUserPredictions[item].matchID {
+                    print("HEYEY")
+                    self.currentUserPredictions.remove(at: item)
+                    self.divideUserPrediction(prediction: prediction)
+                    break
+                }
+            }
+        }
     }
 }
 
+// MARK: - Constants class
+
 private struct Constants {
-   static let footballMatchConst = FootballMatch(fixture: Fixture(id: 12, referee: "1312", timezone: "1211", date: "2022-04-16T14:00:00+00:00", timestamp: 12312, periods: nil, venue: nil, status: nil), league: nil, teams: Teams(home: Home(id: 1, name: "-----", logo: "https://media.api-sports.io/football/teams/71.png", winner: true), away: Away(id: 12, name: "asada2", logo: "https://media.api-sports.io/football/teams/71.png", winner: false)), goals: nil, score: nil)
+    static let footballMatchConst = FootballMatch(fixture: Fixture(id: 12, referee: "1312", timezone: "1211", date: "2022-04-16T14:00:00+00:00", timestamp: 12312, periods: nil, venue: nil, status: nil), league: nil, teams: Teams(home: Home(id: 1, name: "-----", logo: "https://media.api-sports.io/football/teams/71.png", winner: true), away: Away(id: 12, name: "asada2", logo: "https://media.api-sports.io/football/teams/71.png", winner: false)), goals: nil, score: nil)
     static let hockeyMatchConst = HockeyMatch(id: nil, date: "2022-04-16T14:00:00+00:00", time: nil, timestamp: nil, timezone: nil, week: nil, timer: nil, status: nil, country: nil, league: nil, teams: HockeyTeams(home: TeamData(id: 1, name: "Teaam1", logo: "https://media.api-sports.io/football/teams/71.png"), away: TeamData(id: 2, name: "Teaam2", logo: "https://media.api-sports.io/football/teams/71.png")), scores: nil, periods: nil, events: nil, type: "hockey")
     static let basketballConst = BasketBallMatch(type: "basketball", id: 1, date: "2022-04-16T14:00:00+00:00", time: nil, timestamp: nil, timezone: nil, stage: nil, week: nil, status: nil, league: nil, country: nil, teams: HockeyTeams(home: TeamData(id: 1, name: "Team1", logo: "https://media.api-sports.io/football/teams/71.png"), away: TeamData(id: 2, name: "Team2", logo: "https://media.api-sports.io/football/teams/71.png")), scores: nil)
     static let englandPL = 39

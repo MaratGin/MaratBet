@@ -47,6 +47,8 @@ class FeedViewModel: FeedViewModelProtocol {
         self.betStatus = Observable(BetInfo(league: nil, fixture: nil, update: nil, bookmakers: nil))
     }
     
+    // MARK: - Network methods
+    
     func goToDetail(cell: SportCell, dataType: DataType, matchID: Int, predictions: [UserPrediction]) {
         print("detail")
         var betRequestType = BetMoyaConfiguration.getFootballBets(matchID: matchID)
@@ -85,6 +87,7 @@ class FeedViewModel: FeedViewModelProtocol {
         
     }
     
+
     func getAllMatches() {
         getHockeyMatches(league: Constants.nhlLeague)
         matchStatus.value = allData
@@ -160,6 +163,9 @@ class FeedViewModel: FeedViewModelProtocol {
     }
     
 }
+
+// MARK: - League constants
+
 private struct Constants {
     static let englandPL = 39
     static let championsLeague = 2

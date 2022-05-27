@@ -9,6 +9,8 @@ import UIKit
 
 class BalanceViewController: UIViewController {
     
+    // MARK: - Variables
+    
     var viewModel: BalanceViewModelProtocol?
     var data = [
         Question(image: Asset.hazard.image, text: "Какой футболист изрбражен на фото?", optionA: "Эрлинг Холанд", optionB: "Мемфис Депай", optionC: "Эден Азар", optionD: "Рис Джеймс", answer: "c"),
@@ -53,6 +55,8 @@ class BalanceViewController: UIViewController {
         view.addSubview(buttonD)
     }
     
+    // MARK: - Binding
+    
     func bindViewModel() {
         viewModel?.status.bind({ (loadedData) in
             DispatchQueue.main.async {
@@ -60,6 +64,8 @@ class BalanceViewController: UIViewController {
             }
         })}
     
+    // MARK: - Question configuration
+
     func setupQuestion() {
         usleep(200000)
         UIView.animate(withDuration: 1, delay: .zero, options: .curveEaseIn, animations: {
@@ -88,6 +94,8 @@ class BalanceViewController: UIViewController {
         buttonD.setTitle(question.optionD, for: .normal)
     }
     
+    // MARK: - Button Action
+
     @objc
     func buttonAction(_ sender: UIButton) {
         if sender == buttonA {
@@ -223,6 +231,8 @@ class BalanceViewController: UIViewController {
         }
     }
     
+    // MARK: - Constraints
+
     func setupConstraints() {
         questionImage.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(50)

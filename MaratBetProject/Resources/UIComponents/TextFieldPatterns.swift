@@ -11,10 +11,10 @@ import UIKit
 class AuthTextField: UITextField {   
     override init(frame: CGRect) {
         super.init(frame: frame)
-            isSecureTextEntry = false
-            layer.borderColor = UIColor.black.cgColor
-            layer.borderWidth = 1.0
-            layer.cornerRadius = 8
+        isSecureTextEntry = false
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 1.0
+        layer.cornerRadius = 8
         
     }
     
@@ -24,15 +24,12 @@ class AuthTextField: UITextField {
 }
 
 class BaseTextField: UITextField {
-
     init(placeHolder: String?=nil) {
         super.init(frame: CGRect.zero)
-        
         font = UIFont(name: "Futura Bold", size: 13)
         returnKeyType = .next
         
         attributedPlaceholder = NSAttributedString(string: placeHolder ?? "", attributes: [NSAttributedString.Key.font: UIFont(name: "Futura Bold", size: 14) as Any, NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-
         autocorrectionType = .no
         autocapitalizationType = .none
         enablesReturnKeyAutomatically = true
@@ -65,7 +62,7 @@ class CustomTextField: UITextField {
         font = UIFont(name: "Futura Bold", size: 14)
         returnKeyType = .next
         
-        attributedPlaceholder = NSAttributedString(string: placeHolder ?? "", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14) ?? .systemFont(ofSize: 10), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        attributedPlaceholder = NSAttributedString(string: placeHolder ?? "", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         
         autocorrectionType = .no
         autocapitalizationType = .none
